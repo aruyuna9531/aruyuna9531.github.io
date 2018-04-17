@@ -153,13 +153,17 @@
 	var date=new Date();
 	document.getElementById("today").innerHTML = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
  }
+ function predictloginbonus(){
+	var prediction = Math.floor(Number(document.getElementById("daily").innerHTML)*0.5);
+	document.getElementById("loginbonus").value = prediction;
+ }
  </script>
 </head>
 <body onload="printToday()">
  <p>今天：<span id="today"></span></p>
  <p>前排提示：能打的新EX，新MA先都打了，否则计算会有偏差</p>
  <p>抽谁的生日卡：
- <select onchange="daystobirth(value,true);otherbirth(value);newex();newma();calendar();total();sum()">
+ <select onchange="daystobirth(value,true);otherbirth(value);newex();newma();calendar();total();predictloginbonus();sum()">
   <option value ="blank"></option>
   <option value ="honoka">高坂穗乃果</option>
   <option value ="eli">绚濑绘里</option>
@@ -186,18 +190,17 @@
  <p>预测可获得心数：<span id="loveca"></span><br>
 	每日一心：<span id="daily"></span><br>
 	其他人生日（含自己当天）：<span id="othersbirth"></span><br>
-	新EX：每首能拿<input id="lovecaperex" type="number" value="2" min = "1" max = "3" onchange = "newex();total();sum()"/>心，共计<span id="newexpert"></span>心<br>
-	新MA：每首能拿<input id="lovecaperma" type="number" value="5" min = "1" max = "7" onchange = "newma();total();sum()"/>心，共计<span id="newmaster"></span>心<br>
+	新EX：每首能拿<input id="lovecaperex" type="number" value="2" min = "1" max = "3" onchange = "newex();total();sum()"/>心，共计<span id="newexpert"></span>心
+
+<br>
+	新MA：每首能拿<input id="lovecaperma" type="number" value="5" min = "1" max = "7" onchange = "newma();total();sum()"/>心，共计<span id="newmaster"></span>心
+
+<br>
 	登录日历：<span id="loginCalendar"></span><br>
 	各种登陆奖励（预测值）：<input id="loginbonus" type="number" value="0" onchange="total()" /><br>
  </p>
  <p>
    预测成员生日当天总心数：<strong><font color="red"><span id="totalloveca"></span></font></strong>
- </p>
- <br>
- <p>
-	Created By: aruyuna~ at 2018.4.17 <br>
-	Bilibili site: <a href="https://space.bilibili.com/5054198">https://space.bilibili.com/5054198</a>
  </p>
 </body>
 </html>
