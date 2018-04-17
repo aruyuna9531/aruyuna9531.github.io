@@ -45,7 +45,7 @@ function dailyloveca(){
 function datecompare(d1, d2){
 	var d1 = new Date(d1.replace(/\-/g, "\/"));  
 	var d2=new Date(d2.replace(/\-/g, "\/"));  
-	if(d1>=d2)return true;
+	if(d1>d2)return true;
 	else return false;
 }
 function otherbirth(value){
