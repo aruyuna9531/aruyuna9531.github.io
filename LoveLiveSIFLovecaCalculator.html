@@ -62,6 +62,8 @@
 	if(fromHTML==true){
 	document.getElementById("birth").innerHTML = year+"-"+month+"-"+day;
 	dailyloveca();
+	document.getElementById("test").innerHTML = document.getElementById("eventset").value;
+	eventCount(document.getElementById("eventset").value);
 	}
 	else return year+"-"+month+"-"+day;
  }
@@ -183,6 +185,7 @@
  </script>
 </head>
 <body onload="printToday()">
+ <p>test：<span id="test"></span></p>
  <p>今天：<span id="today"></span></p>
  <p>前排提示：能打的新EX，新MA先都打了，否则计算会有偏差</p>
  <p>抽谁的生日卡：
@@ -220,7 +223,7 @@
 
 <br>
 	登录日历：<span id="loginCalendar"></span><br>
-	活动攒心（不计现在进行中的和生日所在当期活动）：<select name="eventset" onchange="eventCount(value);total();sum();">
+	活动攒心（不计现在进行中的和生日所在当期活动）：<select id="eventset" onchange="eventCount(value);total();sum();">
 	<option value="blank">选择活动策略</option>
 	<option value="normal">平刷</option>
 	<option value="first">一档</option>
