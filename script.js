@@ -184,10 +184,12 @@ function predictloginbonus(){
 }
 function printToday(){
 	var date=TokyoTime();
-	document.getElementById("today").innerHTML = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes
-
-()+":"+date.getSeconds();
+	document.getElementById("today").innerHTML = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+front0(date.getMinutes())+":"+front0(date.getSeconds());
 	setTimeout(printToday,1000);
+}
+function front0(ms){
+	if(ms<=9)return "0"+ms;
+	else return ms;
 }
 function sum(){
 	var currentlove = Number(document.getElementById("current").value);
