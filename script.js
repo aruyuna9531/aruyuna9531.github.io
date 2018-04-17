@@ -263,5 +263,6 @@ function MuseMemberGachaMax(){
 	var Ticket = Number(document.getElementById("totalTicket").innerHTML);
 	var Chain_11 = Math.floor(Loveca/50);
 	var single = Math.floor((Loveca-Chain_11*50)/5);
-	document.getElementById("MuseMemberResult").innerHTML = Chain_11*11+single+Ticket; 
+	if(document.getElementById("member").selectedIndex<10)document.getElementById("MuseMemberResult").innerHTML = Chain_11*11+single+Ticket; 
+	else document.getElementById("MuseMemberResult").innerHTML = ""; 
 }
