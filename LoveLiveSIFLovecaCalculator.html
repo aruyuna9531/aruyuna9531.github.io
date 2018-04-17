@@ -5,9 +5,9 @@
 <body onload="printToday()">
  <p>今天：<span id="today"></span></p>
  <p>前排提示：1.能打的新EX，新MA先都打了，否则计算会有偏差<br>
-	2.目前水团只有Step Up抽卡，因此<del>超过120的可以不攒了留着过年</del>最后抽卡计数的结果只计算μ's成员的，敬请原谅
-	3.目前<strong>iOS系统出现只有绚濑绘里能输出正常结果的问题</strong>，不知道怎么解#(滑稽)#(心碎)请iOS用户在PC端使用这玩意，或者借台安卓机也可以
-	4.如果今天正好是某人的生日那么预测可获得心数会出现负数的情况，由于边界值引起，但懒得改了，反正本次也攒不起心了。等到第2天该成员来到明年的年份后会恢复正常。
+	2.目前水团只有Step Up抽卡，因此<del>超过120的可以不攒了留着过年</del>最后抽卡计数的结果只计算μ's成员的，敬请原谅<br>
+	3.目前<strong>iOS系统出现只有绚濑绘里能输出正常结果的问题</strong>，不知道怎么解#(滑稽)#(心碎)请iOS用户在PC端使用这玩意，或者借台安卓机也可以<br>
+	4.如果今天正好是某人的生日那么预测可获得心数会出现负数的情况，由于边界值引起，但懒得改了，反正本次也攒不起心了。等到第2天该成员来到明年的年份后会恢复正常。<br>
  </p>
  <p>抽谁的生日卡：
  <select id="member" onchange="daystobirth(value,true);otherMemberLoveca(value);newex();newma();calendar();predictloginbonus();total();sum();TicketEventBonus
