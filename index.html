@@ -1,0 +1,199 @@
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <title>攒心计算器</title>
+ <script>
+ function datecompare(d1, d2){
+	var d1 = new Date(d1.replace(/\-/g, "\/"));  
+	var d2=new Date(d2.replace(/\-/g, "\/"));  
+	if(d1>=d2)return true;
+	else return false;
+ }
+ function otherbirth(value){
+	var names = ["dia", "hanayo", "kanan", "hanamaru", "umi", "you", "maki", "nozomi", "mari", "yoshiko", "nico", "chika", "honoka", "kotori", "riko", "ruby", 
+
+"eli", "rin"];
+	
+	var now = daystobirth(value,false);
+	var endDate = new Date();
+	var counter = 0;
+	for(var i=0;i<names.length;i++){
+		if(datecompare(daystobirth(names[i],false),now)==false)counter++;
+	}
+	document.getElementById("othersbirth").innerHTML = counter*5;
+ }
+ function dailyloveca(){
+	var currentDate = new Date();
+	var endDate = new Date(document.getElementById("birth").innerHTML);
+	var now = currentDate.getTime();
+	var end = endDate.getTime();
+	var left = end-now;
+	var leftDays = Math.floor(left/1000/60/60/24);
+	document.getElementById("daily").innerHTML = leftDays;
+ }
+ function daystobirth(value, fromHTML){
+	var date=new Date();
+	var year=date.getFullYear();
+	var month=0;
+	var day=0;
+	switch(value)
+	{
+	case "honoka": month=8; day=3; break;
+	case "eli": month=10; day=21; break;
+	case "kotori": month=9; day=12; break;
+	case "umi": month=3; day=15; break;
+	case "rin": month=11; day=1; break;
+	case "maki": month=4; day=19; break;
+	case "nozomi": month=6; day=9; break;
+	case "hanayo": month=1; day=17; break;
+	case "nico": month=7; day=22; break;
+	case "chika": month=8; day=1; break;
+	case "riko": month=9; day=19; break;
+	case "kanan": month=2; day=10; break;
+	case "dia": month=1; day=1; break;
+	case "you": month=4; day=17; break;
+	case "yoshiko": month=7; day=13; break;
+	case "hanamaru": month=3; day=4; break;
+	case "mari": month=6; day=13; break;
+	case "ruby": month=9; day=21; break;
+	default: break;
+	}
+	if(month<date.getMonth()+1)year++;
+	if(month==date.getMonth()+1 && day<date.getDate())year++;
+	if(fromHTML==true){
+	document.getElementById("birth").innerHTML = year+"-"+month+"-"+day;
+	dailyloveca();
+	}
+	else return year+"-"+month+"-"+day;
+ }
+ function newma(){
+	var date = new Date();
+	var endDate = new Date(document.getElementById("birth").innerHTML);
+	var monthminus = endDate.getMonth()-date.getMonth();
+	var daycounter = 0;
+	if(endDate.getFullYear()-date.getFullYear()==1)monthminus+=12;
+	if(endDate.getDate()>date.getDate()){
+		if(date.getDate()<1 && endDate.getDate()>=1)daycounter++;
+		if(date.getDate()<6 && endDate.getDate()>=6)daycounter++;
+		if(date.getDate()<16 && endDate.getDate()>=16)daycounter++;
+		if(date.getDate()<21 && endDate.getDate()>=21)daycounter++;
+	}
+	else
+	{
+		if(date.getDate()>=1 && endDate.getDate()<1)daycounter--;
+		if(date.getDate()>=6 && endDate.getDate()<6)daycounter--;
+		if(date.getDate()>=16 && endDate.getDate()<16)daycounter--;
+		if(date.getDate()>=21 && endDate.getDate()<21)daycounter--;
+	}
+	document.getElementById("newmaster").innerHTML = document.getElementById("lovecaperma").value * (monthminus * 4 + daycounter);
+ }
+ function calendar(){
+	var date = new Date();
+	var endDate = new Date(document.getElementById("birth").innerHTML);
+	var monthminus = endDate.getMonth()-date.getMonth();
+	var daycounter = 0;
+	if(endDate.getFullYear()-date.getFullYear()==1)monthminus+=12;
+	if(endDate.getDate()>date.getDate()){
+		if(date.getDate()<5 && endDate.getDate()>=5)daycounter++;
+		if(date.getDate()<10 && endDate.getDate()>=10)daycounter++;
+		if(date.getDate()<15 && endDate.getDate()>=15)daycounter++;
+		if(date.getDate()<20 && endDate.getDate()>=20)daycounter++;
+		if(date.getDate()<25 && endDate.getDate()>=25)daycounter++;
+		if(date.getDate()<getCountDays() && endDate.getDate()>=getCountDays())daycounter++;
+	}
+	else
+	{
+		if(date.getDate()>=5 && endDate.getDate()<5)daycounter--;
+		if(date.getDate()>=10 && endDate.getDate()<10)daycounter--;
+		if(date.getDate()>=15 && endDate.getDate()<15)daycounter--;
+		if(date.getDate()>=20 && endDate.getDate()<20)daycounter--;
+		if(date.getDate()>=25 && endDate.getDate()<25)daycounter--;
+		if(date.getDate()>=getCountDays() && getCountDays())daycounter--;
+	}
+	document.getElementById("loginCalendar").innerHTML = monthminus * 12 + daycounter * 2;
+ }
+ function newex(){
+	var date = new Date();
+	var endDate = new Date(document.getElementById("birth").innerHTML);
+	var monthminus = endDate.getMonth()-date.getMonth();
+	var daycounter = 0;
+	if(endDate.getFullYear()-date.getFullYear()==1)monthminus+=12;
+	if(endDate.getDate()>date.getDate()){
+		if(date.getDate()<15 && endDate.getDate()>=15)daycounter++;
+		if(date.getDate()<getCountDays() && endDate.getDate()>=getCountDays())daycounter++;
+	}
+	else
+	{
+		if(date.getDate()>=15 && endDate.getDate()<15)daycounter--;
+		if(date.getDate()>=getCountDays() && getCountDays())daycounter--;
+	}
+	document.getElementById("newexpert").innerHTML = (monthminus * 2 + daycounter) * document.getElementById("lovecaperex").value;
+ }
+ function getCountDays() {
+       var curDate = new Date();
+       var curMonth = curDate.getMonth();
+       curDate.setMonth(curMonth + 1);
+       curDate.setDate(0);
+       return curDate.getDate();
+ }
+ function total(){
+	var dailylove = Number(document.getElementById("daily").innerHTML);
+	var birthlove = Number(document.getElementById("othersbirth").innerHTML);
+	var exlove = Number(document.getElementById("newexpert").innerHTML);
+	var malove = Number(document.getElementById("newmaster").innerHTML);
+	var callove = Number(document.getElementById("loginCalendar").innerHTML);
+	var bonuslove = Number(document.getElementById("loginbonus").value);
+	document.getElementById("loveca").innerHTML=dailylove+birthlove+exlove+malove+callove+bonuslove;
+ }
+ function sum(){
+	var currentlove = Number(document.getElementById("current").value);
+	var predictlove = Number(document.getElementById("loveca").innerHTML);
+	document.getElementById("totalloveca").innerHTML = currentlove + predictlove;
+ }
+ function printToday(){
+	var date=new Date();
+	document.getElementById("today").innerHTML = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
+ }
+ </script>
+</head>
+<body onload="printToday()">
+ <p>今天：<span id="today"></span></p>
+ <p>前排提示：能打的新EX，新MA先都打了，否则计算会有偏差</p>
+ <p>抽谁的生日卡：
+ <select onchange="daystobirth(value,true);otherbirth(value);newex();newma();calendar();total();sum()">
+  <option value ="blank"></option>
+  <option value ="honoka">高坂穗乃果</option>
+  <option value ="eli">绚濑绘里</option>
+  <option value="kotori">南小鸟</option>
+  <option value="umi">园田海未</option>
+  <option value="rin">星空凛</option>
+  <option value="maki">西木野真姬</option>
+  <option value="nozomi">东条希</option>
+  <option value="hanayo">小泉花阳</option>
+  <option value="nico">矢泽妮可</option>
+  <option value="chika">高海千歌</option>
+  <option value="riko">樱内梨子</option>
+  <option value="kanan">松浦果南</option>
+  <option value="dia">黑泽黛雅</option>
+  <option value="you">渡边曜</option>
+  <option value="yoshiko">津岛善子</option>
+  <option value="hanamaru">国木田花丸</option>
+  <option value="mari">小原鞠莉</option>
+  <option value="ruby">黑泽露比</option>
+ </select>
+ @ <span id="birth"></span>
+ </p>
+ <p>当前心数（如果礼物盒、支线剧情的心不想拿出来，请清点了加到这里）：<input id="current" type="number" value="0" onchange="sum()"/></p>
+ <p>预测可获得心数：<span id="loveca"></span><br>
+	每日一心：<span id="daily"></span><br>
+	其他人生日（含自己当天）：<span id="othersbirth"></span><br>
+	新EX：每首能拿<input id="lovecaperex" type="number" value="2" min = "1" max = "3" onchange = "newex();total();sum()"/>心，共计<span id="newexpert"></span>心<br>
+	新MA：每首能拿<input id="lovecaperma" type="number" value="5" min = "1" max = "7" onchange = "newma();total();sum()"/>心，共计<span id="newmaster"></span>心<br>
+	登录日历：<span id="loginCalendar"></span><br>
+	各种登陆奖励（预测值）：<input id="loginbonus" type="number" value="0" onchange="total()" /><br>
+ </p>
+ <p>
+   预测成员生日当天总心数：<strong><font color="red"><span id="totalloveca"></span></font></strong>
+ </p>
+</body>
+</html>
