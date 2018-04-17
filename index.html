@@ -1,7 +1,6 @@
 <html>
 <head>
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
- <title>ÔÜÐÄ¼ÆËãÆ÷</title>
+ <title>æ”’å¿ƒè®¡ç®—å™¨</title>
  <script>
  function datecompare(d1, d2){
 	var d1 = new Date(d1.replace(/\-/g, "\/"));  
@@ -157,43 +156,43 @@
  </script>
 </head>
 <body onload="printToday()">
- <p>½ñÌì£º<span id="today"></span></p>
- <p>Ç°ÅÅÌáÊ¾£ºÄÜ´òµÄÐÂEX£¬ÐÂMAÏÈ¶¼´òÁË£¬·ñÔò¼ÆËã»áÓÐÆ«²î</p>
- <p>³éË­µÄÉúÈÕ¿¨£º
+ <p>ä»Šå¤©ï¼š<span id="today"></span></p>
+ <p>å‰æŽ’æç¤ºï¼šèƒ½æ‰“çš„æ–°EXï¼Œæ–°MAå…ˆéƒ½æ‰“äº†ï¼Œå¦åˆ™è®¡ç®—ä¼šæœ‰åå·®</p>
+ <p>æŠ½è°çš„ç”Ÿæ—¥å¡ï¼š
  <select onchange="daystobirth(value,true);otherbirth(value);newex();newma();calendar();total();sum()">
   <option value ="blank"></option>
-  <option value ="honoka">¸ßÛàËëÄË¹û</option>
-  <option value ="eli">Ñ¤äþ»æÀï</option>
-  <option value="kotori">ÄÏÐ¡Äñ</option>
-  <option value="umi">Ô°Ìïº£Î´</option>
-  <option value="rin">ÐÇ¿ÕÁÝ</option>
-  <option value="maki">Î÷Ä¾Ò°Õæ¼§</option>
-  <option value="nozomi">¶«ÌõÏ£</option>
-  <option value="hanayo">Ð¡Èª»¨Ñô</option>
-  <option value="nico">Ê¸ÔóÄÝ¿É</option>
-  <option value="chika">¸ßº£Ç§¸è</option>
-  <option value="riko">Ó£ÄÚÀæ×Ó</option>
-  <option value="kanan">ËÉÆÖ¹ûÄÏ</option>
-  <option value="dia">ºÚÔó÷ìÑÅ</option>
-  <option value="you">¶É±ßê×</option>
-  <option value="yoshiko">½òµºÉÆ×Ó</option>
-  <option value="hanamaru">¹úÄ¾Ìï»¨Íè</option>
-  <option value="mari">Ð¡Ô­¾ÏÀò</option>
-  <option value="ruby">ºÚÔóÂ¶±È</option>
+  <option value ="honoka">é«˜å‚ç©—ä¹ƒæžœ</option>
+  <option value ="eli">ç»šæ¿‘ç»˜é‡Œ</option>
+  <option value="kotori">å—å°é¸Ÿ</option>
+  <option value="umi">å›­ç”°æµ·æœª</option>
+  <option value="rin">æ˜Ÿç©ºå‡›</option>
+  <option value="maki">è¥¿æœ¨é‡ŽçœŸå§¬</option>
+  <option value="nozomi">ä¸œæ¡å¸Œ</option>
+  <option value="hanayo">å°æ³‰èŠ±é˜³</option>
+  <option value="nico">çŸ¢æ³½å¦®å¯</option>
+  <option value="chika">é«˜æµ·åƒæ­Œ</option>
+  <option value="riko">æ¨±å†…æ¢¨å­</option>
+  <option value="kanan">æ¾æµ¦æžœå—</option>
+  <option value="dia">é»‘æ³½é»›é›…</option>
+  <option value="you">æ¸¡è¾¹æ›œ</option>
+  <option value="yoshiko">æ´¥å²›å–„å­</option>
+  <option value="hanamaru">å›½æœ¨ç”°èŠ±ä¸¸</option>
+  <option value="mari">å°åŽŸéž èŽ‰</option>
+  <option value="ruby">é»‘æ³½éœ²æ¯”</option>
  </select>
  @ <span id="birth"></span>
  </p>
- <p>µ±Ç°ÐÄÊý£¨Èç¹ûÀñÎïºÐ¡¢Ö§Ïß¾çÇéµÄÐÄ²»ÏëÄÃ³öÀ´£¬ÇëÇåµãÁË¼Óµ½ÕâÀï£©£º<input id="current" type="number" value="0" onchange="sum()"/></p>
- <p>Ô¤²â¿É»ñµÃÐÄÊý£º<span id="loveca"></span><br>
-	Ã¿ÈÕÒ»ÐÄ£º<span id="daily"></span><br>
-	ÆäËûÈËÉúÈÕ£¨º¬×Ô¼ºµ±Ìì£©£º<span id="othersbirth"></span><br>
-	ÐÂEX£ºÃ¿Ê×ÄÜÄÃ<input id="lovecaperex" type="number" value="2" min = "1" max = "3" onchange = "newex();total();sum()"/>ÐÄ£¬¹²¼Æ<span id="newexpert"></span>ÐÄ<br>
-	ÐÂMA£ºÃ¿Ê×ÄÜÄÃ<input id="lovecaperma" type="number" value="5" min = "1" max = "7" onchange = "newma();total();sum()"/>ÐÄ£¬¹²¼Æ<span id="newmaster"></span>ÐÄ<br>
-	µÇÂ¼ÈÕÀú£º<span id="loginCalendar"></span><br>
-	¸÷ÖÖµÇÂ½½±Àø£¨Ô¤²âÖµ£©£º<input id="loginbonus" type="number" value="0" onchange="total()" /><br>
+ <p>å½“å‰å¿ƒæ•°ï¼ˆå¦‚æžœç¤¼ç‰©ç›’ã€æ”¯çº¿å‰§æƒ…çš„å¿ƒä¸æƒ³æ‹¿å‡ºæ¥ï¼Œè¯·æ¸…ç‚¹äº†åŠ åˆ°è¿™é‡Œï¼‰ï¼š<input id="current" type="number" value="0" onchange="sum()"/></p>
+ <p>é¢„æµ‹å¯èŽ·å¾—å¿ƒæ•°ï¼š<span id="loveca"></span><br>
+	æ¯æ—¥ä¸€å¿ƒï¼š<span id="daily"></span><br>
+	å…¶ä»–äººç”Ÿæ—¥ï¼ˆå«è‡ªå·±å½“å¤©ï¼‰ï¼š<span id="othersbirth"></span><br>
+	æ–°EXï¼šæ¯é¦–èƒ½æ‹¿<input id="lovecaperex" type="number" value="2" min = "1" max = "3" onchange = "newex();total();sum()"/>å¿ƒï¼Œå…±è®¡<span id="newexpert"></span>å¿ƒ<br>
+	æ–°MAï¼šæ¯é¦–èƒ½æ‹¿<input id="lovecaperma" type="number" value="5" min = "1" max = "7" onchange = "newma();total();sum()"/>å¿ƒï¼Œå…±è®¡<span id="newmaster"></span>å¿ƒ<br>
+	ç™»å½•æ—¥åŽ†ï¼š<span id="loginCalendar"></span><br>
+	å„ç§ç™»é™†å¥–åŠ±ï¼ˆé¢„æµ‹å€¼ï¼‰ï¼š<input id="loginbonus" type="number" value="0" onchange="total()" /><br>
  </p>
  <p>
-   Ô¤²â³ÉÔ±ÉúÈÕµ±Ìì×ÜÐÄÊý£º<strong><font color="red"><span id="totalloveca"></span></font></strong>
+   é¢„æµ‹æˆå‘˜ç”Ÿæ—¥å½“å¤©æ€»å¿ƒæ•°ï¼š<strong><font color="red"><span id="totalloveca"></span></font></strong>
  </p>
 </body>
 </html>
