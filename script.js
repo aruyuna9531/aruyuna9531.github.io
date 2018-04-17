@@ -217,8 +217,8 @@ function EventTimes(){
 	else currentMonthEvents=0;
 	if(end.getDate()>15)finalMonthEvents=1;
 	else finalMonthEvents=0;
-	var mediummonth = end.getMonth()-date.getMonth();
-	if(mediummonth<0) mediummonth+=12;
+	var mediummonth = end.getMonth()-date.getMonth()-1;
+	if(mediummonth<0 && date.getFullYear()<end.getFullYear()) mediummonth+=12;
 	mediumEvents = 2 * mediummonth;
 	var events = currentMonthEvents + finalMonthEvents + mediumEvents;
 	return events;
