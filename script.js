@@ -1,5 +1,15 @@
+function TokyoTime(){
+	d=new Date();
+	localTime = d.getTime(); 
+	localOffset=d.getTimezoneOffset()*60000;
+	utc = localTime + localOffset;
+	offset =9;
+	gtm= utc + (3600000*offset); 
+	nd = new Date(gtm); 
+	return nd;
+}
 function calendar(){
-	var date = new Date();
+	var date = TokyoTime();
 	var endDate = new Date(document.getElementById("birth").innerHTML);
 	var monthminus = endDate.getMonth()-date.getMonth();
 	var daycounter = 0;
@@ -24,7 +34,7 @@ function calendar(){
 	document.getElementById("loginCalendar").innerHTML = monthminus * 12 + daycounter * 2;
 }
 function dailyloveca(){
-	var currentDate = new Date();
+	var currentDate = TokyoTime();
 	var endDate = new Date(document.getElementById("birth").innerHTML);
 	var now = currentDate.getTime();
 	var end = endDate.getTime();
@@ -44,7 +54,7 @@ function otherbirth(value){
 "eli", "rin"];
 	
 	var now = daystobirth(value,false);
-	var endDate = new Date();
+	var endDate = TokyoTime();
 	var counter = 0;
 	for(var i=0;i<names.length;i++){
 		if(datecompare(daystobirth(names[i],false),now)==false)counter++;
@@ -54,7 +64,7 @@ function otherbirth(value){
 function otherMuseBirth(value){
 	var names = ["hanayo", "umi", "maki", "nozomi", "nico", "honoka", "kotori", "eli", "rin"];
 	var now = daystobirth(value,false);
-	var endDate = new Date();
+	var endDate = TokyoTime();
 	var counter = 0;
 	for(var i=0;i<names.length;i++){
 		if(datecompare(daystobirth(names[i],false),now)==false)counter++;
@@ -64,7 +74,7 @@ function otherMuseBirth(value){
 function otherAqoursBirth(value){
 	var names = ["dia", "kanan", "hanamaru", "you",  "mari", "yoshiko", "chika", "riko", "ruby"];
 	var now = daystobirth(value,false);
-	var endDate = new Date();
+	var endDate = TokyoTime();
 	var counter = 0;
 	for(var i=0;i<names.length;i++){
 		if(datecompare(daystobirth(names[i],false),now)==false)counter++;
@@ -75,7 +85,7 @@ function otherMemberLoveca(value){
 	document.getElementById("othersbirth").innerHTML = otherbirth(value)*5;
 }
 function daystobirth(value, fromHTML){
-	var date=new Date();
+	var date=TokyoTime();
 	var year=date.getFullYear();
 	var month=0;
 	var day=0;
@@ -123,7 +133,7 @@ function eventCount(strategy){
 	}
 }
 function newex(){
-	var date = new Date();
+	var date = TokyoTime();
 	var endDate = new Date(document.getElementById("birth").innerHTML);
 	var monthminus = endDate.getMonth()-date.getMonth();
 	var daycounter = 0;
@@ -141,14 +151,14 @@ function newex(){
 }
  
 function getCountDays() {
-       var curDate = new Date();
+       var curDate = TokyoTime();
        var curMonth = curDate.getMonth();
        curDate.setMonth(curMonth + 1);
        curDate.setDate(0);
        return curDate.getDate();
 }
 function newma(){
-	var date = new Date();
+	var date = TokyoTime();
 	var endDate = new Date(document.getElementById("birth").innerHTML);
 	var monthminus = endDate.getMonth()-date.getMonth();
 	var daycounter = 0;
@@ -173,8 +183,11 @@ function predictloginbonus(){
 	document.getElementById("loginbonus").value = prediction;
 }
 function printToday(){
-	var date=new Date();
-	document.getElementById("today").innerHTML = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
+	var date=TokyoTime();
+	document.getElementById("today").innerHTML = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes
+
+()+":"+date.getSeconds();
+	setTimeout(printToday,1000);
 }
 function sum(){
 	var currentlove = Number(document.getElementById("current").value);
@@ -197,7 +210,7 @@ function EventTimes(){
 	var currentMonthEvents = 0;
 	var finalMonthEvents = 0;
 	var mediumEvents = 0;
-	var date = new Date();
+	var date = TokyoTime();
 	var end = new Date(document.getElementById("birth").innerHTML);
 	if(date.getDate()<=5)currentMonthEvents=2;
 	else if(date.getDate()<=20)currentMonthEvents=1;
