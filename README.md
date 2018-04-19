@@ -1,3 +1,4 @@
 # aruyuna9531.github.io
 
-LoveLive! SIF攒心计数器：https://aruyuna9531.github.io/LoveLiveSIFLovecaCalculator.html
+[SIF攒心计数器](https://aruyuna9531.github.io/LoveLiveSIFLovecaCalculator.html)
+[SIF活动算心（更新中）](https://aruyuna9531.github.io/heartcounter.html)
