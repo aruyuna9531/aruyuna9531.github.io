@@ -83,7 +83,7 @@ function AutomaticRecover(){
 	var AutoRec=Math.floor((RemainMins>10?RemainMins-10:0)/6);
 	var LvUpRec=Number(document.getElementById("LvUp").value) * Number(document.getElementById("LPMax").value) +1;
 	var LP50Rec=Number(document.getElementById("LP50").value)*50;
-	var LP50pcRec=Number(document.getElementById("LP50pc").value)*Number(document.getElementById("LPMax").value)*0.5;
+	var LP50pcRec=Math.floor(Number(document.getElementById("LP50pc").value)*Number(document.getElementById("LPMax").value)*0.5);
 	var LP100pcRec=Number(document.getElementById("LP100pc").value)*Number(document.getElementById("LPMax").value);
 	document.getElementById("LPs").innerHTML=AutoRec+LvUpRec+LP50Rec+LP50pcRec+LP100pcRec;
 	countres();
