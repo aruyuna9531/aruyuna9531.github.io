@@ -46,7 +46,7 @@ function EventEnd(date){
 }
 
 function countTime() {
-        var date = new Date(new Date().getTime()+86400000);
+        var date = new Date(new Date().getTime());
         var now = date.getTime();  
         var endDate = EventEnd(date);
         var end = endDate.getTime();
