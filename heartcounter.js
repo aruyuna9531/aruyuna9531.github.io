@@ -93,9 +93,10 @@ function needlps(){
 	var i = 0;
 	var icon = 27;
 	var ptcha = Number(document.getElementById("aim").value)-Number(document.getElementById("cur").value);
+	var curic = Number(document.getElementById("curicons").value);
 	var ptneeds = ptcha > 0 ? ptcha : 0;
 	while(true){
-		if(icon*i+EventSongPt()*Math.floor((icon*i)/75)>=ptneeds)break;
+		if(icon*i+EventSongPt()*Math.floor((icon*i+curicons)/75)>=ptneeds)break;
 		i++;
 	}
 	document.getElementById("normalsong").innerHTML = i;
