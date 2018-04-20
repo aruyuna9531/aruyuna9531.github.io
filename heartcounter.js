@@ -117,7 +117,8 @@ function countres(){
 	var needlp = Number(document.getElementById("NeedLP").innerHTML);
 	var recovlp= Number(document.getElementById("LPs").innerHTML);
 	var lpmax  = Number(document.getElementById("LPMax").value);
-	document.getElementById("auto").innerHTML=Math.ceil((needlp-recovlp)/lpmax);
+	var res = Math.ceil((needlp-recovlp)/lpmax);
+	document.getElementById("auto").innerHTML=res>0?res:0;
 }
 
 function EventSongPt(){
