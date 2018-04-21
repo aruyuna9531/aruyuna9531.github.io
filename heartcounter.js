@@ -1,7 +1,6 @@
-function isNull(v){
-	var str = v.replace(/(^\s*)|(\s*$)/g, '');
-        if (str == '' || str == undefined || str == null) {
-		v.value=0;
+function isNull(obj){
+        if (obj == '' || obj == undefined || obj == null) {
+		obj.value=0;
 	}
 }
 
