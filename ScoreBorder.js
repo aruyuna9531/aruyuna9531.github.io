@@ -23,8 +23,10 @@ function print(){
 	var S1 = Number(document.getElementById("FirstBase").innerHTML);
 	var S2 = Number(document.getElementById("SecondBase").innerHTML);
 	var S3 = Number(document.getElementById("ThirdBase").innerHTML);
-	console.log(Math.round(arrangeBits(EType)*comboBonus(maxC)));
 	document.getElementById("First").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S1);
 	document.getElementById("Second").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S2);
 	document.getElementById("Third").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S3);
+	document.getElementById("Tea1").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*(S1+20));
+	document.getElementById("Tea2").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*(S2+18));
+	document.getElementById("Tea3").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*(S3+16));
 }
