@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <head>
  <title>攒心计算器</title>
 </head>
@@ -25,17 +25,24 @@
 	<option value="C">C</option>
 	<option value="D">D</option>
 	</select><br>
+	<span id="IconCol"><strong>Icon collection:</strong><br>
 	<br>
 	普通曲消费LP：<input id="LPUse" type="number" value="80" onchange="isNull(this);needlps();">
 	每首歌攒道具数：<input id="IconGet" type="number" value="108" onchange="isNull(this);needlps();">
- </p>
- <p>
+ 	</p>
+ 	<p>
 	目标pt：<input id="aim" type="number" value="40000" onchange="isNull(this);needlps()"><br>
 	目前pt：<input id="cur" type="number" value="0" onchange="isNull(this);needlps()"><br>
-	目前道具：<input id="curicons" type="number" value="0" onchange="isNull(this);needlps()">
+	目前道具：<input id="curicons" type="number" value="0" onchange="isNull(this);needlps()"><br>
 	需要打普通曲目数：<span id="normalsong"></span><br>
 	需要LP：<span id="NeedLP"></span><br>
- </p>
+	 </p>
+	</span>
+	<span id="ScMatch">
+	<strong>ChaFes</strong>
+	
+	</span>
+
  <p>
 	当前LP上限：<input id="LPMax" type="number" value="150" onchange="isNull(this);AutomaticRecover()"><br>
 	预计能升几级（活动内）：<input id="LvUp" type="number" value="2" onchange="isNull(this);AutomaticRecover()"><br>
