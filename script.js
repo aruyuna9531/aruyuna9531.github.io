@@ -11,7 +11,7 @@ function TokyoTime(){
 }
 function calendar(){
 	var date = TokyoTime();
-	var endDate = new Date(document.getElementById("birth").innerHTML);
+	var endDate = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/"));
 	var monthminus = endDate.getMonth()-date.getMonth();
 	var daycounter = 0;
 	if(endDate.getFullYear()-date.getFullYear()==1)monthminus+=12;
