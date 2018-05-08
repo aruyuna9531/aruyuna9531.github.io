@@ -69,13 +69,13 @@ function EventEnd(date){
 	if(date.getDate()==5 && date.getHours()>=15 || 
 	date.getDate()>5 && date.getDate()<20 || 
 	date.getDate()==20 && date.getHours()<15
-	)return new Date(date.getFullYear()+"-"+(date.getMonth()+1)+"-15 14:00:00");
+	)return new Date(date.getFullYear()+"/"+(date.getMonth()+1)+"/15 14:00:00");
 	if(date.getDate()==20 && date.getHours()>=15 ||
 	date.getDate()>20 && date.getDate()<LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1) || 
 	date.getDate()==LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1)
-	)return new Date(date.getFullYear()+"-"+(date.getMonth()+1)+"-"+LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1)+" 14:00:00");
-	if(date.getMonth()!=0)return new Date(date.getFullYear()+"-"+(date.getMonth())+"-"+LastDayOfCurrentMonth(date.getFullYear(),date.getMonth())+" 14:00:00");
-	else return new Date((date.getFullYear()-1)+"-12-31 14:00:00");
+	)return new Date(date.getFullYear()+"/"+(date.getMonth()+1)+"/"+LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1)+" 14:00:00");
+	if(date.getMonth()!=0)return new Date(date.getFullYear()+"/"+(date.getMonth())+"/"+LastDayOfCurrentMonth(date.getFullYear(),date.getMonth())+" 14:00:00");
+	else return new Date((date.getFullYear()-1)+"/12/31 14:00:00");
 }
 
 function countTime() {
