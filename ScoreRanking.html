@@ -1,0 +1,38 @@
+<html>
+<head>
+ <title>分榜计算器</title>
+</head>
+<body onload="countTime();needlps();AutomaticRecover()">
+ <p>
+	离活动结束还有：
+	<span id="_d"></span>天
+	<span id="_h"></span>:
+	<span id="_m"></span>:
+	<span id="_s"></span>
+ </p>
+写在前头：前期涨速比较快，误差比较大，建议活动开始后2天再开始算。同时计算窗口在活动开始后当晚23点才开放，前面的都是不准的
+ <p>
+	活动种类：<select id="eventType">
+	<option value="IconCollect">传统</option>
+	<option value="SM">sm</option>
+	<option value="MF">mf</option>
+	<option value="CF">cf</option>
+	<option value="SR">散步</option>
+	<option value="NM">协力</option>
+	</select><br>
+	目标档线：<select id="Target">
+	<option value="1">一档</option>
+	<option value="2">二档</option>
+	<option value="3">三档</option>
+	</select><br>
+	档线当前值：<input id="Current" type="number"><br>
+	档线预测值：<span id="Predict"></span><br>
+ </p>
+ <p>
+	Author: aruyuna~ at 2018.04.17 <br>
+	bilibili mainpage: <a href="https://space.bilibili.com/5054198/">https://space.bilibili.com/5054198</a><br>
+	微信公众号：yuna的SIF小屋<br>
+ </p>
+ <script src="heartcounter.js"></script>
+</body>
+</html>

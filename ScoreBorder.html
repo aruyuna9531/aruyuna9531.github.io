@@ -1,0 +1,27 @@
+<html>
+<head>
+ <title>分数排行榜预测</title>
+ <script src="ScoreBorder.js"></script>
+</head>
+<body onload="print()">
+ <p><strong>日服</strong><br>
+ 当前活动类型：<select id="EventType" onchange="print()">
+	<option value="IC">传统</option>
+	<option value="MF">mf</option>
+	<option value="CF" selected="selected">cf</option>
+	<option value="SR">散步</option>
+	<option value="NM">协力</option>
+	</select><br>
+ 最高Combo：<input id="MaxCombo" type="number" value="612" onchange="print()"/><br>
+ <br>
+ 一档预测线：<strong><span id="First"></span></strong><br>
+ 二档预测线：<strong><span id="Second"></span></strong><br>
+ 三档预测线：<strong><span id="Third"></span></strong><br>
+ </p>
+ <p id="baseScore" style="display:none">
+ 一档基础分：<span id="FirstBase">1334</span>
+ 二档基础分：<span id="SecondBase">1135</span>
+ 三档基础分：<span id="ThirdBase">1040</span>
+ </p>
+</body>
+</html>
