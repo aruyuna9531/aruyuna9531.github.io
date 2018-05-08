@@ -124,7 +124,3 @@ function warn(obj){
 	obj.style.fontWeight="Bold";
 }
 
-function printAgent(){
-	var date=new Date();
-	document.getElementById("timeFormat").innerHTML=date;
-}
