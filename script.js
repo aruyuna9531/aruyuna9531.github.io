@@ -1,5 +1,5 @@
 function TokyoTime(){
-	d=new Date(new Date().toLocaleString().replace(/-/g,'/'));
+	d=new Date();
 	localTime = d.getTime(); 
 	localOffset=d.getTimezoneOffset()*60000;
 	utc = localTime + localOffset;
@@ -43,8 +43,8 @@ function dailyloveca(){
 	document.getElementById("daily").innerHTML = leftDays;
 }
 function datecompare(d1, d2){
-	var d1 = new Date(d1.replace(/\-/g, "\/"));  
-	var d2=new Date(d2.replace(/\-/g, "\/"));  
+	var d1 = new Date(d1);  
+	var d2=new Date(d2);  
 	if(d1>=d2)return true;
 	else return false;
 }
