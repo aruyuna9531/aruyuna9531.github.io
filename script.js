@@ -1,11 +1,15 @@
 function TokyoTime(){
-	d=new Date();
-	localTime = d.getTime(); 
-	localOffset=d.getTimezoneOffset()*60000;
-	utc = localTime + localOffset;
-	offset =9;
-	gtm= utc + (3600000*offset); 
-	nd = new Date(gtm); 
+	var d=new Date();
+	var localTime = d.getTime(); 
+	var localOffset=d.getTimezoneOffset()*60000;
+	var utc = localTime + localOffset;
+	var offset =9;
+	var gtm= utc + (3600000*offset); 
+	var u = navigator.userAgent;
+	var nd = new Date(gtm); 
+	var nnd;
+	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+	if(isiOS){var nnd=new Date(nd.getFullYear(),nd.getMonth()-1,nd.getDate(),nd.getHours(),nd.getMinutes(),nd.getSeconds()); return nnd;}
 	return nd;
 }
 function calendar(){
