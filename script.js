@@ -7,9 +7,6 @@ function TokyoTime(){
 	var gtm= utc + (3600000*offset); 
 	var u = navigator.userAgent;
 	var nd = new Date(gtm); 
-	var nnd;
-	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-	if(isiOS){var nnd=new Date(nd.getFullYear(),nd.getMonth()-1,nd.getDate(),nd.getHours(),nd.getMinutes(),nd.getSeconds()); return nnd;}
 	return nd;
 }
 function calendar(){
@@ -39,7 +36,7 @@ function calendar(){
 }
 function dailyloveca(){
 	var currentDate = TokyoTime();
-	var endDate = new Date(document.getElementById("birth").innerHTML);
+	var endDate = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/"));
 	var now = currentDate.getTime();
 	var end = endDate.getTime();
 	var left = end-now;
@@ -125,7 +122,7 @@ function daystobirth(value, fromHTML){
 	MuseBirthGacha(document.getElementById("OtherStepUpMuse").value);
 	AqoursBirthGacha(document.getElementById("OtherStepUpAqours").value);
 	}
-	else return year+"-"+month+"-"+day;
+	else return year+"/"+month+"/"+day;
 }
 function eventCount(strategy){
 	var events=EventTimes();
@@ -138,7 +135,7 @@ function eventCount(strategy){
 }
 function newex(){
 	var date = TokyoTime();
-	var endDate = new Date(document.getElementById("birth").innerHTML);
+	var endDate = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/"));
 	var monthminus = endDate.getMonth()-date.getMonth();
 	var daycounter = 0;
 	if(endDate.getFullYear()-date.getFullYear()==1)monthminus+=12;
@@ -163,7 +160,7 @@ function getCountDays() {
 }
 function newma(){
 	var date = TokyoTime();
-	var endDate = new Date(document.getElementById("birth").innerHTML);
+	var endDate = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/"));
 	var monthminus = endDate.getMonth()-date.getMonth();
 	var daycounter = 0;
 	if(endDate.getFullYear()-date.getFullYear()==1)monthminus+=12;
@@ -217,7 +214,7 @@ function EventTimes(){
 	var finalMonthEvents = 0;
 	var mediumEvents = 0;
 	var date = TokyoTime();
-	var end = new Date(document.getElementById("birth").innerHTML);
+	var end = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/"));
 	if(date.getDate()<=5)currentMonthEvents=2;
 	else if(date.getDate()<=20)currentMonthEvents=1;
 	else currentMonthEvents=0;
