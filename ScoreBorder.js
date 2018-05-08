@@ -80,6 +80,7 @@ function EventEnd(date){
 
 function countTime() {
         var date;
+	var u = navigator.userAgent;
 	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
 	if(isiOS)date = new Date(new Date().toLocaleString().replace(/-/g,'/'));
 	else date = new Date();
