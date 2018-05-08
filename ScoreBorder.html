@@ -3,8 +3,15 @@
  <title>分数排行榜预测</title>
  <script src="ScoreBorder.js"></script>
 </head>
-<body onload="print()">
+<body onload="countTime();print()">
  <p><strong>日服</strong><br>
+ <p>
+	离活动结束还有：
+	<span id="_d"></span>天
+	<span id="_h"></span>:
+	<span id="_m"></span>:
+	<span id="_s"></span>
+ </p>
  当前活动类型：<select id="EventType" onchange="print()">
 	<option value="IC">传统</option>
 	<option value="MF">mf</option>
@@ -27,9 +34,6 @@
  一档基础分：<span id="FirstBase">1338</span>
  二档基础分：<span id="SecondBase">1139</span>
  三档基础分：<span id="ThirdBase">1044</span>
- 一档喝茶分：<span id="T1">1360</span>
- 二档喝茶分：<span id="T2">1160</span>
- 三档喝茶分：<span id="T3">1060</span>
  </p>
  上次更新：2018.5.8 22:00 (UTC+8)
 </body>
