@@ -122,8 +122,6 @@ function warn(obj){
 }
 
 function printAgent(){
-	var u = navigator.userAgent;
-	document.getElementById("agent").innerHTML=u;
-	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-	document.getElementById("ios").innerHTML=isiOS;
+	var date=new Date().toLocaleString();
+	document.getElementById("timeFormat").innerHTML=date;
 }
