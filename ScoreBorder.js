@@ -122,6 +122,6 @@ function warn(obj){
 }
 
 function printAgent(){
-	var date=new Date().toLocaleString();
+	var date=new Date();
 	document.getElementById("timeFormat").innerHTML=date;
 }
