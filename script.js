@@ -1,5 +1,5 @@
 function TokyoTime(){
-	d=new Date();
+	d=new Date(new Date().toLocaleString().replace(/-/g,'/'));
 	localTime = d.getTime(); 
 	localOffset=d.getTimezoneOffset()*60000;
 	utc = localTime + localOffset;

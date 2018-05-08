@@ -79,7 +79,7 @@ function EventEnd(date){
 }
 
 function countTime() {
-        var date = new Date(new Date().getTime());
+        var date = new Date(new Date().toLocaleString().replace(/-/g,'/'));
         var now = date.getTime();  
         var endDate = EventEnd(date);
         var end = endDate.getTime();
