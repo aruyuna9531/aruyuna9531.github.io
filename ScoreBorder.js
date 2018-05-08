@@ -23,10 +23,13 @@ function print(){
 	var S1 = Number(document.getElementById("FirstBase").innerHTML);
 	var S2 = Number(document.getElementById("SecondBase").innerHTML);
 	var S3 = Number(document.getElementById("ThirdBase").innerHTML);
+	var T1 = Number(document.getElementById("T1").innerHTML);
+	var T2 = Number(document.getElementById("T2").innerHTML);
+	var T3 = Number(document.getElementById("T3").innerHTML);
 	document.getElementById("First").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S1);
 	document.getElementById("Second").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S2);
 	document.getElementById("Third").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S3);
-	document.getElementById("Tea1").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*(S1+20));
-	document.getElementById("Tea2").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*(S2+18));
-	document.getElementById("Tea3").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*(S3+16));
+	document.getElementById("Tea1").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*T1);
+	document.getElementById("Tea2").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*T2);
+	document.getElementById("Tea3").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*T3);
 }
