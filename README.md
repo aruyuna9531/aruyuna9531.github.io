@@ -6,5 +6,3 @@
 
 [SIF分数档线预测](https://aruyuna9531.github.io/ScoreBorder.html)
 
-[SIF分数档线预测2](https://aruyuna9531.github.io/ScoreBorder.php)
-
