@@ -88,6 +88,9 @@ function countTime() {
         var endDate = EventEnd(date);
         var end = endDate.getTime();
         var leftTime = end-now; 
+	document.getElementById("now").innerHTML=now;
+	document.getElementById("end").innerHTML=end;
+	document.getElementById("cha").innerHTML=leftTime;
         var d=0,h=0,m=0,s=0;  
         if (leftTime>0 && EventOpening(date)==true) {
 	d = Math.floor(leftTime/1000/60/60/24);  
