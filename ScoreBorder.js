@@ -79,8 +79,10 @@ function EventEnd(date){
 }
 
 function countTime() {
-        var date = new Date(new Date().toLocaleString().replace(/-/g,'/'));
-	console.log(new Date().toLocaleString());
+        var date;
+	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+	if(isiOS)date = new Date(new Date().toLocaleString().replace(/-/g,'/'));
+	else date = new Date();
         var now = date.getTime();  
         var endDate = EventEnd(date);
         var end = endDate.getTime();
