@@ -79,7 +79,11 @@ function EventEnd(date){
 }
 
 function countTime() {
-        var date = new Date(new Date().toLocaleString().replace(/-/g,'/'));
+        var date;
+	var u = navigator.userAgent;
+	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+	if(isiOS)date = new Date(new Date().toLocaleString().replace(/-/g,'/'));
+	else date = new Date();
         var now = date.getTime();  
         var endDate = EventEnd(date);
         var end = endDate.getTime();
@@ -115,4 +119,9 @@ function front0(x){
 function warn(obj){
 	obj.style.color="red";
 	obj.style.fontWeight="Bold";
+}
+
+function printAgent(){
+	var u = navigator.userAgent;
+	document.getElementById("agent").innerHTML=u;
 }
