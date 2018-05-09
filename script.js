@@ -275,7 +275,9 @@ function AqoursBirthGacha(strategy){
 	}
 }
 function MuseMemberGachaMax(){
-	var Loveca = Number(document.getElementById("totalloveca").innerHTML)-80;
+	var this80=0;
+	if(document.getElementById("this80").value=="yes")this80=1;
+	var Loveca = Number(document.getElementById("totalloveca").innerHTML)-80*this80;
 	var Ticket = Number(document.getElementById("totalTicket").innerHTML);
 	var Chain_11 = Math.floor(Loveca/50);
 	var single = Math.floor((Loveca-Chain_11*50)/5);
@@ -297,9 +299,9 @@ function MuseMemberGachaMax(){
 function otherBirth(){
 	var other1 = otherMuseBirth(document.getElementById("member").value);
 	var other2 = otherAqoursBirth(document.getElementById("member").value);
-	document.getElementById("memberBirth").innerHTML=other1+other2;
-	var monthEnd = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/")).getMonth();
-	var monthNow = new Date().getMonth();
-	document.getElementById("months").innerHTML=monthEnd-monthNow;
-	document.getElementById("randomPack").innerHTML=Math.round((monthEnd-monthNow)/2);
+	document.getElementById("memberBirth").innerHTML=(other1+other2);
+	var monthEnd = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/"));
+	var monthNow = TokyoTime();
+	document.getElementById("months").innerHTML=monthEnd.getMonth()-monthNow.getMonth();
+	document.getElementById("randomPack").innerHTML=Math.round((monthEnd.getMonth()-monthNow.getMonth())/2);
 }
