@@ -1,8 +1,8 @@
-<html>
+﻿<html>
 <head>
  <title>攒心计算器</title>
 </head>
-<body onload="printToday()">
+<body onload="printToday();otherBirth()">
  <p>现在（东京时间）：<span id="today"></span></p>
  <p>前排提示：1.能打的新EX，新MA先都打了，否则计算会有偏差<br>
 	2.目前水团只有Step Up抽卡，因此<del>超过120的可以不攒了留着过年</del>最后抽卡计数的结果只计算μ's成员的，敬请原谅<br>
@@ -95,7 +95,17 @@ id="newmaster"></span>心<br>
 	预测成员生日当天总券数：<strong><font color="red"><span id="totalTicket"></span></font></strong>
  </p>
  <p>
-	计算结果（可以抽BOX内卡片数目，假设该成员Step Up抽了80心）：<strong><font color="red"><span id="MuseMemberResult"></span></font></strong>
+	可选：氪礼包<br>
+	现有11连券：<input id="current11Ticket" type="number" value="0" onchange="MuseMemberGachaMax()"/> <br>
+	现有3连券：<input id="current3Ticket" type="number" value="0" onchange="MuseMemberGachaMax()"/> <br>
+	预计氪11连券：<input id="Buy11Ticket" type="number" value="0" onchange="MuseMemberGachaMax()"/> 
+	参考：剩余月初礼包*<span id="months"></span>,成员生日礼包*<span id="memberBirth"></span>,其他乱七八糟的礼包*<span id="randomPack"></span><br>
+ </p>
+ <p>
+	计算结果（可以抽BOX内卡片数目，假设该成员Step Up抽了80心）：<strong><font color="red"><span id="MuseMemberResult"></span></font></strong><br>
+	能获得1张BOX生日卡概率：<span id="card1"></span><br>
+	能获得2张BOX生日卡概率：<span id="card2"></span><br>
+	能获得3张BOX生日卡概率：<span id="card3"></span><br>
  </p>
  <p>
 	Author: aruyuna~ at 2018.04.17 <br>
