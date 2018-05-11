@@ -179,7 +179,7 @@ function languageSwitch(value){
 			document.getElementById("T2").innerHTML="Medley Festival";
 			document.getElementById("T3").innerHTML="Challenge Festival";
 			document.getElementById("T4").innerHTML="Adventure Scroll";
-			document.getElementById("T5").innerHTML="";
+			document.getElementById("T5").innerHTML="Companion Match";
 			document.getElementById("MsgMaxC").innerHTML="Max Combo：";
 			document.getElementById("MsgBorderGuest").innerHTML="Border Predict";
 			document.getElementById("Msg1").innerHTML="10000th：";
