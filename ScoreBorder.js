@@ -121,3 +121,76 @@ function warn(obj){
 	obj.style.fontWeight="Bold";
 }
 
+function languageSwitch(value){
+	switch(value){
+		case "ch":
+			document.getElementById("lan").innerHTML="语言：";
+			document.getElementById("server").innerHTML="日服";
+			document.getElementById("MsgToEnd").innerHTML="离活动结束还有：";
+			document.getElementById("MsgDays").innerHTML="天";
+			document.getElementById("MsgET").innerHTML="当前活动类型：";
+			document.getElementById("T1").innerHTML="传统";
+			document.getElementById("T2").innerHTML="mf";
+			document.getElementById("T3").innerHTML="cf";
+			document.getElementById("T4").innerHTML="散步";
+			document.getElementById("T5").innerHTML="协力";
+			document.getElementById("MsgMaxC").innerHTML="最高Combo：";
+			document.getElementById("MsgBorderGuest").innerHTML="预测线";
+			document.getElementById("Msg1").innerHTML="一档：";
+			document.getElementById("Msg2").innerHTML="二档：";
+			document.getElementById("Msg3").innerHTML="三档：";
+			document.getElementById("MsgCurrentUpdate").innerHTML="上次更新：";
+			document.getElementById("MsgSafe").innerHTML="喝茶线";
+			document.getElementById("MsgS1").innerHTML="一档：";
+			document.getElementById("MsgS2").innerHTML="二档：";
+			document.getElementById("MsgS3").innerHTML="三档：";
+			document.getElementById("MsgSafeTips").innerHTML="喝茶线是动态变化的，随着活动进行会越来越迫近预测线，仅供参考";
+			break;
+		case "jp":
+			document.getElementById("lan").innerHTML="言語：";
+			document.getElementById("server").innerHTML="日本版";
+			document.getElementById("MsgToEnd").innerHTML="イベント終了までおよそ：";
+			document.getElementById("MsgDays").innerHTML="日";
+			document.getElementById("MsgET").innerHTML="開催中のイベントタイプ";
+			document.getElementById("T1").innerHTML="マカロン";
+			document.getElementById("T2").innerHTML="メドレーフェスティバル";
+			document.getElementById("T3").innerHTML="チャレンジフェスティバル";
+			document.getElementById("T4").innerHTML="おさんぽラリー";
+			document.getElementById("T5").innerHTML="なかよしマッチ";
+			document.getElementById("MsgMaxC").innerHTML="最大ノーツ数：";
+			document.getElementById("MsgBorderGuest").innerHTML="ボーダー予想";
+			document.getElementById("Msg1").innerHTML="10000位：";
+			document.getElementById("Msg2").innerHTML="30000位：";
+			document.getElementById("Msg3").innerHTML="50000位：";
+			document.getElementById("MsgCurrentUpdate").innerHTML="前回更新：";
+			document.getElementById("MsgSafe").innerHTML="セーフボーダー（すでにボーダー以上確定）";
+			document.getElementById("MsgS1").innerHTML="10000位：";
+			document.getElementById("MsgS2").innerHTML="30000位：";
+			document.getElementById("MsgS3").innerHTML="50000位：";
+			document.getElementById("MsgSafeTips").innerHTML="セーフボーダーは時間の流れによって自動的に更新します";
+			break;
+		case "en":
+			document.getElementById("lan").innerHTML="Language：";
+			document.getElementById("server").innerHTML="JP Ver.";
+			document.getElementById("MsgToEnd").innerHTML="Time to event over:";
+			document.getElementById("MsgDays").innerHTML="days";
+			document.getElementById("MsgET").innerHTML="Current event type:";
+			document.getElementById("T1").innerHTML="Icon collection";
+			document.getElementById("T2").innerHTML="Medley Festival";
+			document.getElementById("T3").innerHTML="Challenge Festival";
+			document.getElementById("T4").innerHTML="Adventure Scroll";
+			document.getElementById("T5").innerHTML="";
+			document.getElementById("MsgMaxC").innerHTML="Max Combo：";
+			document.getElementById("MsgBorderGuest").innerHTML="Border Predict";
+			document.getElementById("Msg1").innerHTML="10000th：";
+			document.getElementById("Msg2").innerHTML="30000th：";
+			document.getElementById("Msg3").innerHTML="50000th：";
+			document.getElementById("MsgCurrentUpdate").innerHTML="Last update：";
+			document.getElementById("MsgSafe").innerHTML="Safety border (be sure above the border)";
+			document.getElementById("MsgS1").innerHTML="10000th：";
+			document.getElementById("MsgS2").innerHTML="30000th：";
+			document.getElementById("MsgS3").innerHTML="50000th：";
+			document.getElementById("MsgSafeTips").innerHTML="Safety border is dynamic.";
+			break;
+	}
+}
