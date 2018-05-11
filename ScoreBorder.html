@@ -4,6 +4,11 @@
  <script src="ScoreBorder.js"></script>
 </head>
 <body onload="countTime();print()">
+ <p><span id="lan">语言：</span><select id="Language" onchange="languageSwitch(value)">
+	 <option value="ch">中文</option>
+	 <option value="jp">日本語</option>
+	 <option value="en">English</option>
+	 </select></p>
  <p><strong><span id="server">日服</span></strong><br></p>
  <p>
 	<span id="MsgToEnd">离活动结束还有：</span>
