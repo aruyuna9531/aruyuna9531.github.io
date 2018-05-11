@@ -4,34 +4,36 @@
  <script src="ScoreBorder.js"></script>
 </head>
 <body onload="countTime();print()">
- <p><strong>日服</strong><br>
+ <p><strong><span id="server">日服</span></strong><br></p>
  <p>
-	离活动结束还有：
+	<span id="MsgToEnd">离活动结束还有：</span>
 	<span id="_d"></span>天
 	<span id="_h"></span>:
 	<span id="_m"></span>:
 	<span id="_s"></span>
  </p>
- 当前活动类型：<select id="EventType" onchange="print()">
-	<option value="IC">传统</option>
-	<option value="MF">mf</option>
-	<option value="CF" selected="selected">cf</option>
-	<option value="SR">散步</option>
-	<option value="NM">协力</option>
+ <span id="MsgET">当前活动类型：</span><select id="EventType" onchange="print()">
+	<option id="T1" value="IC">传统</option>
+	<option id="T2" value="MF">mf</option>
+	<option id="T3" value="CF" selected="selected">cf</option>
+	<option id="T4" value="SR">散步</option>
+	<option id="T5" value="NM">协力</option>
 	</select><br>
- 最高Combo：<input id="MaxCombo" type="number" value="612" onchange="print()"/><br>
+ <span id="MsgMaxC">最高Combo：</span><input id="MaxCombo" type="number" value="612" onchange="print()"/><br>
  <br>
- 一档预测线：<strong><span id="First"></span></strong><br>
- 二档预测线：<strong><span id="Second"></span></strong><br>
- 三档预测线：<strong><span id="Third"></span></strong><br>
+ <span id="MsgBorderGuest">预测线</span>	
+ <span id="Msg1">一档：</span></span><strong><span id="First"></span></strong><br>
+ <span id="Msg2">二档：</span><strong><span id="Second"></span></strong><br>
+ <span id="Msg3">三档：</span><strong><span id="Third"></span></strong><br>
  </p>
- 上次更新：2018.5.11 14:00 (UTC+8)<br>
+ <span id="MsgCurrentUpdate">上次更新：</span>2018.5.11 14:00 (UTC+8)<br>
  <p>
- 一档喝茶线：<strong><span id="Tea1"></span></strong><br>
- 二档喝茶线：<strong><span id="Tea2"></span></strong><br>
- 三档喝茶线：<strong><span id="Tea3"></span></strong><br>
+ <span id="MsgSafe">喝茶线</span>
+ <span id="MsgS1">一档：</span><strong><span id="Tea1"></span></strong><br>
+ <span id="MsgS2">二档：</span><strong><span id="Tea2"></span></strong><br>
+ <span id="MsgS3">三档：</span><strong><span id="Tea3"></span></strong><br>
  </p>
-	 喝茶线是动态变化的，随着活动进行会越来越迫近预测线，仅供参考<br>
+ <span id="MsgSafeTips">喝茶线是动态变化的，随着活动进行会越来越迫近预测线，仅供参考</span><br>
  <p style="display:none">
  一档基础分：<span id="FirstBase">1356</span>
  二档基础分：<span id="SecondBase">1140</span>
