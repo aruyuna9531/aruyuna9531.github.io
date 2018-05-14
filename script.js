@@ -284,17 +284,14 @@ function MuseMemberGachaMax(){
 	if(document.getElementById("member").selectedIndex<10){
 	var res = Chain_11*11+single+Ticket+Number(document.getElementById("current3Ticket").value)*3+Number(document.getElementById("current11Ticket").value)*11+Number(document.getElementById("Buy11Ticket").value)*11; 
 	document.getElementById("MuseMemberResult").innerHTML=res;
-	var c1 = res/(200);
-	if(res>=200)document.getElementById("card1").innerHTML="100%";
-	else document.getElementById("card1").innerHTML=(c1*100).toFixed(2)+"%";
-	var c2 = Math.pow(res/400,2);
-	if(res>=400)document.getElementById("card2").innerHTML="100%";
-	else document.getElementById("card2").innerHTML=(c2*100).toFixed(2)+"%";
-	var c3 = Math.pow(res/600,3);
-	if(res>=600)document.getElementById("card3").innerHTML="100%";
-	else document.getElementById("card3").innerHTML=(c3*100).toFixed(2)+"%";
-}
+	var cards = Number(document.getElementById("NeedCard").value);
+	document.getElementById("card1").innerHTML=(calcPerc(res,cards)*100).toFixed(2)+"%";
+	}
 	else document.getElementById("MuseMemberResult").innerHTML = ""; 
+}
+function calcPerc(res,cards){
+	if(res>=cards*200)return 1;
+	else return Math.pow(res/(200*cards),cards);
 }
 function otherBirth(){
 	var other1 = otherMuseBirth(document.getElementById("member").value);
