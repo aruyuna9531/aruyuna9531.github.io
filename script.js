@@ -128,8 +128,9 @@ function eventCount(strategy){
 	var events=EventTimes();
 	switch(strategy)
 	{
-	case "normal": document.getElementById("eventloveca").innerHTML = events*10; break;
-	case "first": document.getElementById("eventloveca").innerHTML = events*4; break;
+	case "normal": document.getElementById("eventloveca").innerHTML = events*9; break;
+	case "pt11w": document.getElementById("eventloveca").innerHTML = events*4; break;
+	case "pt13w": document.getElementById("eventloveca").innerHTML = events*-1; break;
 	default: document.getElementById("eventloveca").innerHTML = 0; break;
 	}
 }
