@@ -234,5 +234,6 @@ function EventSongPt(){
 		case "D":return 426;
 		}
 		break;
+	case "D":return 0;
 	}
 }
