@@ -1,8 +1,8 @@
 ﻿<html>
 <head>
- <title>攒心计算器</title>
+ <title>活动算心</title>
 </head>
-<body onload="countTime();needlps();AutomaticRecover()">
+<body onload="countTime();needlps();AutomaticRecover();CfOneRoundPt();CfNeedLps()">
  <p>
 	离活动结束还有：
 	<span id="_d"></span>天
@@ -10,13 +10,13 @@
 	<span id="_m"></span>:
 	<span id="_s"></span>
  </p>
-写在前头：由于本期活动有LP打折优惠导致攒道具为EASY等级最佳（每LP1.6个道具，EX为1.35个），因此增加攒道具消费LP和每曲攒道具数一栏供选择，请注意（可以直接4倍填上去）
  <p>
 	每首活动曲分数等级：<select id="scoreRank" onchange="needlps();">
 	<option value="S">S</option>
 	<option value="A">A</option>
 	<option value="B">B</option>
 	<option value="C">C</option>
+	<option value="D">D</option>
 	</select><br>
 	每首活动曲连击等级：<select id="ComboRank" onchange="needlps();">
 	<option value="S">S</option>
@@ -25,25 +25,34 @@
 	<option value="C">C</option>
 	<option value="D">D</option>
 	</select><br>
-	<span id="IconCol"><strong>Icon collection:</strong><br>
+	目标pt：<input id="aim" type="number" value="100000" onchange="isNull(this);needlps();CfNeedLps()"><br>
+	目前pt：<input id="cur" type="number" value="0" onchange="isNull(this);needlps();CfNeedLps()"><br>
+  </p>
+	<span id="IconCol" style="display:none"><strong>Icon collection:</strong><br>
 	<br>
 	普通曲消费LP：<input id="LPUse" type="number" value="80" onchange="isNull(this);needlps();">
 	每首歌攒道具数：<input id="IconGet" type="number" value="108" onchange="isNull(this);needlps();">
  	</p>
  	<p>
-	目标pt：<input id="aim" type="number" value="40000" onchange="isNull(this);needlps()"><br>
-	目前pt：<input id="cur" type="number" value="0" onchange="isNull(this);needlps()"><br>
 	目前道具：<input id="curicons" type="number" value="0" onchange="isNull(this);needlps()"><br>
 	需要打普通曲目数：<span id="normalsong"></span><br>
 	需要LP：<span id="NeedLP"></span><br>
 	 </p>
 	</span>
-	<span id="ScMatch">
+
+	<span id="CF">
 	<strong>ChaFes</strong>
-	
+	R1倍数：<input id="cfr1" type="number" value="1" min="1" max="4" onchange="isNull(this);CfOneRoundPt();CfNeedLps()"><br>
+	R2倍数：<input id="cfr2" type="number" value="1" min="1" max="4" onchange="isNull(this);CfOneRoundPt();CfNeedLps()"><br>
+	R3倍数：<input id="cfr3" type="number" value="1" min="1" max="4" onchange="isNull(this);CfOneRoundPt();CfNeedLps()"><br>
+	R4倍数：<input id="cfr4" type="number" value="4" min="1" max="4" onchange="isNull(this);CfOneRoundPt();CfNeedLps()"><br>
+	R5倍数：<input id="cfr5" type="number" value="4" min="1" max="4" onchange="isNull(this);CfOneRoundPt();CfNeedLps()"><br>
+	每轮可获得pt:<div id="Cfrpt"></div><br>
+	共计消耗lp:<div id="Cfrlp"></div><br>
 	</span>
 
  <p>
+	现有LP：<input id="lp" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
 	当前LP上限：<input id="LPMax" type="number" value="150" onchange="isNull(this);AutomaticRecover()"><br>
 	预计能升几级（活动内）：<input id="LvUp" type="number" value="2" onchange="isNull(this);AutomaticRecover()"><br>
 	吃50糖：<input id="LP50" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
