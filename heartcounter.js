@@ -124,7 +124,7 @@ function countres(){
 function CfNeedLps(){
 	var ptcha = Number(document.getElementById("aim").value)-Number(document.getElementById("cur").value);
 	var rounds = Math.floor(ptcha/Number(document.getElementById("Cfrpt").innerHTML));
-	var RLps = (Number(document.getElementById("cfr1").value)+Number(document.getElementById("cfr2").value)+Number(document.getElementById("cfr3").value)+Number(document.getElementById("cfr4").value)+Number(document.getElementById("cfr5").value))*25*rounds;
+	var RLps = (Number(document.getElementById("cfr1").value)+Number(document.getElementById("cfr2").value)+Number(document.getElementById("cfr3").value)+Number(document.getElementById("cfr4").value)+Number(document.getElementById("cfr5").value))*25*rounds-rounds*5;
 	var ptRemain = ptcha-rounds*Number(document.getElementById("Cfrpt").innerHTML);
 	var r1b=document.getElementById("cfr1").value;
 	var r2b=document.getElementById("cfr2").value;
