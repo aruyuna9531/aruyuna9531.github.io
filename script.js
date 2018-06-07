@@ -225,7 +225,7 @@ function EventTimes(){
 	if(mediummonth<0 && date.getFullYear()<end.getFullYear()) mediummonth+=12;
 	mediumEvents = 2 * mediummonth;
 	var events = currentMonthEvents + finalMonthEvents + mediumEvents;
-	return events;
+	return events>=0?events:0;
 }
 function TicketEventget(strategy){
 	var events = EventTimes();
