@@ -122,46 +122,39 @@ function countres(){
 }
 
 function CfNeedLps(){
-	var ptcha = Number(document.getElementById("aim").value)-Number(document.getElementById("cur").value);
-	var rounds = Math.floor(ptcha/Number(document.getElementById("Cfrpt").innerHTML));
-	var RLps = (Number(document.getElementById("cfr1").value)+Number(document.getElementById("cfr2").value)+Number(document.getElementById("cfr3").value)+Number(document.getElementById("cfr4").value)+Number(document.getElementById("cfr5").value))*25*rounds-rounds*5;
-	var ptRemain = ptcha-rounds*Number(document.getElementById("Cfrpt").innerHTML);
-	var r1b=document.getElementById("cfr1").value;
-	var r2b=document.getElementById("cfr2").value;
-	var r3b=document.getElementById("cfr3").value;
-	var r4b=document.getElementById("cfr4").value;
-	var r5b=document.getElementById("cfr5").value;
-	if(ptRemain>0)
-	{
-		RLps+=r1b*25;
-		ptRemain-=r1b*CfEventSongPt(1);
-		if(ptRemain>=0){
-		RLps+=r2b*25;
-		ptRemain-=r2b*CfEventSongPt(2);
-		if(ptRemain>=0){
-		RLps+=r3b*25;
-		ptRemain-=r3b*CfEventSongPt(3);
-		if(ptRemain>=0){
-		RLps+=r4b*25;
-		ptRemain-=r4b*CfEventSongPt(4);
-		if(ptRemain>=0){
-		RLps+=r5b*25;
-		ptRemain-=r5b*CfEventSongPt(5);
-		}
-		}
-		}
-		}
-	}
-	document.getElementById("Cfrlp").innerHTML=Math.ceil(RLps);
-}
-
-function CfOneRoundPt(){
+	var needPts = Number(document.getElementById("aim").value)-Number(document.getElementById("cur").value)-Number(document.getElementById("CfPtInRun").value);
+	var CurrentRound=Number(document.getElementById("CfCurrentRound").value);
+	
 	var r1b = document.getElementById("cfr1").value;
 	var r2b = document.getElementById("cfr2").value;
 	var r3b = document.getElementById("cfr3").value;
 	var r4b = document.getElementById("cfr4").value;
 	var r5b = document.getElementById("cfr5").value;
-	document.getElementById("Cfrpt").innerHTML=Math.ceil(r1b*CfEventSongPt(1)+r2b*CfEventSongPt(2)+r3b*CfEventSongPt(3)+r4b*CfEventSongPt(4)+r5b*CfEventSongPt(5));
+	var r=r1b;
+
+	switch(CurrentRound){
+	case 1:r=r1b;break;
+	case 2:r=r2b;break;
+	case 3:r=r3b;break;
+	case 4:r=r4b;break;
+	case 5:r=r5b;break;
+	}
+	var needLP=0;
+	while(needPts>0){
+		needLP+=r*25;
+		needPts-=r*Math.round(CfEventSongPt(CurrentRound));
+		
+		CurrentRound++;
+		if(CurrentRound>5)CurrentRound-=5;
+		switch(CurrentRound){
+		case 1:r=r1b;break;
+		case 2:r=r2b;break;
+		case 3:r=r3b;break;
+		case 4:r=r4b;break;
+		case 5:r=r5b;break;
+		}
+	}
+	document.getElementById("Cfrlp").innerHTML=needLP;
 }
 
 function CfEventSongPt(round){
