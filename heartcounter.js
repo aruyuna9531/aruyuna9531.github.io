@@ -130,6 +130,7 @@ function CfNeedLps(){
 	var r3b = document.getElementById("cfr3").value;
 	var r4b = document.getElementById("cfr4").value;
 	var r5b = document.getElementById("cfr5").value;
+	var songs = 0;
 	var r=r1b;
 
 	switch(CurrentRound){
@@ -145,6 +146,7 @@ function CfNeedLps(){
 		needPts-=r*Math.round(CfEventSongPt(CurrentRound));
 		
 		CurrentRound++;
+		songs++;
 		if(CurrentRound>5)CurrentRound-=5;
 		switch(CurrentRound){
 		case 1:r=r1b;break;
@@ -155,6 +157,7 @@ function CfNeedLps(){
 		}
 	}
 	document.getElementById("Cfrlp").innerHTML=needLP;
+	document.getElementById("CfSongs").innerHTML=songs;
 }
 
 function CfEventSongPt(round){
