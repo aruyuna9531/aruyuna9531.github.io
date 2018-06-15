@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>保档观测仪</title>
+<script src="SafetyTest.js"></script>
+</head>
+<body onload="countTime();change()">
+ <p>
+	<span id="MsgToEnd">离活动结束还有：</span>
+	<span id="_d"></span><span id="MsgDays">天</span>
+	<span id="_h"></span>:
+	<span id="_m"></span>:
+	<span id="_s"></span>
+ </p>
+ <p>
+ 欲保档线：<select id="border" onchange="change()">
+ <option value="10000">10000位</option>
+ <option value="30000">30000位</option>
+ <option value="50000">50000位</option>
+ </select><br>
+ 当前排名：<input id="curRank" type="number" value="9000" onchange="change()"><br>
+ 1分钟后安全排名：<span id="nextRank"></span><br>
+ 5分钟后安全排名：<span id="nextRank_5"></span><br>
+ 10分钟后安全排名：<span id="nextRank_10"></span><br>
+ 30分钟后安全排名：<span id="nextRank_30"></span><br>
+ 仅供参考，如果下一分钟到来时你的排名在上值之后，建议打歌保档。
+ </p>
+</body>
+</html>
