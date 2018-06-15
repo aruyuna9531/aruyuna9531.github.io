@@ -6,4 +6,4 @@
 
 [SIF分数档线预测](https://aruyuna9531.github.io/ScoreBorder.html)
 
-[SIF Challenge Festival LP消耗策略](https://aruyuna9531.github.io/ChaFesStrategy.txt)
+[SIF 保档观测仪](https://aruyuna9531.github.io/SafetyTest.html)
