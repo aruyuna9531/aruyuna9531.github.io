@@ -79,7 +79,7 @@ function countTime() {
 	}
 	if(preMin!=m)fix();
 	if(d==0 && h<5){
-		document.getElementById("main").style.display="block";
+		document.getElementById("main").style.display="inline";
 		document.getElementById("TimeOutOfRange").style.display="none";
 	}
         setTimeout(countTime,1000);
