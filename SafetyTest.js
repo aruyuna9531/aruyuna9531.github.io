@@ -78,13 +78,10 @@ function countTime() {
 		}
 	}
 	if(preMin!=m)fix();
-<<<<<<< HEAD
-=======
-	if(d==0 && h<5){
+	if(d==0 && h<2){
 		document.getElementById("main").style.display="inline";
 		document.getElementById("TimeOutOfRange").style.display="none";
 	}
->>>>>>> be564eacbb7d483b16eaafbcaaf7af625a718f4c
         setTimeout(countTime,1000);
 }
 function front0(x){

@@ -251,6 +251,7 @@ function OrNeedLps(){
 	case "9":
 	case "Epilogue":
 	}
+	console.log(getPt);
 	//normalsong
 	var sBets = 0.0;
 	var cBets = 0.0;
@@ -311,9 +312,34 @@ function OrNeedLps(){
 }
 //------------------------------------------general------------------------------------------
 function countres(){
-	var needlp = Number(document.getElementById("Orrlp").innerHTML);
+	var needlp = 0;
+	
+	switch(document.getElementById("CurrentEvent").value){
+	case "ic":needlp=Number(document.getElementById("NeedLP").innerHTML);break;
+	case "sm":needlp=0;break;
+	case "mf":needlp=0;break;
+	case "cf":needlp=Number(document.getElementById("Cfrlp").innerHTML);break;
+	case "sr":needlp=Number(document.getElementById("Orrlp").innerHTML);break;
+	case "nm":needlp=0;break;
+	}
+
 	var recovlp= Number(document.getElementById("LPs").innerHTML);
 	var lpmax  = Number(document.getElementById("LPMax").value);
 	var res = Math.ceil((needlp-recovlp)/lpmax);
 	document.getElementById("auto").innerHTML=res>0?res:0;
+}
+function eventType(){
+	var a = document.getElementById("CurrentEvent").value;
+	document.getElementById("IconCol").style.display="none";
+	document.getElementById("CF").style.display="none";
+	document.getElementById("OR").style.display="none";
+	document.getElementById("notAvailable").style.display="none";
+	switch(a){
+	case "ic":document.getElementById("IconCol").style.display="inline";break;
+	case "sm":document.getElementById("notAvailable").style.display="inline";break;
+	case "mf":document.getElementById("notAvailable").style.display="inline";break;
+	case "cf":document.getElementById("CF").style.display="inline";break;
+	case "sr":document.getElementById("OR").style.display="inline";break;
+	case "nm":document.getElementById("notAvailable").style.display="inline";break;
+	}
 }

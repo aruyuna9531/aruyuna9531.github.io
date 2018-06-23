@@ -2,7 +2,7 @@
 <head>
  <title>活动算心</title>
 </head>
-<body onload="countTime();needlps();AutomaticRecover();CfNeedLps();OrNeedLps()">
+<body onload="countTime();needlps();AutomaticRecover();CfNeedLps();OrNeedLps();eventType()">
  <p>
 	离活动结束还有：
 	<span id="_d"></span>天
@@ -27,6 +27,15 @@
 	</select><br>
 	目标pt：<input id="aim" type="number" value="100000" onchange="isNull(this);needlps();CfNeedLps();OrNeedLps()"><br>
 	目前pt：<input id="cur" type="number" value="0" onchange="isNull(this);needlps();CfNeedLps();OrNeedLps()"><br>
+	<br>
+	当前活动类型:<select id="CurrentEvent" onchange="eventType();countres()">
+	<option value="ic">传统</option>
+	<option value="sm">SM</option>
+	<option value="mf">MF</option>
+	<option value="cf">CF</option>
+	<option value="sr" selected="selected">散步</option>
+	<option value="nm">协力</option>
+	</select><br>
   </p>
 <!--					传统活动				-->
 	<span id="IconCol" style="display:none"><strong>传统活动</strong><br>
@@ -63,7 +72,7 @@
 	预计总消耗lp:<span id="Cfrlp"></span><br>
 	</span>
 <!--					散步拉力				-->
-	<span id="OR">
+	<span id="OR" style="display:none">
 	<strong>散步拉力</strong><br>
 	剧情读至第<select id="ORStoryProcess" onchange="OrNeedLps()">
 	<option value="Nop">未进入游戏</option>
@@ -91,6 +100,7 @@
 	预计共消耗LP：<span id="Orrlp"></span><br>
 	</span>
 <!--					end					-->
+	<p id="notAvailable" style="display:none">该活动还没写好，咕咕咕</p>
  <p>
 	现有LP：<input id="lp" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
 	当前LP上限：<input id="LPMax" type="number" value="150" onchange="isNull(this);AutomaticRecover()"><br>
@@ -106,7 +116,7 @@
 	 <span id="TimeLimitWarning"></span>
  </p>
  <p>
-	Author: aruyuna~ at 2018.04.17 <br>
+	Author: aruyuna~ at 2018.04.21 <br>
 	bilibili mainpage: <a href="https://space.bilibili.com/5054198/">https://space.bilibili.com/5054198</a><br>
 	微信公众号：yuna的SIF小屋<br>
  </p>
