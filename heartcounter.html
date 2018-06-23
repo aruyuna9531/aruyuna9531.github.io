@@ -2,7 +2,7 @@
 <head>
  <title>活动算心</title>
 </head>
-<body onload="countTime();needlps();AutomaticRecover();CfNeedLps()">
+<body onload="countTime();needlps();AutomaticRecover();CfNeedLps();OrNeedLps()">
  <p>
 	离活动结束还有：
 	<span id="_d"></span>天
@@ -25,10 +25,11 @@
 	<option value="C">C</option>
 	<option value="D">D</option>
 	</select><br>
-	目标pt：<input id="aim" type="number" value="100000" onchange="isNull(this);needlps();CfNeedLps()"><br>
-	目前pt：<input id="cur" type="number" value="0" onchange="isNull(this);needlps();CfNeedLps()"><br>
+	目标pt：<input id="aim" type="number" value="100000" onchange="isNull(this);needlps();CfNeedLps();OrNeedLps()"><br>
+	目前pt：<input id="cur" type="number" value="0" onchange="isNull(this);needlps();CfNeedLps();OrNeedLps()"><br>
   </p>
-	<span id="IconCol" style="display:none"><strong>Icon collection:</strong><br>
+<!--					传统活动				-->
+	<span id="IconCol" style="display:none"><strong>传统活动</strong><br>
 	<br>
 	普通曲消费LP：<input id="LPUse" type="number" value="80" onchange="isNull(this);needlps();">
 	每首歌攒道具数：<input id="IconGet" type="number" value="108" onchange="isNull(this);needlps();">
@@ -39,9 +40,9 @@
 	需要LP：<span id="NeedLP"></span><br>
 	 </p>
 	</span>
-
-	<span id="CF">
-	<strong>ChaFes</strong><br>
+<!--					CF					-->
+	<span id="CF" style="display:none">
+	<strong>Challenge Festival</strong><br>
 	<a href="https://aruyuna9531.github.io/ChaFesStrategy.txt">倍数策略排名</a><br>
 	当前Round:<select id="CfCurrentRound" onchange="CfNeedLps()">
 	<option value="1">1</option>
@@ -52,7 +53,7 @@
 	</select><br>
 	未领取pt：<input id="CfPtInRun" type="number" value="0" onchange="isNull(this);CfNeedLps()"><br>
 	R1倍数：<input id="cfr1" type="number" value="1" min="1" max="4" onchange="isNull(this);CfNeedLps()">
-		适宜多倍的pt应援要求（P组，2年级，个人应援等）：>1.18倍<br>
+		适宜多倍的pt应援要求（P组，3年级，个人应援等）：>1.18倍<br>
 	R2倍数：<input id="cfr2" type="number" value="1" min="1" max="4" onchange="isNull(this);CfNeedLps()">
 		适宜多倍的pt应援要求：>1.11倍<br>
 	R3倍数：<input id="cfr3" type="number" value="1" min="1" max="4" onchange="isNull(this);CfNeedLps()">
@@ -61,7 +62,35 @@
 	R5倍数：<input id="cfr5" type="number" value="4" min="1" max="4" onchange="isNull(this);CfNeedLps()"><br>
 	预计总消耗lp:<span id="Cfrlp"></span><br>
 	</span>
-
+<!--					散步拉力				-->
+	<span id="OR">
+	<strong>散步拉力</strong><br>
+	剧情读至第<select id="ORStoryProcess" onchange="OrNeedLps()">
+	<option value="Nop">未进入游戏</option>
+	<option value="Prologue">序章</option>
+	<option value="1">1章</option>
+	<option value="2">2章</option>
+	<option value="3">3章</option>
+	<option value="4">4章</option>
+	<option value="5">5章</option>
+	<option value="6">6章</option>
+	<option value="7">7章</option>
+	<option value="8">8章</option>
+	<option value="9">9章</option>
+	<option value="Epilogue">终章</option>
+	</select><br>
+	普通歌策略（剧情、挑战点）：<select id="ORNormalBets" onchange="OrNeedLps()">
+	<option value="1ea">1倍Easy</option>
+	<option value="1ex">1倍Expert</option>
+	<option value="4ex">4倍Expert</option>
+	</select><br>
+	隐藏点策略：4倍Expert<br>
+	平均每<input id="ORsecretPerc" type="number" value="6" onchange="isNull(this);OrNeedLps()">首歌出1个隐藏点<br>
+	隐藏点平均pt奖励：<input id="ORsecretPtArr" type="number" value="1.5" onchange="isNull(this);OrNeedLps()"><br>
+	隐藏点平均LP消耗：<input id="ORsecretLpDec" type="number" value="80" onchange="isNull(this);OrNeedLps()">%<br>
+	预计共消耗LP：<span id="Orrlp"></span><br>
+	</span>
+<!--					end					-->
  <p>
 	现有LP：<input id="lp" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
 	当前LP上限：<input id="LPMax" type="number" value="150" onchange="isNull(this);AutomaticRecover()"><br>

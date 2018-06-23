@@ -1,4 +1,4 @@
-function isNull(obj){
+﻿function isNull(obj){
         if (obj == '' || obj == undefined || obj == null) {
 		obj.value=0;
 	}
@@ -98,6 +98,7 @@ function AutomaticRecover(){
 	countres();
 }
 
+// ----------------------------------Icon collection--------------------------------------
 function needlps(){
 	var i = 0;
 	var icon = Number(document.getElementById("IconGet").value);
@@ -113,14 +114,52 @@ function needlps(){
 	countres();
 }
 
-function countres(){
-	var needlp = Number(document.getElementById("Cfrlp").innerHTML);
-	var recovlp= Number(document.getElementById("LPs").innerHTML);
-	var lpmax  = Number(document.getElementById("LPMax").value);
-	var res = Math.ceil((needlp-recovlp)/lpmax);
-	document.getElementById("auto").innerHTML=res>0?res:0;
+function EventSongPt(){
+	var sRank = document.getElementById("scoreRank").value;
+	var cRank = document.getElementById("ComboRank").value;
+	switch(sRank)
+	{
+	case "S":switch(cRank)
+		{
+		case "S":return 565;
+		case "A":return 549;
+		case "B":return 518;
+		case "C":return 508;
+		case "D":return 498;
+		}
+		break;
+	case "A":switch(cRank)
+		{
+		case "S":return 540;
+		case "A":return 525;
+		case "B":return 495;
+		case "C":return 485;
+		case "D":return 475;
+		}
+		break;
+	case "B":switch(cRank)
+		{
+		case "S":return 509;
+		case "A":return 495;
+		case "B":return 467;
+		case "C":return 458;
+		case "D":return 448;
+		}
+		break;
+	case "C":switch(cRank)
+		{
+		case "S":return 484;
+		case "A":return 470;
+		case "B":return 444;
+		case "C":return 435;
+		case "D":return 426;
+		}
+		break;
+	case "D":return 0;
+	}
 }
 
+// -----------------------------------Challenge Festival-----------------------------------
 function CfNeedLps(){
 	var needPts = Number(document.getElementById("aim").value)-Number(document.getElementById("cur").value)-Number(document.getElementById("CfPtInRun").value);
 	var CurrentRound=Number(document.getElementById("CfCurrentRound").value);
@@ -193,48 +232,88 @@ function CfEventSongPt(round){
 	case 5: return 377.0*sBets*cBets*1.1*arrangeBets;
 	}
 }
-
-function EventSongPt(){
+//-----------------------------------Osanpo Rally-----------------------------------------
+function OrNeedLps(){
+	//story
+	var story = document.getElementById("ORStoryProcess").value;
+	var getPt = 1500;
+	switch(story){
+	case "Nop": getPt-=50;
+	case "Prologue": getPt-=50;
+	case "1": getPt-=100;
+	case "2": getPt-=100;
+	case "3": getPt-=150;
+	case "4": getPt-=150;
+	case "5": getPt-=200;
+	case "6": getPt-=200;
+	case "7": getPt-=250;
+	case "8": getPt-=250;
+	case "9":
+	case "Epilogue":
+	}
+	//normalsong
+	var sBets = 0.0;
+	var cBets = 0.0;
 	var sRank = document.getElementById("scoreRank").value;
 	var cRank = document.getElementById("ComboRank").value;
-	switch(sRank)
-	{
-	case "S":switch(cRank)
-		{
-		case "S":return 565;
-		case "A":return 549;
-		case "B":return 518;
-		case "C":return 508;
-		case "D":return 498;
-		}
-		break;
-	case "A":switch(cRank)
-		{
-		case "S":return 540;
-		case "A":return 525;
-		case "B":return 495;
-		case "C":return 485;
-		case "D":return 475;
-		}
-		break;
-	case "B":switch(cRank)
-		{
-		case "S":return 509;
-		case "A":return 495;
-		case "B":return 467;
-		case "C":return 458;
-		case "D":return 448;
-		}
-		break;
-	case "C":switch(cRank)
-		{
-		case "S":return 484;
-		case "A":return 470;
-		case "B":return 444;
-		case "C":return 435;
-		case "D":return 426;
-		}
-		break;
-	case "D":return 0;
+	switch(sRank){
+	case "S":sBets=1.20;break;
+	case "A":sBets=1.15;break;
+	case "B":sBets=1.10;break;
+	case "C":sBets=1.05;break;
+	case "D":sBets=1.00;break;
 	}
+	switch(cRank){
+	case "S":cBets=1.08;break;
+	case "A":cBets=1.06;break;
+	case "B":cBets=1.04;break;
+	case "C":cBets=1.02;break;
+	case "D":cBets=1.00;break;
+	}
+	var nms = document.getElementById("ORNormalBets").value;
+	var nlp = 0, npt = 0;
+	switch(nms){
+	case "1ea":nlp=5;npt=54;break;
+	case "1ex":nlp=25;npt=Math.round(343*sBets*cBets);break;
+	case "4ex":nlp=100;npt=Math.round(1372*sBets*cBets);break;
+	}
+	//secret
+	var spc = Number(document.getElementById("ORsecretPerc").value);
+	var spt = Number(document.getElementById("ORsecretPtArr").value);
+	var slp = Number(document.getElementById("ORsecretLpDec").value);
+	
+	var counter=0;
+	var src=0;
+	var needlps = 0;
+	var songCount = 0;
+	var needPts = Number(document.getElementById("aim").value)-Number(document.getElementById("cur").value)-getPt;
+	while(needPts>0){
+		if(src==0){
+			needPts-=npt;
+			needlps+=nlp;
+			counter++;
+			songCount++;
+			if(counter==spc){
+				counter=0;
+				src=1;
+			}
+		}
+		else{
+			needPts-=Math.round(1780*spt);
+			needlps+=slp;
+			songCount++;
+			src=0;
+		}
+	}
+	document.getElementById("Orrlp").innerHTML=Math.ceil(needlps);
+	document.getElementById("Songs").innerHTML=songCount;
+	countres();
+}
+//------------------------------------------general------------------------------------------
+function countres(){
+	var needlp = Number(document.getElementById("Orrlp").innerHTML);
+	var recovlp= Number(document.getElementById("LPs").innerHTML);
+	var lpmax  = Number(document.getElementById("LPMax").value);
+	var res = Math.ceil((needlp-recovlp)/lpmax);
+	document.getElementById("auto").innerHTML=res>0?res:0;
 }

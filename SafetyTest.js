@@ -78,10 +78,6 @@ function countTime() {
 		}
 	}
 	if(preMin!=m)fix();
-	if(d==0 && h<5){
-		document.getElementById("main").style.display="block";
-		document.getElementById("TimeOutOfRange").style.display="none";
-	}
         setTimeout(countTime,1000);
 }
 function front0(x){
@@ -93,7 +89,15 @@ function warn(obj){
 	obj.style.fontWeight="Bold";
 }
 //---------------------------CountTimeLine------------------------------
-
+function exc(){
+	var d=Number(document.getElementById("_d").innerHTML);
+	var h=Number(document.getElementById("_h").innerHTML);
+	if(d*24+h<210){
+		console.log("ok");
+		document.getElementById("main").style.display='inline';
+		document.getElementById("TimeOutOfRange").style.display='none';
+	}
+}
 function change(){
 	var lastRank=Number(document.getElementById("border").value);
 	var curRank=Number(document.getElementById("curRank").value);
