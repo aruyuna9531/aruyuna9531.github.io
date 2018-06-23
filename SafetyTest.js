@@ -78,7 +78,7 @@ function countTime() {
 		}
 	}
 	if(preMin!=m)fix();
-	if(d==0 && h<2){
+	if(d*24+h<2){
 		document.getElementById("main").style.display="inline";
 		document.getElementById("TimeOutOfRange").style.display="none";
 	}
@@ -94,13 +94,6 @@ function warn(obj){
 }
 //---------------------------CountTimeLine------------------------------
 function exc(){
-	var d=Number(document.getElementById("_d").innerHTML);
-	var h=Number(document.getElementById("_h").innerHTML);
-	if(d*24+h<210){
-		console.log("ok");
-		document.getElementById("main").style.display='inline';
-		document.getElementById("TimeOutOfRange").style.display='none';
-	}
 }
 function change(){
 	var lastRank=Number(document.getElementById("border").value);
