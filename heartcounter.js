@@ -3,7 +3,7 @@
 		obj.value=0;
 	}
 }
-
+//--------------------------------------------------------------------time---------------------------------------------------
 function LastDayOfCurrentMonth(year,month){
 	switch(month){
 	case 1:
@@ -83,11 +83,9 @@ function warn(obj){
 	obj.style.color="red";
 	obj.style.fontWeight="Bold";
 }
-
+//----------------------------------------------------------------LP counter-----------------------------------------------
 function AutomaticRecover(){
-	var RemainMins = Number(document.getElementById("_d").innerHTML)*24*60+Number(document.getElementById("_h").innerHTML)+Number(document.getElementById
-
-("_m").innerHTML);
+	var RemainMins = Number(document.getElementById("_d").innerHTML)*24*60+Number(document.getElementById("_h").innerHTML)+Number(document.getElementById("_m").innerHTML);
 	var AutoRec=Math.floor((RemainMins>10?RemainMins-10:0)/6);
 	var LvUpRec=Number(document.getElementById("LvUp").value) * Number(document.getElementById("LPMax").value) +1;
 	var LP50Rec=Number(document.getElementById("LP50").value)*50;
@@ -157,6 +155,72 @@ function EventSongPt(){
 		break;
 	case "D":return 0;
 	}
+}
+//------------------------------------Score Match------------------------------------------
+
+function isMax(pct){
+	var p1=Number(document.getElementById("Sm1pct").value);
+	var p2=Number(document.getElementById("Sm2pct").value);
+	var p3=Number(document.getElementById("Sm3pct").value);
+	if(p1+p2+p3>100){
+		if(pct==document.getElementById("Sm1pct"))pct.value=100-p2-p3;
+		else if(pct==document.getElementById("Sm2pct"))pct.value=100-p1-p3;
+		else pct.value=100-p1-p2;
+		document.getElementById("Sm4pct").innerHTML=0;
+	}
+	else{
+		document.getElementById("Sm4pct").innerHTML=100-p1-p2-p3;
+	}
+}
+
+function SmNeedLps(){
+	var p1=Number(document.getElementById("Sm1pct").value)/100;
+	var p2=Number(document.getElementById("Sm2pct").value)/100;
+	var p3=Number(document.getElementById("Sm3pct").value)/100;
+	var p4=Number(document.getElementById("Sm3pct").innerHTML)/100;
+	var sBets=0.0;
+	var sRank = document.getElementById("scoreRank").value;
+	switch(sRank){
+	case "S":sBets=1.20;break;
+	case "A":sBets=1.15;break;
+	case "B":sBets=1.10;break;
+	case "C":sBets=1.05;break;
+	case "D":sBets=1.00;break;
+	}
+	var rBets=p1*1.25+p2*1.15+p3*1.05+p4;
+	var needPts = Number(document.getElementById("aim").value)-Number(document.getElementById("cur").value);
+	var res=Math.ceil(needPts/Math.round(357*sBets*rBets));
+	document.getElementById("SmNeedLP").innerHTML=res*25;
+	document.getElementById("Songs").innerHTML=Math.ceil(res/Number(document.getElementById("smbet").value));
+	countres();
+}
+
+//------------------------------------Medley Festival--------------------------------------
+
+function MfNeedLps(){
+	var sBets = 0.0;
+	var cBets = 0.0;
+	var sRank = document.getElementById("scoreRank").value;
+	var cRank = document.getElementById("ComboRank").value;
+	switch(sRank){
+	case "S":sBets=1.20;break;
+	case "A":sBets=1.15;break;
+	case "B":sBets=1.10;break;
+	case "C":sBets=1.05;break;
+	case "D":sBets=1.00;break;
+	}
+	switch(cRank){
+	case "S":cBets=1.08;break;
+	case "A":cBets=1.06;break;
+	case "B":cBets=1.04;break;
+	case "C":cBets=1.02;break;
+	case "D":cBets=1.00;break;
+	}
+	var needPts = Number(document.getElementById("aim").value)-Number(document.getElementById("cur").value);
+	var res=Math.ceil(needPts/Math.round(777*sBets*cBets*1.1));
+	document.getElementById("MfNeedLP").innerHTML=res*60;
+	document.getElementById("Songs").innerHTML=Math.ceil(res/Number(document.getElementById("mfbet").value));
+	countres();
 }
 
 // -----------------------------------Challenge Festival-----------------------------------
@@ -310,17 +374,90 @@ function OrNeedLps(){
 	document.getElementById("Songs").innerHTML=songCount;
 	countres();
 }
+//------------------------------------Nakayoshi Match------------------------------------------
+
+function isMaxR(pct){
+	var p1=Number(document.getElementById("Nm1pct").value);
+	var p2=Number(document.getElementById("Nm2pct").value);
+	var p3=Number(document.getElementById("Nm3pct").value);
+	if(p1+p2+p3>100){
+		if(pct==document.getElementById("Nm1pct"))pct.value=100-p2-p3;
+		else if(pct==document.getElementById("Nm2pct"))pct.value=100-p1-p3;
+		else pct.value=100-p1-p2;
+		document.getElementById("Nm4pct").innerHTML=0;
+	}
+	else{
+		document.getElementById("Nm4pct").innerHTML=100-p1-p2-p3;
+	}
+}
+
+function isMaxN(pct){
+	var p1=Number(document.getElementById("NmSSSpct").value);
+	var p2=Number(document.getElementById("NmSSpct").value);
+	var p3=Number(document.getElementById("NmSpct").value);
+	var p4=Number(document.getElementById("NmApct").value);
+	var p5=Number(document.getElementById("NmBpct").value);
+	if(p1+p2+p3+p4+p5>100){
+		if(pct==document.getElementById("NmSSSpct"))pct.value=100-p1-p2-p3-p4-p5+p1;
+		else if(pct==document.getElementById("NmSSpct"))pct.value=100-p1-p2-p3-p4-p5+p2;
+		else if(pct==document.getElementById("NmSpct"))pct.value=100-p1-p2-p3-p4-p5+p3;
+		else if(pct==document.getElementById("NmApct"))pct.value=100-p1-p2-p3-p4-p5+p4;
+		else pct.value=100-p1-p2-p3-p4-p5+p5;
+		document.getElementById("NmCpct").innerHTML=0;
+	}
+	else{
+		document.getElementById("NmCpct").innerHTML=100-p1-p2-p3-p4-p5;
+	}
+}
+
+function NmNeedLps(){
+	var p1=Number(document.getElementById("NmSSSpct").value)/100;
+	var p2=Number(document.getElementById("NmSSpct").value)/100;
+	var p3=Number(document.getElementById("NmSpct").value)/100;
+	var p4=Number(document.getElementById("NmApct").value)/100;
+	var p5=Number(document.getElementById("NmBpct").value)/100;
+	var p6=Number(document.getElementById("NmCpct").innerHTML)/100;
+	var r1=Number(document.getElementById("Nm1pct").value)/100;
+	var r2=Number(document.getElementById("Nm2pct").value)/100;
+	var r3=Number(document.getElementById("Nm3pct").value)/100;
+	var r4=Number(document.getElementById("Nm4pct").innerHTML)/100;
+	var sBets = 0.0;
+	var cBets = 0.0;
+	var sRank = document.getElementById("scoreRank").value;
+	var cRank = document.getElementById("ComboRank").value;
+	switch(sRank){
+	case "S":sBets=1.20;break;
+	case "A":sBets=1.15;break;
+	case "B":sBets=1.10;break;
+	case "C":sBets=1.05;break;
+	case "D":sBets=1.00;break;
+	}
+	switch(cRank){
+	case "S":cBets=1.08;break;
+	case "A":cBets=1.06;break;
+	case "B":cBets=1.04;break;
+	case "C":cBets=1.02;break;
+	case "D":cBets=1.00;break;
+	}
+	var pBets=p1*1.45+p2*1.35+p3*1.25+p4*1.15+p5*1.1*p6*1.05;
+	var rBets=r1*1.08+p2*1.05+p3*1.02+p4;
+	var needPts = Number(document.getElementById("aim").value)-Number(document.getElementById("cur").value);
+	var res=Math.ceil(needPts/Math.round(301*sBets*cBets*pBets*rBets));
+	document.getElementById("NmNeedLP").innerHTML=res*25;
+	document.getElementById("Songs").innerHTML=Math.ceil(res/Number(document.getElementById("nmbet").value));
+	countres();
+}
 //------------------------------------------general------------------------------------------
 function countres(){
 	var needlp = 0;
 	
 	switch(document.getElementById("CurrentEvent").value){
 	case "ic":needlp=Number(document.getElementById("NeedLP").innerHTML);break;
-	case "sm":needlp=0;break;
-	case "mf":needlp=0;break;
+	case "sm":needlp=Number(document.getElementById("SmNeedLP").innerHTML);break;
+	case "mf":needlp=Number(document.getElementById("MfNeedLP").innerHTML);break;
 	case "cf":needlp=Number(document.getElementById("Cfrlp").innerHTML);break;
 	case "sr":needlp=Number(document.getElementById("Orrlp").innerHTML);break;
-	case "nm":needlp=0;break;
+	case "nm":needlp=Number(document.getElementById("NmNeedLP").innerHTML);break;
 	}
 
 	var recovlp= Number(document.getElementById("LPs").innerHTML);
@@ -331,15 +468,18 @@ function countres(){
 function eventType(){
 	var a = document.getElementById("CurrentEvent").value;
 	document.getElementById("IconCol").style.display="none";
+	document.getElementById("SM").style.display="none";
+	document.getElementById("MF").style.display="none";
 	document.getElementById("CF").style.display="none";
 	document.getElementById("OR").style.display="none";
+	document.getElementById("NM").style.display="none";
 	document.getElementById("notAvailable").style.display="none";
 	switch(a){
 	case "ic":document.getElementById("IconCol").style.display="inline";break;
-	case "sm":document.getElementById("notAvailable").style.display="inline";break;
-	case "mf":document.getElementById("notAvailable").style.display="inline";break;
+	case "sm":document.getElementById("SM").style.display="inline";break;
+	case "mf":document.getElementById("MF").style.display="inline";break;
 	case "cf":document.getElementById("CF").style.display="inline";break;
 	case "sr":document.getElementById("OR").style.display="inline";break;
-	case "nm":document.getElementById("notAvailable").style.display="inline";break;
+	case "nm":document.getElementById("NM").style.display="inline";break;
 	}
 }

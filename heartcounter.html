@@ -2,7 +2,7 @@
 <head>
  <title>活动算心</title>
 </head>
-<body onload="countTime();needlps();AutomaticRecover();CfNeedLps();OrNeedLps();eventType()">
+<body onload="countTime();needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();eventType()">
  <p>
 	离活动结束还有：
 	<span id="_d"></span>天
@@ -38,8 +38,7 @@
 	</select><br>
   </p>
 <!--					传统活动				-->
-	<span id="IconCol" style="display:none"><strong>传统活动</strong><br>
-	<br>
+	<span id="IconCol" style="display:none">
 	普通曲消费LP：<input id="LPUse" type="number" value="80" onchange="isNull(this);needlps();">
 	每首歌攒道具数：<input id="IconGet" type="number" value="108" onchange="isNull(this);needlps();">
  	</p>
@@ -49,9 +48,23 @@
 	需要LP：<span id="NeedLP"></span><br>
 	 </p>
 	</span>
+<!--					SM					-->
+	<span id="SM" style="display:none">
+	倍数：<input id="smbet" type="number" value="1" min="1" max="4" onchange="isNull(this);SmNeedLps()"><br>
+	平均排名：<br>
+	1位占比：<input id="Sm1pct" type="number" value="60" onchange="isNull(this); isMax(this); SmNeedLps()">%<br>
+	2位占比：<input id="Sm2pct" type="number" value="20" onchange="isNull(this); isMax(this); SmNeedLps()">%<br>
+	3位占比：<input id="Sm3pct" type="number" value="10" onchange="isNull(this); isMax(this); SmNeedLps()">%<br>
+	4位占比：<span id="Sm4pct">10</span>%<br>
+	预计消耗LP:<span id="SmNeedLP"></span><br>
+	</span>
+<!--					MF					-->
+	<span id="MF" style="display:none">
+	倍数：<input id="mfbet" type="number" value="1" min="1" max="4" onchange="isNull(this);MfNeedLps()"><br>
+	预计消耗LP:<span id="MfNeedLP"></span><br>
+	</span>
 <!--					CF					-->
 	<span id="CF" style="display:none">
-	<strong>Challenge Festival</strong><br>
 	<a href="https://aruyuna9531.github.io/ChaFesStrategy.txt">倍数策略排名</a><br>
 	当前Round:<select id="CfCurrentRound" onchange="CfNeedLps()">
 	<option value="1">1</option>
@@ -73,7 +86,6 @@
 	</span>
 <!--					散步拉力				-->
 	<span id="OR" style="display:none">
-	<strong>散步拉力</strong><br>
 	剧情读至第<select id="ORStoryProcess" onchange="OrNeedLps()">
 	<option value="Nop">未进入游戏</option>
 	<option value="Prologue">序章</option>
@@ -98,6 +110,23 @@
 	隐藏点平均pt奖励：<input id="ORsecretPtArr" type="number" value="1.5" onchange="isNull(this);OrNeedLps()"><br>
 	隐藏点平均LP消耗：<input id="ORsecretLpDec" type="number" value="80" onchange="isNull(this);OrNeedLps()">%<br>
 	预计共消耗LP：<span id="Orrlp"></span><br>
+	</span>
+<!--					协力					-->
+	<span id="NM" style="display:none">
+	倍数：<input id="nmbet" type="number" value="1" min="1" max="4" onchange="isNull(this);NmNeedLps()"><br>
+	贡献度平均排名：<br>
+	1位占比：<input id="Nm1pct" type="number" value="80" onchange="isNull(this); isMaxR(this); NmNeedLps()">%<br>
+	2位占比：<input id="Nm2pct" type="number" value="15" onchange="isNull(this); isMaxR(this); NmNeedLps()">%<br>
+	3位占比：<input id="Nm3pct" type="number" value="5" onchange="isNull(this); isMaxR(this); NmNeedLps()">%<br>
+	4位占比：<span id="Nm4pct">0</span>%<br>
+	贡献度等级分布：<br>
+	SSS占比：<input id="NmSSSpct" type="number" value="73" onchange="isNull(this); isMaxN(this); NmNeedLps()">%<br>
+	SS占比：<input id="NmSSpct" type="number" value="20" onchange="isNull(this); isMaxN(this); NmNeedLps()">%<br>
+	S占比：<input id="NmSpct" type="number" value="5" onchange="isNull(this); isMaxN(this); NmNeedLps()">%<br>
+	A占比：<input id="NmApct" type="number" value="2" onchange="isNull(this); isMaxN(this); NmNeedLps()">%<br>
+	B占比：<input id="NmBpct" type="number" value="0" onchange="isNull(this); isMaxN(this); NmNeedLps()">%<br>
+	C占比：<span id="NmCpct">0</span>%<br>
+	预计消耗LP:<span id="NmNeedLP"></span><br>
 	</span>
 <!--					end					-->
 	<p id="notAvailable" style="display:none">该活动还没写好，咕咕咕</p>
