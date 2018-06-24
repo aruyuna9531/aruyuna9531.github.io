@@ -3,10 +3,12 @@
 <title>保档观测仪</title>
 <script src="SafetyTest.js"></script>
 </head>
-<body onload="countTime();change()">
+<body onload="countTime();countTimeC();change();changeC()">
+ <button id="sv" type="button" value="0" onclick="serverSwitch(value)">切换国/日服</button>
+ <span id="JP">
  <p>
-	<span id="MsgToEnd">离活动结束还有：</span>
-	<span id="_d"></span><span id="MsgDays">天</span>
+	（日服活动）离活动结束还有：
+	<span id="_d"></span>天
 	<span id="_h"></span>:
 	<span id="_m"></span>:
 	<span id="_s"></span>
@@ -25,6 +27,31 @@
  仅供参考，如果下一分钟到来时你的排名在上值之后，建议打歌保档。
  </p>
  <p id="TimeOutOfRange"> 仅在活动结束前2小时开放，敬请期待 </p>
+ </span>
+ 
+ <span id="CN" style="display:none">
+ <p>
+	（国服活动）离活动结束还有：
+	<span id="_dc"></span>天
+	<span id="_hc"></span>:
+	<span id="_mc"></span>:
+	<span id="_sc"></span>
+ </p>
+ <p id="mainC" style="display:none">
+ 欲保档线：<select id="borderC" onchange="changeC()">
+ <option value="10000">10000位</option>
+ <option value="30000">30000位</option>
+ <option value="50000">50000位</option>
+ </select><br>
+ 当前排名：<input id="curRankC" type="number" value="9000" onchange="change()"><br>
+ 1分钟后安全排名：<span id="nextRankC"></span><br>
+ 5分钟后安全排名：<span id="nextRank_5C"></span><br>
+ 10分钟后安全排名：<span id="nextRank_10C"></span><br>
+ 30分钟后安全排名：<span id="nextRank_30C"></span><br>
+ 仅供参考，如果下一分钟到来时你的排名在上值之后，建议打歌保档。
+ </p>
+ <p id="TimeOutOfRangeC"> 仅在活动结束前2小时开放，敬请期待 </p>
+ </span>
 </body>
 </html>
  

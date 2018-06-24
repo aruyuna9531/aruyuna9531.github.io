@@ -4,6 +4,7 @@ function isNull(obj){
 	}
 }
 
+//----------------------------------------日服------------------------------------------
 function LastDayOfCurrentMonth(year,month){
 	switch(month){
 	case 1:
@@ -50,8 +51,8 @@ function countTime() {
 	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
 	if(isiOS)date = new Date();
 	else date = new Date();
-        var now = date.getTime();  
-        var endDate = EventEnd(date);
+        var now = date.getTime();
+	var endDate = EventEnd(date);
         var end = endDate.getTime();
         var leftTime = end-now; 
         var d=0,h=0,m=0,s=0;
@@ -93,8 +94,6 @@ function warn(obj){
 	obj.style.fontWeight="Bold";
 }
 //---------------------------CountTimeLine------------------------------
-function exc(){
-}
 function change(){
 	var lastRank=Number(document.getElementById("border").value);
 	var curRank=Number(document.getElementById("curRank").value);
@@ -110,6 +109,79 @@ function change(){
 }
 
 function fix(){
+	document.getElementById("curRank").value=Number(document.getElementById("nextRank").innerHTML);
+	change();
+}
+//----------------------------国服------------------------------------
+function serverSwitch(value){
+	if(value==1){
+		document.getElementById("JP").style.display="inline";
+		document.getElementById("CN").style.display="none";
+	}
+	else{
+		document.getElementById("JP").style.display="none";
+		document.getElementById("CN").style.display="inline";
+	}
+	document.getElementById("sv").value=1-Number(document.getElementById("sv").value);
+}
+function countTimeC() {
+        var date;
+	var u = navigator.userAgent;
+	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+	if(isiOS)date = new Date();
+	else date = new Date();
+        var now = date.getTime();
+//--------------------fix-------------------
+	var endDate = new Date("2018/6/25 14:00");
+	var opening=true;
+//--------------------fix end---------------
+        var end = endDate.getTime();
+        var leftTime = end-now; 
+        var d=0,h=0,m=0,s=0;
+	var preMin=Number(document.getElementById("_mc").innerHTML);
+        if (leftTime>0 && opening==true) {
+	d = Math.floor(leftTime/1000/60/60/24);  
+        h = Math.floor(leftTime/1000/60/60%24);  
+        m = Math.floor(leftTime/1000/60%60);  
+        s = Math.floor(leftTime/1000%60);                     
+        }
+        document.getElementById("_dc").innerHTML = d;
+	document.getElementById("_hc").innerHTML = h;
+	document.getElementById("_mc").innerHTML = front0(m);
+	document.getElementById("_sc").innerHTML = front0(s);
+	if(d<1){
+		warn(_dc);
+		if(h<10)
+		{
+			warn(_hc);
+			if(h<2){
+				warn(_mc);
+				warn(_sc);
+			}
+		}
+	}
+	if(preMin!=m)fixC();
+	if(d*24+h<2){
+		document.getElementById("mainC").style.display="inline";
+		document.getElementById("TimeOutOfRangeC").style.display="none";
+	}
+        setTimeout(countTimeC,1000);
+}
+function changeC(){
+	var lastRank=Number(document.getElementById("borderC").value);
+	var curRank=Number(document.getElementById("curRankC").value);
+	var remainMin=Number(document.getElementById("_dc").innerHTML)*24*60+Number(document.getElementById("_h").innerHTML)*60+Number(document.getElementById("_mc").innerHTML);
+	var drop=Math.floor((lastRank-curRank)/remainMin);
+	document.getElementById("nextRankC").innerHTML=curRank+drop-1;
+	if(remainMin>5)document.getElementById("nextRank_5C").innerHTML=curRank+drop*5-10;
+	else document.getElementById("nextRank_5C").innerHTML=""
+	if(remainMin>10)document.getElementById("nextRank_10C").innerHTML=curRank+drop*10-20;
+	else document.getElementById("nextRank_10C").innerHTML=""
+	if(remainMin>30)document.getElementById("nextRank_30C").innerHTML=curRank+drop*30-50;
+	else document.getElementById("nextRank_30C").innerHTML=""
+}
+
+function fixC(){
 	document.getElementById("curRank").value=Number(document.getElementById("nextRank").innerHTML);
 	change();
 }
