@@ -15,3 +15,7 @@
 [SIF 保档观测仪](https://aruyuna9531.github.io/SafetyTest.html)
 
 面向最后2小时，有时间盯pt榜然后又不想吃心保档想在掉档边缘试探的同学（pt榜，分榜均可用）
+
+[SIF score match 跳车观测仪](https://aruyuna9531.github.io/SMquitTest.html)
+
+面向最后一天，想通过秒退保smpt的同学们的参考器（输入数字一定要快，否则局开了我不负责hhhh或者你可以人齐了先切到后台算完再决定打不打，sm结算允许的等待时间是30秒）
