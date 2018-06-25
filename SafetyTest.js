@@ -97,6 +97,7 @@ function warn(obj){
 function change(){
 	var lastRank=Number(document.getElementById("border").value);
 	var curRank=Number(document.getElementById("curRank").value);
+	if(curRank-lastRank<0)alert("您已掉档，请打歌");
 	var remainMin=Number(document.getElementById("_d").innerHTML)*24*60+Number(document.getElementById("_h").innerHTML)*60+Number(document.getElementById("_m").innerHTML);
 	var drop=Math.floor((lastRank-curRank)/remainMin);
 	document.getElementById("nextRank").innerHTML=curRank+drop-1;
@@ -170,6 +171,7 @@ function countTimeC() {
 function changeC(){
 	var lastRank=Number(document.getElementById("borderC").value);
 	var curRank=Number(document.getElementById("curRankC").value);
+	if(curRank-lastRank<0)alert("您已掉档，请打歌");
 	var remainMin=Number(document.getElementById("_dc").innerHTML)*24*60+Number(document.getElementById("_hc").innerHTML)*60+Number(document.getElementById("_mc").innerHTML);
 	var drop=Math.floor((lastRank-curRank)/remainMin);
 	document.getElementById("nextRankC").innerHTML=curRank+drop-1;
