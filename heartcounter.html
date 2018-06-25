@@ -32,7 +32,7 @@
 	目标pt：<input id="aim" type="number" value="100000" onchange="isNull(this);needlps();CfNeedLps();OrNeedLps()"><br>
 	目前pt：<input id="cur" type="number" value="0" onchange="isNull(this);needlps();CfNeedLps();OrNeedLps()"><br>
 	<br>
-	当前活动类型:<select id="CurrentEvent" onchange="eventType();countres()">
+	当前活动类型:<select id="CurrentEvent" onchange="eventType();needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps()">
 	<option value="ic">传统</option>
 	<option value="sm">SM</option>
 	<option value="mf">MF</option>
