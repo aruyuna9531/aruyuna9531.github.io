@@ -115,7 +115,7 @@ function change(){
 	}
 	if(drop<=HighRisk)document.getElementById("msg").innerHTML=remainMin>15?"掉档风险极大，建议立即打歌，5首":"掉档风险极大，赶紧打歌，能打几首打几首";
 	else if(drop<=LittleRisk)document.getElementById("msg").innerHTML="掉档风险较大，建议立即打1首歌";
-	else document.getElementById("msg").innerHTML="仅供参考，如果1分钟后你的排名在上面安全排名之后，建议打歌保档";
+	else document.getElementById("msg").innerHTML="基本稳。仅供参考，如果1分钟后你的排名在上面安全排名之后，还是建议打歌保档";
 }
 
 function fix(){
@@ -198,7 +198,7 @@ function changeC(){
 	}
 	if(drop<=HighRisk)document.getElementById("msgC").innerHTML=remainMin>15?"掉档风险极大，建议立即打歌，5首":"掉档风险极大，赶紧打歌，能打几首打几首";
 	else if(drop<=LittleRisk)document.getElementById("msgC").innerHTML="掉档风险较大，建议立即打1首歌";
-	else document.getElementById("msgC").innerHTML="仅供参考，如果1分钟后你的排名在上面安全排名之后，建议打歌保档";
+	else document.getElementById("msgC").innerHTML="基本稳。仅供参考，如果1分钟后你的排名在上面安全排名之后，仍建议打歌保档";
 }
 
 function fixC(){
