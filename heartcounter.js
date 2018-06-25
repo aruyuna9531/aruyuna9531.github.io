@@ -270,12 +270,7 @@ function CfNeedLps(){
 	document.getElementById("Cfrlp").innerHTML=needLP;
 	document.getElementById("Songs").innerHTML=songs;
 	
-	var remainTime=Number(document.getElementById("_d").innerHTML)*24*60+Number(document.getElementById("_h").innerHTML)*60+Number(document.getElementById("_m").innerHTML);
-	if(remainTime-songs*2.5>12)document.getElementById("TimeLimitWarning").innerHTML="";
-	else if(remainTime-songs*2.5>0)document.getElementById("TimeLimitWarning").innerHTML="达到目标pt所需时间可能不够，请抓紧时间";
-	else document.getElementById("TimeLimitWarning").innerHTML="已经没有时间足以达到该pt，请调整目标pt或多倍策略";
 }
-
 function CfEventSongPt(round){
 	var sRank = document.getElementById("scoreRank").value;
 	var cRank = document.getElementById("ComboRank").value;
@@ -490,4 +485,11 @@ function eventType(){
 	case "sr":document.getElementById("OR").style.display="inline";break;
 	case "nm":document.getElementById("NM").style.display="inline";break;
 	}
+}
+function TimeLimitWarnings(){
+	var remainTime=Number(document.getElementById("_d").innerHTML)*24*60+Number(document.getElementById("_h").innerHTML)*60+Number(document.getElementById("_m").innerHTML);
+	var songs=Number(document.getElementById("Songs").innerHTML);
+	if(remainTime-songs*2.5>12)document.getElementById("TimeLimitWarning").innerHTML="";
+	else if(remainTime-songs*2.5>0)document.getElementById("TimeLimitWarning").innerHTML="达到目标pt所需时间可能不够，请抓紧时间";
+	else document.getElementById("TimeLimitWarning").innerHTML="已经没有时间足以达到该pt，请调整目标pt或多倍策略";
 }
