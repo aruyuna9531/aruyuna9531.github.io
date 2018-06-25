@@ -57,7 +57,8 @@ function countTime() {
         var leftTime = end-now; 
         var d=0,h=0,m=0,s=0;
 	var preMin=Number(document.getElementById("_m").innerHTML);
-        if (leftTime>0 && EventOpening(date)==true) {
+	var opening=EventOpening(date);
+        if (leftTime>0 && opening==true) {
 	d = Math.floor(leftTime/1000/60/60/24);  
         h = Math.floor(leftTime/1000/60/60%24);  
         m = Math.floor(leftTime/1000/60%60);  
@@ -79,7 +80,7 @@ function countTime() {
 		}
 	}
 	if(preMin!=m)fix();
-	if(d*24+h<2){
+	if(d*24+h<2 && opening==true){
 		document.getElementById("main").style.display="inline";
 		document.getElementById("TimeOutOfRange").style.display="none";
 	}
@@ -184,7 +185,7 @@ function countTimeC() {
 		}
 	}
 	if(preMin!=m)fixC();
-	if(d*24+h<2){
+	if(d*24+h<2 && opening==true){
 		document.getElementById("mainC").style.display="inline";
 		document.getElementById("TimeOutOfRangeC").style.display="none";
 	}
