@@ -187,3 +187,4 @@ function fixC(){
 	document.getElementById("curRankC").value=Number(document.getElementById("nextRankC").innerHTML);
 	changeC();
 }
+
