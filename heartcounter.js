@@ -171,6 +171,9 @@ function isMax(pct){
 	var p1=Number(document.getElementById("Sm1pct").value);
 	var p2=Number(document.getElementById("Sm2pct").value);
 	var p3=Number(document.getElementById("Sm3pct").value);
+	if(p1<0)document.getElementById("Sm1pct").value=0;
+	if(p2<0)document.getElementById("Sm2pct").value=0;
+	if(p3<0)document.getElementById("Sm3pct").value=0;
 	if(p1+p2+p3>100){
 		if(pct==document.getElementById("Sm1pct"))pct.value=100-p2-p3;
 		else if(pct==document.getElementById("Sm2pct"))pct.value=100-p1-p3;
@@ -389,6 +392,10 @@ function isMaxR(pct){
 	var p1=Number(document.getElementById("Nm1pct").value);
 	var p2=Number(document.getElementById("Nm2pct").value);
 	var p3=Number(document.getElementById("Nm3pct").value);
+	if(p1<0)document.getElementById("Nm1pct").value=0;
+	if(p2<0)document.getElementById("Nm2pct").value=0;
+	if(p3<0)document.getElementById("Nm3pct").value=0;
+	
 	if(p1+p2+p3>100){
 		if(pct==document.getElementById("Nm1pct"))pct.value=100-p2-p3;
 		else if(pct==document.getElementById("Nm2pct"))pct.value=100-p1-p3;
@@ -406,6 +413,11 @@ function isMaxN(pct){
 	var p3=Number(document.getElementById("NmSpct").value);
 	var p4=Number(document.getElementById("NmApct").value);
 	var p5=Number(document.getElementById("NmBpct").value);
+	if(p1<0)document.getElementById("NmSSSpct").value=0;
+	if(p2<0)document.getElementById("NmSSpct").value=0;
+	if(p3<0)document.getElementById("NmSpct").value=0;
+	if(p4<0)document.getElementById("NmApct").value=0;
+	if(p5<0)document.getElementById("NmBpct").value=0;
 	if(p1+p2+p3+p4+p5>100){
 		if(pct==document.getElementById("NmSSSpct"))pct.value=100-p1-p2-p3-p4-p5+p1;
 		else if(pct==document.getElementById("NmSSpct"))pct.value=100-p1-p2-p3-p4-p5+p2;
