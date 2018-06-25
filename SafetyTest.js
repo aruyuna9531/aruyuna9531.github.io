@@ -143,7 +143,7 @@ function countTimeC() {
         var now = date.getTime();
 //--------------------fix-------------------
 	var endDate = new Date("2018/6/25 14:00");
-	var opening=true;
+	var opening=false;
 //--------------------fix end---------------
         var end = endDate.getTime();
         var leftTime = end-now; 
