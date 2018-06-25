@@ -109,7 +109,7 @@ function change(){
 	else document.getElementById("nextRank_30").innerHTML=""
 	var HighRisk=0, LittleRisk=1;
 	switch(lastRank){
-		case 10000:HighRisk=18;LittleRisk=25;break;
+		case 10000:HighRisk=14;LittleRisk=23;break;
 		case 30000:HighRisk=25;LittleRisk=40;break;
 		case 50000:HighRisk=50;LittleRisk=75;break;
 	}
