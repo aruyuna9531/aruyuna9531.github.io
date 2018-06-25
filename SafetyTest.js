@@ -4,7 +4,7 @@ function isNull(obj){
 	}
 }
 
-//----------------------------------------日服------------------------------------------
+//----------------------------------------脠脮路镁------------------------------------------
 function LastDayOfCurrentMonth(year,month){
 	switch(month){
 	case 1:
@@ -112,7 +112,7 @@ function fix(){
 	document.getElementById("curRank").value=Number(document.getElementById("nextRank").innerHTML);
 	change();
 }
-//----------------------------国服------------------------------------
+//----------------------------鹿煤路镁------------------------------------
 function serverSwitch(value){
 	if(value==1){
 		document.getElementById("JP").style.display="inline";
@@ -170,7 +170,7 @@ function countTimeC() {
 function changeC(){
 	var lastRank=Number(document.getElementById("borderC").value);
 	var curRank=Number(document.getElementById("curRankC").value);
-	var remainMin=Number(document.getElementById("_dc").innerHTML)*24*60+Number(document.getElementById("_h").innerHTML)*60+Number(document.getElementById("_mc").innerHTML);
+	var remainMin=Number(document.getElementById("_dc").innerHTML)*24*60+Number(document.getElementById("_hc").innerHTML)*60+Number(document.getElementById("_mc").innerHTML);
 	var drop=Math.floor((lastRank-curRank)/remainMin);
 	document.getElementById("nextRankC").innerHTML=curRank+drop-1;
 	if(remainMin>5)document.getElementById("nextRank_5C").innerHTML=curRank+drop*5-10;
