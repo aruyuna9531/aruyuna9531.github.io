@@ -118,6 +118,7 @@ function needlps(){
 	document.getElementById("normalsong").innerHTML = i;
 	document.getElementById("NeedLP").innerHTML = i*Number(document.getElementById("LPUse").value);
 	countres();
+	TimeLimitWarnings();
 }
 
 function EventSongPt(){
@@ -201,6 +202,7 @@ function SmNeedLps(){
 	document.getElementById("SmNeedLP").innerHTML=res*25;
 	document.getElementById("Songs").innerHTML=Math.ceil(res/Number(document.getElementById("smbet").value));
 	countres();
+	TimeLimitWarnings();
 }
 
 //------------------------------------Medley Festival--------------------------------------
@@ -229,6 +231,7 @@ function MfNeedLps(){
 	document.getElementById("MfNeedLP").innerHTML=res*60;
 	document.getElementById("Songs").innerHTML=Math.ceil(res/Number(document.getElementById("mfbet").value));
 	countres();
+	TimeLimitWarnings();
 }
 
 // -----------------------------------Challenge Festival-----------------------------------
@@ -269,6 +272,8 @@ function CfNeedLps(){
 	}
 	document.getElementById("Cfrlp").innerHTML=needLP;
 	document.getElementById("Songs").innerHTML=songs;
+	countres();
+	TimeLimitWarnings();
 	
 }
 function CfEventSongPt(round){
@@ -376,6 +381,7 @@ function OrNeedLps(){
 	document.getElementById("Orrlp").innerHTML=Math.ceil(needlps);
 	document.getElementById("Songs").innerHTML=songCount;
 	countres();
+	TimeLimitWarnings();
 }
 //------------------------------------Nakayoshi Match------------------------------------------
 
@@ -449,6 +455,7 @@ function NmNeedLps(){
 	document.getElementById("NmNeedLP").innerHTML=res*25;
 	document.getElementById("Songs").innerHTML=Math.ceil(res/Number(document.getElementById("nmbet").value));
 	countres();
+	TimeLimitWarnings();
 }
 //------------------------------------------general------------------------------------------
 function countres(){
