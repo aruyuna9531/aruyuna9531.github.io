@@ -93,6 +93,10 @@ function warn(obj){
 	obj.style.color="red";
 	obj.style.fontWeight="Bold";
 }
+function unwarn(obj){
+	obj.style.color="black";
+	obj.style.fontWeight="normal";
+}
 //---------------------------CountTimeLine------------------------------
 function change(){
 	var lastRank=Number(document.getElementById("border").value);
@@ -113,9 +117,18 @@ function change(){
 		case 30000:HighRisk=25;LittleRisk=40;break;
 		case 50000:HighRisk=50;LittleRisk=75;break;
 	}
-	if(drop<=HighRisk)document.getElementById("msg").innerHTML=remainMin>15?"掉档风险极大，建议立即打歌，5首":"掉档风险极大，赶紧打歌，能打几首打几首";
-	else if(drop<=LittleRisk)document.getElementById("msg").innerHTML="掉档风险较大，建议立即打1首歌";
-	else document.getElementById("msg").innerHTML="基本稳。仅供参考，如果1分钟后你的排名在上面安全排名之后，还是建议打歌保档";
+	if(drop<=HighRisk){
+		document.getElementById("msg").innerHTML=remainMin>15?"掉档风险极大，建议立即打歌，5首":"掉档风险极大，赶紧打歌，能打几首打几首";
+		warn(document.getElementById("msg"));
+	}
+	else if(drop<=LittleRisk){
+		document.getElementById("msg").innerHTML="掉档风险较大，建议立即打1首歌";
+		unwarn(document.getElementById("msg"));
+	}
+	else{
+		document.getElementById("msg").innerHTML="基本稳。仅供参考，如果1分钟后你的排名在上面安全排名之后，仍建议打歌保档";
+		unwarn(document.getElementById("msg"));
+	}
 }
 
 function fix(){
@@ -196,9 +209,18 @@ function changeC(){
 		case 6900:HighRisk=8;LittleRisk=11;break;
 		case 11500:HighRisk=12;LittleRisk=16;break;
 	}
-	if(drop<=HighRisk)document.getElementById("msgC").innerHTML=remainMin>15?"掉档风险极大，建议立即打歌，5首":"掉档风险极大，赶紧打歌，能打几首打几首";
-	else if(drop<=LittleRisk)document.getElementById("msgC").innerHTML="掉档风险较大，建议立即打1首歌";
-	else document.getElementById("msgC").innerHTML="基本稳。仅供参考，如果1分钟后你的排名在上面安全排名之后，仍建议打歌保档";
+	if(drop<=HighRisk){
+		document.getElementById("msgC").innerHTML=remainMin>15?"掉档风险极大，建议立即打歌，5首":"掉档风险极大，赶紧打歌，能打几首打几首";
+		warn(document.getElementById("msgC"));
+	}
+	else if(drop<=LittleRisk){
+		document.getElementById("msgC").innerHTML="掉档风险较大，建议立即打1首歌";
+		unwarn(document.getElementById("msgC"));
+	}
+	else{
+		document.getElementById("msgC").innerHTML="基本稳。仅供参考，如果1分钟后你的排名在上面安全排名之后，仍建议打歌保档";
+		unwarn(document.getElementById("msgC"));
+	}
 }
 
 function fixC(){
