@@ -107,6 +107,8 @@ function change(){
 	else document.getElementById("nextRank_10").innerHTML=""
 	if(remainMin>30)document.getElementById("nextRank_30").innerHTML=curRank+drop*30-50;
 	else document.getElementById("nextRank_30").innerHTML=""
+	if(drop-1>=drop*5-10)document.getElementById("msg").innerHTML="掉档风险较大，建议立即打歌";
+	else document.getElementById("msg").innerHTML="仅供参考，如果1分钟后你的排名在上面安全排名之后，建议打歌保档";
 }
 
 function fix(){
@@ -181,6 +183,8 @@ function changeC(){
 	else document.getElementById("nextRank_10C").innerHTML=""
 	if(remainMin>30)document.getElementById("nextRank_30C").innerHTML=curRank+drop*30-50;
 	else document.getElementById("nextRank_30C").innerHTML=""
+	if(drop-1>=drop*5-10)document.getElementById("msgC").innerHTML="掉档风险较大，建议立即打歌";
+	else document.getElementById("msgC").innerHTML="仅供参考，如果1分钟后你的排名在上面安全排名之后，建议打歌保档";
 }
 
 function fixC(){
