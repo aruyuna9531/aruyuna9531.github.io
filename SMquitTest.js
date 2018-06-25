@@ -8,10 +8,10 @@ function count(){
 	if(document.getElementById("robot2").checked==true)robots++;
 	if(document.getElementById("robot3").checked==true)robots++;
 	var arr=Math.round((r1smpt+r2smpt+r3smpt-3*mysmpt)/160);
-	document.getElementById("r1res").innerHTML=plm((arr+getSmpt(mysmpt,1))*((4-robots)/4)>=3?(arr+getSmpt(mysmpt,1))*((4-robots)/4):3);
-	document.getElementById("r2res").innerHTML=plm((arr+getSmpt(mysmpt,2))*((4-robots)/4));
-	document.getElementById("r3res").innerHTML=plm((arr+getSmpt(mysmpt,3))*((4-robots)/4));
-	document.getElementById("r4res").innerHTML=plm((arr+getSmpt(mysmpt,4))*((4-robots)/4));
+	document.getElementById("r1res").innerHTML=plm(Math.round((arr+getSmpt(mysmpt,1))*((4-robots)/4)>=3?(arr+getSmpt(mysmpt,1))*((4-robots)/4):3));
+	document.getElementById("r2res").innerHTML=plm(Math.round((arr+getSmpt(mysmpt,2))*((4-robots)/4)));
+	document.getElementById("r3res").innerHTML=plm(Math.round((arr+getSmpt(mysmpt,3))*((4-robots)/4)));
+	document.getElementById("r4res").innerHTML=plm(Math.round((arr+getSmpt(mysmpt,4))*((4-robots)/4)));
 }
 
 function getSmpt(base, rank){
