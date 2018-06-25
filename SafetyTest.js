@@ -156,11 +156,12 @@ function countTimeC() {
 	else date = new Date();
         var now = date.getTime();
 //--------------------fix-------------------
+	var startDate = new Date("2018/6/15 14:00");
 	var endDate = new Date("2018/6/25 14:00");
-	var opening=false;
 //--------------------fix end---------------
         var end = endDate.getTime();
-        var leftTime = end-now; 
+        var leftTime = end-now;
+	var opening = now-startDate.getTime()>0 && end-now>0;
         var d=0,h=0,m=0,s=0;
 	var preMin=Number(document.getElementById("_mc").innerHTML);
         if (leftTime>0 && opening==true) {
