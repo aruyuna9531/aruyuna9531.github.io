@@ -47,11 +47,19 @@ function EventEnd(date){
 function countTime() {
         var date = new Date(new Date().getTime());
         var now = date.getTime();  
-        var endDate = EventEnd(date);
+        var endDate,opening;
+	if(document.getElementById("server").value=="JP"){
+		endDate=EventEnd(date);
+		opening=EventOpening(date);
+	}
+	else{
+		endDate=new Date("2018/6/25 14:00");
+		opening=true;
+	}
         var end = endDate.getTime();
         var leftTime = end-now; 
         var d=0,h=0,m=0,s=0;  
-        if (leftTime>0 && EventOpening(date)==true) {
+        if (leftTime>0 && opening==true) {
 	d = Math.floor(leftTime/1000/60/60/24);  
         h = Math.floor(leftTime/1000/60/60%24);  
         m = Math.floor(leftTime/1000/60%60);  

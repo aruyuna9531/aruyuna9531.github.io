@@ -3,6 +3,10 @@
  <title>活动算心</title>
 </head>
 <body onload="countTime();needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();eventType()">
+服务器：<select id="server" onchange="countTime();needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps()">
+<option value="JP">日服</option>
+<option value="CN">国服</option>
+</select>
  <p>
 	离活动结束还有：
 	<span id="_d"></span>天
