@@ -182,6 +182,6 @@ function changeC(){
 }
 
 function fixC(){
-	document.getElementById("curRank").value=Number(document.getElementById("nextRank").innerHTML);
+	document.getElementById("curRankC").value=Number(document.getElementById("nextRankC").innerHTML);
 	change();
 }
