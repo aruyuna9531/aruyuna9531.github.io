@@ -1,4 +1,4 @@
-function comboBonus(combo){
+﻿function comboBonus(combo){
 	if(combo<50)return combo;
 	if(combo<100)return 1.1*combo-5;
 	if(combo<200)return 1.15*combo-10;
@@ -110,6 +110,7 @@ function countTime() {
 	document.getElementById("_h").innerHTML = h;
 	document.getElementById("_m").innerHTML = front0(m);
 	document.getElementById("_s").innerHTML = front0(s);
+	if(24*d+h<2)document.getElementById("2hrrem").style.display="inline";
 	if(d<1){
 		warn(_d);
 		if(h<10)
