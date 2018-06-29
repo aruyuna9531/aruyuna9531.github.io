@@ -21,7 +21,10 @@ function detect(curEv,b){
 	var arID=curEv+"Ar";
 	var ar=Number(document.getElementById(arID).innerHTML);
 	var cID=curEv+String(b)+"S";
-	document.getElementById(cID).innerHTML=Math.round(eScore*bc*ar);
+	var difID=curEv+"dif";
+	var dif=Number(document.getElementById(difID).innerHTML);
+	
+	document.getElementById(cID).innerHTML=Math.round(eScore*bc*ar*dif);
 	warn2(cID);
 }
 function warn(obj){
@@ -71,6 +74,8 @@ function e(curEv,b){
 	var arID=curEv+"Ar";
 	var ar=Number(document.getElementById(arID).innerHTML);
 	var cID=curEv+String(b)+"C";
-	document.getElementById(cID).innerHTML=(eScore/bc/ar).toFixed(2);
+	var difID=curEv+"dif";
+	var dif=Number(document.getElementById(difID).innerHTML);
+	document.getElementById(cID).innerHTML=(eScore/bc/ar/dif).toFixed(2);
 	warn(cID);
 }
