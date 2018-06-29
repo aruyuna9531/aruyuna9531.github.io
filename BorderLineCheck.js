@@ -58,8 +58,8 @@ function Ar(curEv){
 	case "Score Match":arrangeSpan.innerHTML=1;break;
 	case "Medley Festival":arrangeSpan.innerHTML=1.1;break;
 	case "Challenge Festival":arrangeSpan.innerHTML=1.1;break;
-	case "¤ªÉ¢ši¥é¥ê©`":arrangeSpan.innerHTML=1.13;break;
-	case "¤Ê¤«¤è¤·¥Ş¥Ã¥Á":arrangeSpan.innerHTML=1.20;break;
+	case "ãŠæ•£æ­©ãƒ©ãƒªãƒ¼":arrangeSpan.innerHTML=1.13;break;
+	case "ãªã‹ã‚ˆã—ãƒãƒƒãƒ":arrangeSpan.innerHTML=1.20;break;
 	default:arrangeSpan.innerHTML=1.13
 	}
 }
