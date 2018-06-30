@@ -53,8 +53,11 @@ function countTime() {
 		opening=EventOpening(date);
 	}
 	else{
-		endDate=new Date("2018/6/25 14:00");
-		opening=true;
+		var CNsta=String(document.getElementById("CNsta").innerHTML);
+		var startDate=new Date(CNsta+" 14:00");
+		var CNend=String(document.getElementById("CNend").innerHTML);
+		endDate=new Date(CNend+" 14:00");
+		opening=(now-startDate.getTime()>0)&&(endDate.getTime()-now);
 	}
         var end = endDate.getTime();
         var leftTime = end-now; 
