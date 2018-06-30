@@ -156,8 +156,8 @@ function countTimeC() {
 	else date = new Date();
         var now = date.getTime();
 //--------------------fix-------------------
-	var startDate = new Date("2018/6/15 14:00");
-	var endDate = new Date("2018/6/25 14:00");
+	var startDate = new Date(String(document.getElementById("CNsta").innerHTML)+" 15:00");
+	var endDate = new Date(String(document.getElementById("CNend").innerHTML)+" 14:00");
 //--------------------fix end---------------
         var end = endDate.getTime();
         var leftTime = end-now;
