@@ -81,7 +81,15 @@ function countTime() {
 				warn(_m);
 				warn(_s);
 			}
+			else{
+			}
 		}
+	}
+	else{
+		unwarn(_d);
+		unwarn(_h);
+		unwarn(_m);
+		unwarn(_s);
 	}
 	needlps();
         setTimeout(countTime,1000);
@@ -93,6 +101,10 @@ function front0(x){
 function warn(obj){
 	obj.style.color="red";
 	obj.style.fontWeight="Bold";
+}
+function unwarn(obj){
+	obj.style.color="black";
+	obj.style.fontWeight="normal";
 }
 //----------------------------------------------------------------LP counter-----------------------------------------------
 function AutomaticRecover(){
