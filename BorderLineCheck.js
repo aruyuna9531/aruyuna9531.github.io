@@ -1,14 +1,16 @@
-function f(ev){
+﻿function f(ev){
 	var curEv=ev;
 	for(var i=curEv-4;i<curEv;i++){
 		BC(i);
 		Ar(i);
+		Dif(i);
 		e(i,1);
 		e(i,2);
 		e(i,3);
 	}
 	BC(curEv);
 	Ar(curEv);
+	Dif(curEv);
 	detect(curEv,1);
 	detect(curEv,2);
 	detect(curEv,3);
@@ -61,7 +63,7 @@ function Ar(curEv){
 	case "Score Match":arrangeSpan.innerHTML=1;break;
 	case "Medley Festival":arrangeSpan.innerHTML=1.1;break;
 	case "Challenge Festival":arrangeSpan.innerHTML=1.1;break;
-	case "お散歩ラリー":arrangeSpan.innerHTML=1.13;break;
+	case "おさんぽラリー":arrangeSpan.innerHTML=1.13;break;
 	case "なかよしマッチ":arrangeSpan.innerHTML=1.20;break;
 	default:arrangeSpan.innerHTML=1.13
 	}
@@ -78,4 +80,49 @@ function e(curEv,b){
 	var dif=Number(document.getElementById(difID).innerHTML);
 	document.getElementById(cID).innerHTML=(eScore/bc/ar/dif).toFixed(2);
 	warn(cID);
+}
+//-------------------------%--------------------------------
+function Dif(curEv){
+	var enID=curEv+"EN";
+	var EventName=String(document.getElementById(enID).innerHTML);
+	var pct=0,eventSong=0,oneRound=1,maxSongs=1,allSongs=1,fcDif=1;
+	switch(EventName){
+	case "Score Match":
+		pct=1;break;
+	case "Medley Festival":
+		eventSong=150;
+		oneRound=3;
+		maxSongs=2;
+		allSongs=15;		//56/11*3--song can be refresh
+		fcDif=0.9;
+		break;
+	case "Challenge Festival":
+		eventSong=300;
+		oneRound=5;
+		maxSongs=3;
+		allSongs=8;
+		break;
+	case "おさんぽラリー":
+		eventSong=150;
+		oneRound=1;
+		maxSongs=1.6;
+		allSongs=7;
+		break;
+	case "なかよしマッチ":
+		eventSong=220;
+		oneRound=1;
+		maxSongs=3;
+		allSongs=36;
+		fcDif=0.95;
+		break;
+	default:
+		eventSong=54;
+		oneRound=1;
+		maxSongs=1;
+		allSongs=1;
+		break;
+	}
+	pct=1-1/(eventSong/oneRound*maxSongs/allSongs*fcDif);
+	var difID=curEv+"dif";
+	document.getElementById(difID).innerHTML=pct.toFixed(3);
 }
