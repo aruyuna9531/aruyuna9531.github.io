@@ -85,7 +85,9 @@ function e(curEv,b){
 function Dif(curEv){
 	var enID=curEv+"EN";
 	var EventName=String(document.getElementById(enID).innerHTML);
-	var pct=0,eventSong=0,oneRound=1,maxSongs=1,allSongs=1,fcDif=1;
+	var hnID=curEv+"HN";
+	var maxSongs=Number(document.getElementById(hnID).innerHTML);
+	var pct=0,eventSong=0,oneRound=1,allSongs=1,fcDif=1;
 	switch(EventName){
 	case "Score Match":
 		pct=1;break;
