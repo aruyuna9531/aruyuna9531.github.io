@@ -57,7 +57,7 @@ function countTime() {
 		var startDate=new Date(CNsta+" 14:00");
 		var CNend=String(document.getElementById("CNend").innerHTML);
 		endDate=new Date(CNend+" 14:00");
-		opening=(now-startDate.getTime()>0)&&(endDate.getTime()-now);
+		opening=(now-startDate.getTime()>0)&&(endDate.getTime()-now>0);
 	}
         var end = endDate.getTime();
         var leftTime = end-now; 
