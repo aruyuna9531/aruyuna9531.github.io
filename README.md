@@ -22,4 +22,4 @@
 
 ———————————————————————————————————
 
-有什么想要的功能、意见或建议、bug反馈等可联系(982033268@qq.com) （[LLhelper](http://llhelper.com)原本有完整功能的别喊我加hhhhh）
+有什么想要的功能、意见或建议、bug反馈等可联系[982033268@qq.com] （[LLhelper](http://llhelper.com)原本有完整功能的别喊我加hhhhh）
