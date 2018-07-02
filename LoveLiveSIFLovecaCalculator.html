@@ -107,6 +107,12 @@ id="newmaster"></span>心<br>
 	<option value="yes">抽</option>
 	<option value="no">不抽</option>
 	</select><br>
+	临时补充：沼津感谢祭Step Up，抽心数目：<select id="NumazuKanshasai" onchange="MuseMemberGachaMax()">
+	<option value="0">0</option>
+	<option value="30">30</option>
+	<option value="70">70</option>
+	<option value="120">120</option>
+	</select><br>
 	计算结果（可以抽BOX内卡片数目）：<strong><font color="red"><span id="MuseMemberResult"></span></font></strong><br>
 	能获得<input id="NeedCard" type="number" value="0" onchange="MuseMemberGachaMax()"/>张BOX生日卡概率：<span id="card1"></span><br>
 	 ↑以上概率的前提是抽到生日卡即重置，剩一张普U还想抽出来的不在此范围内
