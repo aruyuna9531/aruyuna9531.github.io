@@ -56,7 +56,7 @@ function countTime() {
 		var CNsta=String(document.getElementById("CNsta").innerHTML);
 		var startDate=new Date(CNsta+" 14:00");
 		var CNend=String(document.getElementById("CNend").innerHTML);
-		var endDate=new Date(CNend+" 14:00");
+		endDate=new Date(CNend+" 14:00");
 		opening=(now-startDate.getTime()>0)&&(endDate.getTime()-now>0);
 	}
         var end = endDate.getTime();
@@ -81,7 +81,15 @@ function countTime() {
 				warn(_m);
 				warn(_s);
 			}
+			else{
+			}
 		}
+	}
+	else{
+		unwarn(_d);
+		unwarn(_h);
+		unwarn(_m);
+		unwarn(_s);
 	}
 	needlps();
         setTimeout(countTime,1000);
@@ -93,6 +101,10 @@ function front0(x){
 function warn(obj){
 	obj.style.color="red";
 	obj.style.fontWeight="Bold";
+}
+function unwarn(obj){
+	obj.style.color="black";
+	obj.style.fontWeight="normal";
 }
 //----------------------------------------------------------------LP counter-----------------------------------------------
 function AutomaticRecover(){

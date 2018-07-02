@@ -19,3 +19,7 @@
 [SIF score match 跳车观测仪](https://aruyuna9531.github.io/SMquitTest.html)
 
 面向最后一天，想通过秒退保smpt的同学们的参考器（输入数字一定要快，否则局开了我不负责hhhh或者你可以人齐了先切到后台算完再决定打不打，sm结算允许的等待时间是30秒）
+
+———————————————————————————————————
+
+有什么想要的功能、意见或建议、bug反馈等可联系[982033268@qq.com] （[LLhelper](http://llhelper.com)原本有完整功能的别喊我加hhhhh）
