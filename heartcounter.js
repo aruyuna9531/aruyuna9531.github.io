@@ -59,10 +59,11 @@ function EventEnd(date){
 function countTime() {
         var date = new Date(new Date().getTime());
         var now = date.getTime();  
-        var endDate,opening;
+        var endDate,opening,waiting,len=0;
 	if(document.getElementById("server").value=="JP"){
 		endDate=EventEnd(date);
 		opening=EventOpening(date);
+		waiting=EventWaiting(date);
 	}
 	else{
 		var CNsta=String(document.getElementById("CNsta").innerHTML);
@@ -70,6 +71,7 @@ function countTime() {
 		var CNend=String(document.getElementById("CNend").innerHTML);
 		endDate=new Date(CNend+" 14:00");
 		opening=(now-startDate.getTime()>0)&&(endDate.getTime()-now>0);
+		waiting=startDate.getTime()-now>0 && startDate.getTime()-now<86400000?3:0;
 	}
         var end = endDate.getTime();
         var leftTime = end-now; 
@@ -80,9 +82,13 @@ function countTime() {
         m = Math.floor(leftTime/1000/60%60);  
         s = Math.floor(leftTime/1000%60);                     
         }
-	else switch(EventWaiting(date)){
+	else switch(waiting){
 		case 1:d=9;h=23;break;
 		case 2:d=LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1)-21;h=23;break;
+		case 3:
+			d = Math.floor(leftTime/1000/60/60/24);  
+        		h = Math.floor(leftTime/1000/60/60%24);
+			break;
 		default:break;
 	}
         document.getElementById("_d").innerHTML = d;
