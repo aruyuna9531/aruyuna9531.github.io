@@ -1,6 +1,6 @@
 ﻿function f(ev){
 	var curEv=ev;
-	for(var i=curEv-5;i<curEv;i++){
+	for(var i=118;i<curEv;i++){
 		BC(i);
 		Ar(i);
 		Dif(i);
