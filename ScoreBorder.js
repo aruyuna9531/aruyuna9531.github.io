@@ -76,6 +76,19 @@ function EventOpening(date){
 	return true;
 }
 
+
+function EventWaiting(date){
+	if(date.getDate()==4)
+		if(date.getHours()>=14)return 1;
+	if(date.getDate()==5)
+		if(date.getHours()<15)return 1;
+	if(date.getDate()==19)
+		if(date.getHours()>=14)return 2;
+	if(date.getDate()==20)
+		if(date.getHours()<15)return 2;
+	return 0;
+}
+
 function EventEnd(date){
 	if(date.getDate()==5 && date.getHours()>=15 || 
 	date.getDate()>5 && date.getDate()<20 || 
@@ -106,6 +119,11 @@ function countTime() {
         m = Math.floor(leftTime/1000/60%60);  
         s = Math.floor(leftTime/1000%60);                     
         }
+	else switch(EventWaiting(date)){
+		case 1:d=9;h=23;break;
+		case 2:d=LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1)-21;h=23;break;
+		default:break;
+	}
         document.getElementById("_d").innerHTML = d;
 	document.getElementById("_h").innerHTML = h;
 	document.getElementById("_m").innerHTML = front0(m);
