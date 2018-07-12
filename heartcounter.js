@@ -498,8 +498,8 @@ function NmNeedLps(){
 	case "C":cBets=1.02;break;
 	case "D":cBets=1.00;break;
 	}
-	var pBets=p1*1.45+p2*1.35+p3*1.25+p4*1.15+p5*1.1*p6*1.05;
-	var rBets=r1*1.08+p2*1.05+p3*1.02+p4;
+	var pBets=p1*1.45+p2*1.35+p3*1.25+p4*1.15+p5*1.1+p6*1.05;
+	var rBets=r1*1.08+r2*1.05+r3*1.02+r4;
 	var needPts = Number(document.getElementById("aim").value)-Number(document.getElementById("cur").value);
 	var res=Math.ceil(needPts/Math.round(301*sBets*cBets*pBets*rBets));
 	document.getElementById("NmNeedLP").innerHTML=res*25;
