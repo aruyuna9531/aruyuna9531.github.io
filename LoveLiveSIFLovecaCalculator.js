@@ -233,8 +233,8 @@ function TicketEventget(strategy){
 	{
 	case "third": document.getElementById("eventTicketSum").innerHTML = events*0; break;
 	case "second": document.getElementById("eventTicketSum").innerHTML = events*1; break;
-	case "first": document.getElementById("eventTicketSum").innerHTML = events*3; break;
-	case "shisanwan": document.getElementById("eventTicketSum").innerHTML = events*4; break;
+	case "shisanwan": document.getElementById("eventTicketSum").innerHTML = events*3; break;
+	case "first": document.getElementById("eventTicketSum").innerHTML = events*4; break;
 	default: document.getElementById("eventTicketSum").innerHTML = 0; break;
 	}
 }
