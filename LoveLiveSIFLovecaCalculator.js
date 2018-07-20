@@ -278,8 +278,8 @@ function AqoursBirthGacha(strategy){
 function MuseMemberGachaMax(){
 	var this80=0;
 	if(document.getElementById("this80").value=="yes")this80=1;
-	var tmp=document.getElementById("NumazuKanshasai").value;
-	var Loveca = Number(document.getElementById("totalloveca").innerHTML)-80*this80-(tmp==null?0:Number(tmp));
+	var tmp=document.getElementById("NumazuKanshasai");
+	var Loveca = Number(document.getElementById("totalloveca").innerHTML)-80*this80-(tmp==null?0:Number(tmp.value));
 	var Ticket = Number(document.getElementById("totalTicket").innerHTML);
 	var Chain_11 = Math.floor(Loveca/50);
 	var single = Math.floor((Loveca-Chain_11*50)/5);
