@@ -31,21 +31,21 @@
 	<option value="C">C</option>
 	<option value="D">D</option>
 	</select><br>
-	目标pt：<input id="aim" type="number" value="190000" onchange="isNull(this);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps()"><br>
+	目标pt：<input id="aim" type="number" value="40000" onchange="isNull(this);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps()"><br>
 	目前pt：<input id="cur" type="number" value="0" onchange="isNull(this);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps()"><br>
 	<br>
 	当前活动类型:<select id="CurrentEvent" onchange="eventType();needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps()">
-	<option value="ic">传统</option>
+	<option value="ic" selected="selected">传统</option>
 	<option value="sm">SM</option>
 	<option value="mf">MF</option>
 	<option value="cf">CF</option>
 	<option value="sr">散步</option>
-	<option value="nm" selected="selected">协力</option>
+	<option value="nm">协力</option>
 	</select><br>
   </p>
 <!--					传统活动				-->
 	<span id="IconCol" style="display:none">
-	普通曲消费LP：<input id="LPUse" type="number" value="80" onchange="isNull(this);needlps();">
+	普通曲消费LP：<input id="LPUse" type="number" value="100" onchange="isNull(this);needlps();">
 	每首歌攒道具数：<input id="IconGet" type="number" value="108" onchange="isNull(this);needlps();">
  	</p>
  	<p>
