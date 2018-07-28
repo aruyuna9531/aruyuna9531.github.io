@@ -503,7 +503,8 @@ function NmNeedLps(){
 	var needPts = Number(document.getElementById("aim").value)-Number(document.getElementById("cur").value);
 	var res=Math.ceil(needPts/Math.round(301*sBets*cBets*pBets*rBets));
 	document.getElementById("NmNeedLP").innerHTML=res*25;
-	document.getElementById("Songs").innerHTML=Math.ceil(res/Number(document.getElementById("nmbet").value));
+	var songplay=Math.ceil(res/Number(document.getElementById("nmbet").value));
+	document.getElementById("Songs").innerHTML=songplay>0?songplay:0;
 	countres();
 	TimeLimitWarnings();
 }
@@ -549,4 +550,77 @@ function TimeLimitWarnings(){
 	if(remainTime-songs*2.5>12)document.getElementById("TimeLimitWarning").innerHTML="";
 	else if(remainTime-songs*2.5>0)document.getElementById("TimeLimitWarning").innerHTML="达到目标pt所需时间可能不够，请抓紧时间";
 	else document.getElementById("TimeLimitWarning").innerHTML="已经没有时间足以达到该pt，请调整目标pt或多倍策略";
+}
+function ptBonus(){
+	var loveca_checkpoint=[500, 2500, 5000, 11000, 20000, 32500, 47500, 62500, 80000, 110000, 160000]
+	var loveca_checkpoint_makaron=[200, 1200, 2250, 5000, 9000, 14000, 20000, 26500, 36000, 42500, 65000]
+	var SR_checkpoint=[25000, 60000, 100000]
+	var SR_checkpoint_makaron=[11000, 25000, 40000]
+	var ticket_checkpoint=[80000, 130000]
+	var ticket_checkpoint_makaron=[34000, 50000]
+	var sugar_checkpoint=[3500, 8000, 15000, 52500, 72500]
+	var sugar_checkpoint_makaron=[1600, 3500, 7000, 22000, 33000]
+	var eventType=document.getElementById("CurrentEvent").value;
+	if(eventType=="ic")ptBonusShow(loveca_checkpoint_makaron, SR_checkpoint_makaron, ticket_checkpoint_makaron, sugar_checkpoint_makaron);
+	else ptBonusShow(loveca_checkpoint, SR_checkpoint, ticket_checkpoint, sugar_checkpoint);
+}
+function ptBonusShow(lovecaArr, srArr, ticketArr, sugarArr){
+	var start=Number(document.getElementById("cur").value);
+	var end=Number(document.getElementById("aim").value);
+	var loveca=0,sr=0,ticket=0,sugar=0;
+	var point_slow=0, point_fast=0;
+	//loveca
+	while(point_fast<11 && lovecaArr[point_fast]<=end){
+		if(point_fast<5)loveca++;
+		else if(point_fast<9)loveca+=2;
+		else if(point_fast==9)loveca+=3;
+		else loveca+=4;
+		point_fast++;
+	}
+	while(point_slow<11 && lovecaArr[point_slow]<start){
+		if(point_slow<5)loveca--;
+		else if(point_slow<9)loveca-=2;
+		else if(point_slow==9)loveca-=3;
+		else loveca-=4;
+		point_slow++;
+	}
+	//SR
+	point_fast=0;
+	point_slow=0;
+	while(point_fast<3 && srArr[point_fast]<=end){
+		sr++;
+		point_fast++;
+	}
+	while(point_slow<3 && srArr[point_slow]<start){
+		sr--;
+		point_slow++;
+	}
+	//ticket
+	point_fast=0;
+	point_slow=0;
+	while(point_fast<2 && ticketArr[point_fast]<=end){
+		ticket++;
+		point_fast++;
+	}
+	while(point_slow<2 && ticketArr[point_slow]<start){
+		ticket--;
+		point_slow++;
+	}
+	//sugar
+	point_fast=0;
+	point_slow=0;
+	while(point_fast<5 && sugarArr[point_fast]<=end){
+		if(point_fast<4)sugar++;
+		else sugar+=2;
+		point_fast++;
+	}
+	while(point_slow<5 && sugarArr[point_slow]<start){
+		if(point_slow<4)sugar--;
+		else sugar-=2;
+		point_slow++;
+	}
+	document.getElementById("getLoveca").innerHTML=loveca>0?loveca:0;
+	document.getElementById("getSR").innerHTML=sr>0?sr:0;
+	document.getElementById("getTicket").innerHTML=ticket>0?ticket:0;
+	document.getElementById("getSugar").innerHTML=sugar>0?sugar:0;
 }
