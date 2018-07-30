@@ -30,9 +30,9 @@ function print(){
 	document.getElementById("First").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S1);
 	document.getElementById("Second").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S2);
 	document.getElementById("Third").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S3);
-	document.getElementById("Tea1").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*(S1+TeaTimeSpot/8))+2000;
-	document.getElementById("Tea2").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*(S2+TeaTimeSpot/9))+1500;
-	document.getElementById("Tea3").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*(S3+TeaTimeSpot/10))+1000;
+	document.getElementById("Tea1").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*(S1+TeaTimeSpot/2))+2000;
+	document.getElementById("Tea2").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*(S2+TeaTimeSpot/3))+1500;
+	document.getElementById("Tea3").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*(S3+TeaTimeSpot/4))+1000;
 	document.getElementById("B1c").innerHTML=isPos(Math.round(arrangeBits(EType)*comboBonus(maxC)*C1));
 	document.getElementById("B2c").innerHTML=isPos(Math.round(arrangeBits(EType)*comboBonus(maxC)*C2));
 	document.getElementById("B3c").innerHTML=isPos(Math.round(arrangeBits(EType)*comboBonus(maxC)*C3));
