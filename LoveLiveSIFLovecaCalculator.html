@@ -4,11 +4,47 @@
 </head>
 <body onload="printToday()">
  <p>现在（东京时间）：<span id="today"></span></p>
- <p id="birthdayProcessing" style="display:none"><span id="processingMember"></span>的生日单人劝诱进行中！</p>
+ <strong>
+ <p id="birthdayProcessing_Honoka" style="display:none">高坂穗乃果的生日单人劝诱进行中（8.2~8.4）！
+	<input id="HonokaStepUpAc" type="checkbox" value="μ's">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Eli" style="display:none">绚濑绘里的生日单人劝诱进行中（10.20~10.22）！
+	<input id="EliStepUpAc" type="checkbox" value="μ's">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Kotori" style="display:none">南小鸟的生日单人劝诱进行中（9.11~9.13）！
+	<input id="KotoriStepUpAc" type="checkbox" value="μ's">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Umi" style="display:none">园田海未的生日单人劝诱进行中（3.14~3.16）！
+	<input id="UmiStepUpAc" type="checkbox" value="μ's">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Rin" style="display:none">星空凛的生日单人劝诱进行中（10.31~11.2）！
+	<input id="RinStepUpAc" type="checkbox" value="μ's">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Maki" style="display:none">西木野真姬的生日单人劝诱进行中（4.18~4.20）！
+	<input id="MakiStepUpAc" type="checkbox" value="μ's">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Nozomi" style="display:none">东条希的生日单人劝诱进行中（6.8~6.10）！
+	<input id="NozomiStepUpAc" type="checkbox" value="μ's">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Hanayo" style="display:none">小泉花阳的生日单人劝诱进行中（1.16~1.18）！
+	<input id="HanayoStepUpAc" type="checkbox" value="μ's">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Nico" style="display:none">矢泽妮可的生日单人劝诱进行中（7.21~7.23）！
+	<input id="NicoStepUpAc" type="checkbox" value="μ's">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Chika" style="display:none">高海千歌的生日单人劝诱进行中（7.31~8.2）！
+	<input id="ChikaStepUpAc" type="checkbox" value="Aqours">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Riko" style="display:none">樱内梨子的生日单人劝诱进行中（9.18~9.20）！
+	<input id="RikoStepUpAc" type="checkbox" value="Aqours">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Kanan" style="display:none">松浦果南的生日单人劝诱进行中（2.9~2.11）！
+	<input id="KananStepUpAc" type="checkbox" value="Aqours">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Dia" style="display:none">黑泽黛雅的生日单人劝诱进行中（12.31~1.2）！
+	<input id="DiaStepUpAc" type="checkbox" value="Aqours">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_You" style="display:none">渡边曜的生日单人劝诱进行中（4.16~4.18）！
+	<input id="YouStepUpAc" type="checkbox" value="Aqours">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Yoshiko" style="display:none">津岛善子的生日单人劝诱进行中（7.12~7.14）！
+	<input id="YoshikoStepUpAc" type="checkbox" value="Aqours">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Hanamaru" style="display:none">国木田花丸的生日单人劝诱进行中（3.3~3.5）！
+	<input id="HanamaruStepUpAc" type="checkbox" value="Aqours">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Mari" style="display:none">小原鞠莉的生日单人劝诱进行中（6.12~6.14）！
+	<input id="MariStepUpAc" type="checkbox" value="Aqours">已抽过Step Up卡池<br></p>
+ <p id="birthdayProcessing_Ruby" style="display:none">黑泽露比的生日单人劝诱进行中（9.20~9.22）！
+	<input id="RubyStepUpAc" type="checkbox" value="Aqours">已抽过Step Up卡池<br></p>
+ </strong>
  <p>前排提示：1.能打的新EX，新MA先都打了，否则计算会有偏差<br>
 	2.目前水团只有Step Up抽卡，因此<del>超过120的可以不攒了留着过年</del>最后抽卡计数的结果只计算μ's成员的，敬请原谅<br>
-	3.<del>目前<strong>iOS系统出现只有绚濑绘里能输出正常结果的问题</strong>，不知道怎么解#(滑稽)#(心碎)请iOS用户在PC端使用这玩意，或者借台安卓机也可以</del>已解（2018.5.9）<br>
-	4.如果今天正好是某人的生日那么预测可获得心数会出现负数的情况，由于边界值引起，但懒得改了，反正本次也攒不起心了。等到第2天该成员来到明年的年份后会恢复正常。<br>
+	3.如果今天正好是某人的生日那么预测可获得心数会出现负数的情况，由于边界值引起，但懒得改了，反正本次也攒不起心了。等到第2天该成员来到明年的年份后会恢复正常。<br>
 	5.生日单人限定开始时间为该成员(A)生日前一天，而“其他成员生日策略”处记录的为截止该成员生日为止还未到生日的总人数。
 	  若今天是某成员(B)生日前一天，那么玩家有可能已经抽了B的生日单人限定，而此时B没有被排除在“其他成员生日策略”的名单之外，因此算心时把B算了进去。
 	  因此，如果你属于这种情况，请自行补上抽掉的心数，或者过一天再来算。<br>
@@ -49,7 +85,6 @@ id="newexpert"></span>心<br>
 id="newmaster"></span>心<br>
 	登录日历：<span id="loginCalendar"></span><br>
 	活动攒心（不计现在进行中的和生日所在当期活动）：<select id="eventset" onchange="eventCount(value);total();sum();MuseMemberGachaMax()">
-	<option value="blank">选择活动策略</option>
 	<option value="normal">平刷</option>
 	<option value="pt11w">十一万pt</option>
 	<option value="pt13w">十三万pt</option>
@@ -76,7 +111,6 @@ id="newmaster"></span>心<br>
 	可选：攒券<br>
 	现有单抽券数：<input id="currentTicket" type="number" value="0" onchange="totalTicketSum();MuseMemberGachaMax()"/> <br>
 	活动攒券：<select id="eventTicket" onchange="TicketEventget(value);TicketEventBonus();totalTicketSum();MuseMemberGachaMax()">
-	<option value="blank">选择活动策略</option>
 	<option value="third">三档</option>
 	<option value="second">二档</option>
 	<option value="first">一档</option>

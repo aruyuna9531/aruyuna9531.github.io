@@ -50,9 +50,7 @@ function datecompare(d1, d2){
 	else return false;
 }
 function otherbirth(value){
-	var names = ["dia", "hanayo", "kanan", "hanamaru", "umi", "you", "maki", "nozomi", "mari", "yoshiko", "nico", "chika", "honoka", "kotori", "riko", "ruby", 
-
-"eli", "rin"];
+	var names = ["dia", "hanayo", "kanan", "hanamaru", "umi", "you", "maki", "nozomi", "mari", "yoshiko", "nico", "chika", "honoka", "kotori", "riko", "ruby", "eli", "rin"];
 	
 	var now = daystobirth(value,false);
 	var endDate = TokyoTime();
@@ -187,6 +185,7 @@ function predictloginbonus(){
 function printToday(){
 	var date=TokyoTime();
 	document.getElementById("today").innerHTML = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+front0(date.getMinutes())+":"+front0(date.getSeconds());
+	birthdayInProcess();
 	setTimeout(printToday,1000);
 }
 function front0(ms){
@@ -303,4 +302,54 @@ function otherBirth(){
 	var monthNow = TokyoTime();
 	document.getElementById("months").innerHTML=monthEnd.getMonth()-monthNow.getMonth();
 	document.getElementById("randomPack").innerHTML=Math.round((monthEnd.getMonth()-monthNow.getMonth())/2);
+}
+
+
+function birthdayInProcess(){
+	var currentMonth = TokyoTime().getMonth()+1;
+	var currentDay = TokyoTime().getDate();
+	var dayShift=0;
+	if(currentMonth>1)dayShift+=31;
+	if(currentMonth>2)dayShift+=28;
+	if(currentMonth>3)dayShift+=31;
+	if(currentMonth>4)dayShift+=30;
+	if(currentMonth>5)dayShift+=31;
+	if(currentMonth>6)dayShift+=30;
+	if(currentMonth>7)dayShift+=31;
+	if(currentMonth>8)dayShift+=31;
+	if(currentMonth>9)dayShift+=30;
+	if(currentMonth>10)dayShift+=31;
+	if(currentMonth>11)dayShift+=30;
+	dayShift+=currentDay;
+
+	if(dayShift==365 || dayShift<=2)showMsg("Dia", 1);
+	else showMsg("Dia", 2);
+	dateCond(dayShift, 16, "Hanayo");
+	dateCond(dayShift, 40, "Kanan");
+	dateCond(dayShift, 62, "Hanamaru");
+	dateCond(dayShift, 73, "Umi");
+	dateCond(dayShift, 106, "You");
+	dateCond(dayShift, 108, "Maki");
+	dateCond(dayShift, 159, "Nozomi");
+	dateCond(dayShift, 163, "Mari");
+	dateCond(dayShift, 193, "Yoshiko");
+	dateCond(dayShift, 202, "Nico");
+	dateCond(dayShift, 212, "Chika");
+	dateCond(dayShift, 214, "Honoka");
+	dateCond(dayShift, 254, "Kotori");
+	dateCond(dayShift, 261, "Riko");
+	dateCond(dayShift, 293, "Eli");
+	dateCond(dayShift, 304, "Rin");
+}
+
+function dateCond(dayShift, start, character){
+	if(dayShift>=start && dayShift<=start+2)showMsg(character, 1);
+	else showMsg(character, 2);
+}
+
+function showMsg(character, showOrHide){
+	var str = "birthdayProcessing_"+character;
+	var show = "none"
+	if(showOrHide==1)show = "inline"
+	document.getElementById(str).style.display=show;
 }
