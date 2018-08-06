@@ -138,7 +138,8 @@ function AutomaticRecover(){
 	var LP50pcRec=Number(document.getElementById("LP50pc").value)*Number(document.getElementById("LPMax").value)*0.5;
 	var LP100pcRec=Number(document.getElementById("LP100pc").value)*Number(document.getElementById("LPMax").value);
 	var nowLP=Number(document.getElementById("lp").value);
-	document.getElementById("LPs").innerHTML=AutoRec+LvUpRec+LP50Rec+LP50pcRec+LP100pcRec+nowLP;
+	var ptBonusSugar=(document.getElementsByName("useTheseSugars")[0].checked)?(Number(document.getElementById("getSugar").innerHTML)*50):0;
+	document.getElementById("LPs").innerHTML=AutoRec+LvUpRec+LP50Rec+LP50pcRec+LP100pcRec+nowLP+ptBonusSugar;
 	countres();
 }
 
@@ -364,7 +365,6 @@ function OrNeedLps(){
 	case "9":
 	case "Epilogue":
 	}
-	console.log(getPt);
 	//normalsong
 	var sBets = 0.0;
 	var cBets = 0.0;

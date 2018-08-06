@@ -31,7 +31,7 @@
 	<option value="C">C</option>
 	<option value="D">D</option>
 	</select><br>
-	目标pt：<input id="aim" type="number" value="40000" onchange="isNull(this);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();ptBonus()"><br>
+	目标pt：<input id="aim" type="number" value="160000" onchange="isNull(this);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();ptBonus()"><br>
 	目前pt：<input id="cur" type="number" value="0" onchange="isNull(this);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();ptBonus()"><br>
 	<br>
 	当前活动类型:<select id="CurrentEvent" onchange="eventType();needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();ptBonus()">
@@ -138,7 +138,7 @@
 	<p id="notAvailable" style="display:none">该活动还没写好，咕咕咕</p>
  <p>
 	现有LP：<input id="lp" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
-	当前LP上限：<input id="LPMax" type="number" value="150" onchange="isNull(this);AutomaticRecover()"><br>
+	当前LP上限：<input id="LPMax" type="number" value="181" onchange="isNull(this);AutomaticRecover()"><br>
 	预计能升几级（活动内）：<input id="LvUp" type="number" value="2" onchange="isNull(this);AutomaticRecover()"><br>
 	吃50糖：<input id="LP50" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
 	吃50%罐头：<input id="LP50pc" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
@@ -149,7 +149,7 @@
 	预计吃心：<span id="auto"></span><br>
 	 打歌数：<span id="Songs"></span><br>
 	 <span id="TimeLimitWarning"></span><br>
-	可获得pt达成奖励：<span id="getLoveca">0</span>心，<span id="getSR">0</span>活动SR，<span id="getTicket">0</span>单抽券，<span id="getSugar">0</span>*50LP糖<br>
+	可获得pt达成奖励：<span id="getLoveca">0</span>心，<span id="getSR">0</span>活动SR，<span id="getTicket">0</span>单抽券，<span id="getSugar">0</span>*50LP糖<input name="useTheseSugars" type="checkbox" onchange="AutomaticRecover()">使用这些pt奖励获得的糖<br>
  </p>
  <p>
 	Author: aruyuna~ at 2018.04.21 <br>
