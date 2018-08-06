@@ -525,6 +525,8 @@ function countres(){
 	var lpmax  = Number(document.getElementById("LPMax").value);
 	var res = Math.ceil((needlp-recovlp)/lpmax);
 	document.getElementById("auto").innerHTML=res>0?res:0;
+	if(res==1)document.getElementById("Loveca1Warning").style.display="inline";
+	else document.getElementById("Loveca1Warning").style.display="none";
 }
 function eventType(){
 	var a = document.getElementById("CurrentEvent").value;
