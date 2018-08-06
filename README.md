@@ -27,3 +27,38 @@ LLhelper很多区没有推出4倍计算或者没考虑其他因素（LP回复道
 ———————————————————————————————————
 
 有什么想要的功能、意见或建议、bug反馈等可联系[982033268@qq.com] （[LLhelper](http://llhelper.com)原本有完整功能的别喊我加hhhhh）
+
+关于我：
+
+[bilibili主页](https://space.bilibili.com/5054198/)
+
+推广：
+
+[SIF master谱面 1速FC手元（大部分无判其余无判补档中（咕））合集](https://www.bilibili.com/video/av6349260)
+
+【挑几个重点推荐的P（位置可能会变，如果错位了就在后面找找（：
+
+[无滑暴力代表 COLORFUL VOICE](https://www.bilibili.com/video/av6349260/?p=65)
+
+[通常曲高物量代表 Super LOVE=Super LIVE!](https://www.bilibili.com/video/av6349260/?p=95)
+
+[日替王者代表 Beat in Angel](https://www.bilibili.com/video/av6349260/?p=103)
+
+[一日限定绝版谱面代表 soldier game](https://www.bilibili.com/video/av6349260/?p=98)
+（为什么说绝版可以在[这里](https://zh.moegirl.org/Soldier_game)的Master难度解说找到，然后注意一下该曲新配信日期，以及那一P的第一条弹幕的日期。当然点开视频看第246个note的位置是最有力证明）
+
+】
+
+[SIF Expert随机谱面 1速无判FC手元合集（仅含①10星且570物量以上以及②11星谱面，还有部分10星AP）](https://www.bilibili.com/video/av13786181)
+
+【重点推荐：
+
+[12连双押 勇気のReason](https://www.bilibili.com/video/av13786181/?p=8)
+
+[19连双押 ずるいよMagnetic today](https://www.bilibili.com/video/av13786181/?p=11)
+
+为啥推荐这俩不用我多说吧
+
+】
+
+[BanG Dream! Girls Band Party Level 27以上谱面FC手元合集](https://www.bilibili.com/video/av20806147)
