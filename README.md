@@ -45,7 +45,9 @@ LLhelper很多区没有推出4倍计算或者没考虑其他因素（LP回复道
 [日替王者代表 Beat in Angel](https://www.bilibili.com/video/av6349260/?p=103)
 
 [一日限定绝版谱面代表 soldier game](https://www.bilibili.com/video/av6349260/?p=98)
-（为什么说绝版可以在[这里](https://zh.moegirl.org/Soldier_game)的Master难度解说找到，然后注意一下该曲新配信日期，以及那一P的第一条弹幕的日期。当然点开视频看第246个note的位置是最有力证明）
+（为什么说绝版可以在[这里](https://zh.moegirl.org/Soldier_game)的Master难度解说找到，然后注意一下该曲新配信日期，以及那一P的第一条弹幕的日期。当然点开视频看第246个note的位置是最有力证明。
+
+原投稿在[这里](https://www.bilibili.com/video/av10763908)）
 
 】
 
