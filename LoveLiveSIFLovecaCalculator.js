@@ -1,4 +1,4 @@
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª»ñÈ¡¶«¾©Ê±¼ä¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”è·å–ä¸œäº¬æ—¶é—´â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function TokyoTime(){
 	var d=new Date();
 	var localTime = d.getTime(); 
@@ -10,7 +10,7 @@ function TokyoTime(){
 	var nd = new Date(gtm); 
 	return nd;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªµÇÂ½ÈÕÀú½±Àø£¨Ã¿µ½5µÄ±¶ÊıÈÕÄÜ»ñµÃ2ĞÄ£©¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”ç™»é™†æ—¥å†å¥–åŠ±ï¼ˆæ¯åˆ°5çš„å€æ•°æ—¥èƒ½è·å¾—2å¿ƒï¼‰â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function calendar(){
 	var date = TokyoTime();
 	var endDate = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/"));
@@ -36,7 +36,7 @@ function calendar(){
 	}
 	document.getElementById("loginCalendar").innerHTML = monthminus * 12 + daycounter * 2;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªÃ¿ÈÕ1ĞÄ½±Àø¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”æ¯æ—¥1å¿ƒå¥–åŠ±â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function dailyloveca(){
 	var currentDate = TokyoTime();
 	var endDate = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/"));
@@ -46,14 +46,14 @@ function dailyloveca(){
 	var leftDays = Math.floor(left/1000/60/60/24);
 	document.getElementById("daily").innerHTML = leftDays;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª±È½ÏÁ½¸öÈÕÆÚ£¨d1ÔÚd2Ö®ºó·µ»Øtrue£¬·ñÔò·µ»Øfalse£©¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”æ¯”è¾ƒä¸¤ä¸ªæ—¥æœŸï¼ˆd1åœ¨d2ä¹‹åè¿”å›trueï¼Œå¦åˆ™è¿”å›falseï¼‰â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function datecompare(d1, d2){
 	var d1 = new Date(d1);  
 	var d2=new Date(d2);  
 	if(d1>=d2)return true;
 	else return false;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª³ÉÔ±ÉúÈÕ5ĞÄ½±Àø¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”æˆå‘˜ç”Ÿæ—¥5å¿ƒå¥–åŠ±â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function otherbirth(value){
 	var names = ["dia", "hanayo", "kanan", "hanamaru", "umi", "you", "maki", "nozomi", "mari", "yoshiko", "nico", "chika", "honoka", "kotori", "riko", "ruby", "eli", "rin"];
 	
@@ -68,7 +68,7 @@ function otherbirth(value){
 function otherMemberLoveca(value){
 	document.getElementById("othersbirth").innerHTML = otherbirth(value)*5+5;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªÆäËû¦Ì's³ÉÔ±ÓĞ¶àÉÙÔÚÄ¿±ê³ÉÔ±Ö®Ç°£¨ÉúÈÕStep up³é¿¨²ßÂÔ£©¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”å…¶ä»–Î¼'sæˆå‘˜æœ‰å¤šå°‘åœ¨ç›®æ ‡æˆå‘˜ä¹‹å‰ï¼ˆç”Ÿæ—¥Step upæŠ½å¡ç­–ç•¥ï¼‰â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function otherMuseBirth(value){
 	var names = ["hanayo", "umi", "maki", "nozomi", "nico", "honoka", "kotori", "eli", "rin"];
 	var now = daystobirth(value,false);
@@ -79,7 +79,7 @@ function otherMuseBirth(value){
 	}
 	return counter;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªÆäËûAqours³ÉÔ±ÓĞ¶àÉÙÔÚÄ¿±ê³ÉÔ±Ö®Ç°£¨ÉúÈÕStep up³é¿¨²ßÂÔ£©¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”å…¶ä»–Aqoursæˆå‘˜æœ‰å¤šå°‘åœ¨ç›®æ ‡æˆå‘˜ä¹‹å‰ï¼ˆç”Ÿæ—¥Step upæŠ½å¡ç­–ç•¥ï¼‰â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function otherAqoursBirth(value){
 	var names = ["dia", "kanan", "hanamaru", "you",  "mari", "yoshiko", "chika", "riko", "ruby"];
 	var now = daystobirth(value,false);
@@ -90,7 +90,7 @@ function otherAqoursBirth(value){
 	}
 	return counter;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªÏÂÒ»´Î[value]³ÉÔ±ÉúÈÕµÄÊ±¼ä£¨Èç¹û½ñÄê¹ıÈ¥ÁËĞ´Ã÷Äê£©¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”ä¸‹ä¸€æ¬¡[value]æˆå‘˜ç”Ÿæ—¥çš„æ—¶é—´ï¼ˆå¦‚æœä»Šå¹´è¿‡å»äº†å†™æ˜å¹´ï¼‰â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function daystobirth(value, fromHTML){
 	var date=TokyoTime();
 	var year=date.getFullYear();
@@ -130,7 +130,7 @@ function daystobirth(value, fromHTML){
 	}
 	else return year+"/"+month+"/"+day;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª»î¶¯ÔÜĞÄ²ßÂÔ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”æ´»åŠ¨æ”’å¿ƒç­–ç•¥â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function eventCount(strategy){
 	var events=EventTimes();
 	switch(strategy)
@@ -142,7 +142,7 @@ function eventCount(strategy){
 	default: document.getElementById("eventloveca").innerHTML = 0; break;
 	}
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªĞÂex¡¢maÔÜĞÄ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”æ–°exã€maæ”’å¿ƒâ€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function newex(){
 	var date = TokyoTime();
 	var endDate = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/"));
@@ -181,7 +181,7 @@ function newma(){
 	}
 	document.getElementById("newmaster").innerHTML = document.getElementById("lovecaperma").value * (monthminus * 4 + daycounter);
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¼ÆËãµ±ÔÂÓĞ¶àÉÙÌì¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”è®¡ç®—å½“æœˆæœ‰å¤šå°‘å¤©â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function getCountDays() {
        var curDate = TokyoTime();
        var curMonth = curDate.getMonth();
@@ -189,12 +189,12 @@ function getCountDays() {
        curDate.setDate(0);
        return curDate.getDate();
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª»î¶¯Ëæ»úµÇÂ¼½±Àø¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”æ´»åŠ¨éšæœºç™»å½•å¥–åŠ±â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function predictloginbonus(){
-	var prediction = Math.floor(Number(document.getElementById("daily").innerHTML)*0.7);
+	var prediction = Math.floor(Number(document.getElementById("daily").innerHTML)*1);
 	document.getElementById("loginbonus").value = prediction;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª´òÓ¡ÏÖÔÚµÄÊ±¼ä¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”æ‰“å°ç°åœ¨çš„æ—¶é—´â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function printToday(){
 	var date=TokyoTime();
 	document.getElementById("today").innerHTML = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+front0(date.getMinutes())+":"+front0(date.getSeconds());
@@ -205,7 +205,7 @@ function front0(ms){
 	if(ms<=9)return "0"+ms;
 	else return ms;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªÍ³¼Æ½á¹û£¨Í¨³££©¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”ç»Ÿè®¡ç»“æœï¼ˆé€šå¸¸ï¼‰â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function sum(){
 	var currentlove = Number(document.getElementById("current").value);
 	var predictlove = Number(document.getElementById("loveca").innerHTML);
@@ -213,7 +213,7 @@ function sum(){
 	var AqoursSingle = Number(document.getElementById("AqoursTotalLoveca").innerHTML);
 	document.getElementById("totalloveca").innerHTML = currentlove + predictlove - MuseSingle - AqoursSingle;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªÍ³¼Æµ±ÈÕĞÄÊı¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”ç»Ÿè®¡å½“æ—¥å¿ƒæ•°â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function total(){
 	var dailylove = Number(document.getElementById("daily").innerHTML);
 	var birthlove = Number(document.getElementById("othersbirth").innerHTML);
@@ -224,7 +224,7 @@ function total(){
 	var bonuslove = Number(document.getElementById("loginbonus").value);
 	document.getElementById("loveca").innerHTML=dailylove+birthlove+exlove+malove+callove+bonuslove+eventlove;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¼ÆËãµ½µ±ÌìÎªÖ¹ÓĞ¼¸´Î»î¶¯¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”è®¡ç®—åˆ°å½“å¤©ä¸ºæ­¢æœ‰å‡ æ¬¡æ´»åŠ¨â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function EventTimes(){
 	var currentMonthEvents = 0;
 	var finalMonthEvents = 0;
@@ -242,7 +242,7 @@ function EventTimes(){
 	var events = currentMonthEvents + finalMonthEvents + mediumEvents;
 	return events>=0?events:0;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª»î¶¯ÔÜÈ¯Êı¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”æ´»åŠ¨æ”’åˆ¸æ•°â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function TicketEventget(strategy){
 	var events = EventTimes();
 	switch(strategy)
@@ -254,7 +254,7 @@ function TicketEventget(strategy){
 	default: document.getElementById("eventTicketSum").innerHTML = 0; break;
 	}
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªmf£¬cf£¬Ğ­Á¦ÔÜÈ¯Êı¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”mfï¼Œcfï¼ŒååŠ›æ”’åˆ¸æ•°â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function TicketEventBonus(){
 	var events = EventTimes();
 	var mf = Math.floor(events/8);
@@ -267,7 +267,7 @@ function TicketEventBonus(){
 	document.getElementById("cfTicket").innerHTML = cf * cfEv;
 	document.getElementById("nmTicket").innerHTML = nm * nmEv;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªÍ³¼Æµ±ÈÕ¿ÉÔÜÈ¯¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”ç»Ÿè®¡å½“æ—¥å¯æ”’åˆ¸â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function totalTicketSum(){
 	var current = Number(document.getElementById("currentTicket").value);
 	var event = Number(document.getElementById("eventTicketSum").innerHTML);
@@ -277,7 +277,7 @@ function totalTicketSum(){
 	var lb = Number(document.getElementById("loginbonusTicket").value);
 	document.getElementById("totalTicket").innerHTML=current+event+mf+cf+nm+lb;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¼ÆËã¿É³éBox¿¨ÊıÁ¿¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”è®¡ç®—å¯æŠ½Boxå¡æ•°é‡â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function MuseMemberGachaMax(){
 	var this80=0;
 	if(document.getElementById("this80").value=="yes")this80=1;
@@ -294,12 +294,12 @@ function MuseMemberGachaMax(){
 	}
 	else document.getElementById("MuseMemberResult").innerHTML = ""; 
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªÄÜ³éµ½ÉúÈÕ¿¨µÄ¸ÅÂÊ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”èƒ½æŠ½åˆ°ç”Ÿæ—¥å¡çš„æ¦‚ç‡â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function calcPerc(res,cards){
 	if(res>=cards*200)return 1;
 	else return Math.pow(res/(200*cards),cards);
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªÏÔÊ¾¿É¹ºÂòÀñ°üÊı¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”æ˜¾ç¤ºå¯è´­ä¹°ç¤¼åŒ…æ•°â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function otherBirths(){
 	var other1 = otherMuseBirth(document.getElementById("member").value);
 	var other2 = otherAqoursBirth(document.getElementById("member").value);
@@ -310,7 +310,7 @@ function otherBirths(){
 	document.getElementById("randomPack").innerHTML=Math.round((monthEnd.getMonth()-monthNow.getMonth())/2);
 }
 
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªµ±Ç°µÄÈÕÆÚÆ«ÒÆ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”å½“å‰çš„æ—¥æœŸåç§»â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function dayShift(){
 	var currentMonth = TokyoTime().getMonth()+1;
 	var currentDay = TokyoTime().getDate();
@@ -330,7 +330,7 @@ function dayShift(){
 	return ds;
 }
 
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª½øĞĞÖĞµÄÉúÈÕµ¥ÈËÏŞ¶¨¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”è¿›è¡Œä¸­çš„ç”Ÿæ—¥å•äººé™å®šâ€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function birthdayInProcess(){
 	var ds = dayShift();
 	//showMsg_old(ds);
@@ -392,7 +392,7 @@ function dateCond(ds, start, character){
 	else showMsg(character, 0);
 }
 
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª£¨Ô­£©¦Ì's³ÉÔ±ÉúÈÕ³é¿¨²ßÂÔ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”ï¼ˆåŸï¼‰Î¼'sæˆå‘˜ç”Ÿæ—¥æŠ½å¡ç­–ç•¥â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function MuseBirthGacha(strategy){
 	var other = otherMuseBirth(document.getElementById("member").value);
 	switch(strategy){
@@ -401,7 +401,7 @@ function MuseBirthGacha(strategy){
 	case "80": document.getElementById("MuseTotalLoveca").innerHTML = 80 * other; break;
 	}
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª£¨Ô­£©Aqours³ÉÔ±ÉúÈÕ³é¿¨²ßÂÔ¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”ï¼ˆåŸï¼‰Aqoursæˆå‘˜ç”Ÿæ—¥æŠ½å¡ç­–ç•¥â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 function AqoursBirthGacha(strategy){
 	var other = otherAqoursBirth(document.getElementById("member").value);
 	switch(strategy){
@@ -410,8 +410,8 @@ function AqoursBirthGacha(strategy){
 	case "120": document.getElementById("AqoursTotalLoveca").innerHTML = 120 * other; break;
 	}
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª£¨ĞÂ£©¦Ì's£¬Aqours³ÉÔ±ÉúÈÕ³é¿¨²ßÂÔ¡¾ÖØ¹¹²¿·Ö£¬ÊÔÓÃ¡¿¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-//ÉúÈÕµ¥ÏŞ·Ö²¼¹şÏ£±í£¨Ã¿Ò»¶ş½øÖÆÎ»´ú±íÒ»¸ö½ÇÉ«µÄstep upÊÇ·ñ½øĞĞÖĞ£¬Îª1ÔòÊÇ£¬Îª0Ôò·ñ£¨¶¨ÒåÎª£º¦Ì's³ÉÔ±´Ó¹ûµ½ÄİÕ¼ÓÃ8-16Î»£¬Aqours³ÉÔ±´ÓÇ§µ½Â¶Õ¼ÓÃ24-32Î»£©£©
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”ï¼ˆæ–°ï¼‰Î¼'sï¼ŒAqoursæˆå‘˜ç”Ÿæ—¥æŠ½å¡ç­–ç•¥ã€é‡æ„éƒ¨åˆ†ï¼Œè¯•ç”¨ã€‘â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+//ç”Ÿæ—¥å•é™åˆ†å¸ƒå“ˆå¸Œè¡¨ï¼ˆæ¯ä¸€äºŒè¿›åˆ¶ä½ä»£è¡¨ä¸€ä¸ªè§’è‰²çš„step upæ˜¯å¦è¿›è¡Œä¸­ï¼Œä¸º1åˆ™æ˜¯ï¼Œä¸º0åˆ™å¦ï¼ˆå®šä¹‰ä¸ºï¼šÎ¼'sæˆå‘˜ä»æœåˆ°å¦®å ç”¨8-16ä½ï¼ŒAqoursæˆå‘˜ä»åƒåˆ°éœ²å ç”¨24-32ä½ï¼‰ï¼‰
 function birthday_Hash(){
 	var b=new Array(365);
 	for(var i=0;i<365;i++)b[i]=0;
@@ -462,23 +462,23 @@ function fillHash(character, start, hashList){
 	hashList[(start+2)%365]+=fillVal;
 	return hashList;
 }
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¼ÆËãÄ¿±êÇ°ÃæÓĞ¶àÉÙ¸öÈËµÄÉúÈÕ£¬²»°üÀ¨ÕıÔÚ½øĞĞÖĞµÄ£¨ÄÑµã£©¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-//Ë¼Â·£º»ñµÃ¹şÏ£±í£¬ÏÈ»ñÈ¡½ñÌìµÄ¹şÏ£Öµ
-//£¨Ä¿Ç°ÓĞ3ÖÖ¿ÉÄÜ£º
-//1)Ã»ÓĞÈËµÄÏŞ¶¨½øĞĞÖĞ£¬Îª0£»
-//2)1¸öÈËÏŞ¶¨½øĞĞÖĞ£¬ÓĞ1Î»Îª1£¬ÆäÓàÎª0£»
-//3)2¸öÈËÏŞ¶¨Í¬Ê±½øĞĞÖĞ£¬2Î»Îª1¡¾·ûºÏÌõ¼şµÄÓĞ3¸öÈÕÆÚ£º4ÔÂ18ÈÕ£¬8ÔÂ2ÈÕ£¬9ÔÂ20ÈÕ¡¿£©
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”è®¡ç®—ç›®æ ‡å‰é¢æœ‰å¤šå°‘ä¸ªäººçš„ç”Ÿæ—¥ï¼Œä¸åŒ…æ‹¬æ­£åœ¨è¿›è¡Œä¸­çš„ï¼ˆéš¾ç‚¹ï¼‰â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+//æ€è·¯ï¼šè·å¾—å“ˆå¸Œè¡¨ï¼Œå…ˆè·å–ä»Šå¤©çš„å“ˆå¸Œå€¼
+//ï¼ˆç›®å‰æœ‰3ç§å¯èƒ½ï¼š
+//1)æ²¡æœ‰äººçš„é™å®šè¿›è¡Œä¸­ï¼Œä¸º0ï¼›
+//2)1ä¸ªäººé™å®šè¿›è¡Œä¸­ï¼Œæœ‰1ä½ä¸º1ï¼Œå…¶ä½™ä¸º0ï¼›
+//3)2ä¸ªäººé™å®šåŒæ—¶è¿›è¡Œä¸­ï¼Œ2ä½ä¸º1ã€ç¬¦åˆæ¡ä»¶çš„æœ‰3ä¸ªæ—¥æœŸï¼š4æœˆ18æ—¥ï¼Œ8æœˆ2æ—¥ï¼Œ9æœˆ20æ—¥ã€‘ï¼‰
 
-//1)Îª0£¬¿ÉÒÔÖ±½ÓÍùºóÉ¨£¬É¨µ½²»ÊÇ0µÄÇé¿ö¼´À´µ½ÁËÒ»¸öÈËµÄÉúÈÕÏŞ¶¨·¶Î§ÄÚ£¬Á¬Ğø3¸öÊı¶¼ÊÇ¸Ã·Ç0Êı£¬µÚ4¸ö¿ªÊ¼»Ö¸´Îª0£¨»òÕßÆäËûÊı£©£»´ËÊ±¿ÉÒÔ¼ÓÈë1ÈË¡£
-//·ÖÍÅ£ºÈô¸ÃÊı´óÓÚµÈÓÚ0x10000Îª¦Ì's³ÉÔ±£¬·´Ö®ÎªAqours³ÉÔ±
-//2,3£©1Î»»ò2Î»Îª0£¬´ËÊ±²»ÄÜÖ±½ÓÉ¨£¬¿ÉÒÔÕâÑù×Ó£º
-//½«½ñÌìµÄ¹şÏ£Öµ°´Î»È¡·´£¬±ÈÈç8ÔÂ2ÈÕ¹şÏ£Îª0x01000100£¬È¡·´ºóÎª0xFEFFFEFF£¬È»ºó½«È¡·´ÊıºÍÖ®ºóÉ¨µ½µÄÊı°´Î»Óë¡£
-//ÄÇÃ´½ñÌìstep up½øĞĞÖĞµÄÄÇĞ©³ÉÔ±ËùÔÚÎ»ÔÚ°´Î»Óëºó¾ùÎª0£¬¶ø²»ÊôÓÚ½ñÌì½øĞĞÖĞµÄ³ÉÔ±£¬°´Î»ÓëºóÎªÔ­ÊıÖµ£¬Óöµ½·Ç0Êı£¬¼´¿É+1
+//1)ä¸º0ï¼Œå¯ä»¥ç›´æ¥å¾€åæ‰«ï¼Œæ‰«åˆ°ä¸æ˜¯0çš„æƒ…å†µå³æ¥åˆ°äº†ä¸€ä¸ªäººçš„ç”Ÿæ—¥é™å®šèŒƒå›´å†…ï¼Œè¿ç»­3ä¸ªæ•°éƒ½æ˜¯è¯¥é0æ•°ï¼Œç¬¬4ä¸ªå¼€å§‹æ¢å¤ä¸º0ï¼ˆæˆ–è€…å…¶ä»–æ•°ï¼‰ï¼›æ­¤æ—¶å¯ä»¥åŠ å…¥1äººã€‚
+//åˆ†å›¢ï¼šè‹¥è¯¥æ•°å¤§äºç­‰äº0x10000ä¸ºÎ¼'sæˆå‘˜ï¼Œåä¹‹ä¸ºAqoursæˆå‘˜
+//2,3ï¼‰1ä½æˆ–2ä½ä¸º0ï¼Œæ­¤æ—¶ä¸èƒ½ç›´æ¥æ‰«ï¼Œå¯ä»¥è¿™æ ·å­ï¼š
+//å°†ä»Šå¤©çš„å“ˆå¸Œå€¼æŒ‰ä½å–åï¼Œæ¯”å¦‚8æœˆ2æ—¥å“ˆå¸Œä¸º0x01000100ï¼Œå–ååä¸º0xFEFFFEFFï¼Œç„¶åå°†å–åæ•°å’Œä¹‹åæ‰«åˆ°çš„æ•°æŒ‰ä½ä¸ã€‚
+//é‚£ä¹ˆä»Šå¤©step upè¿›è¡Œä¸­çš„é‚£äº›æˆå‘˜æ‰€åœ¨ä½åœ¨æŒ‰ä½ä¸åå‡ä¸º0ï¼Œè€Œä¸å±äºä»Šå¤©è¿›è¡Œä¸­çš„æˆå‘˜ï¼ŒæŒ‰ä½ä¸åä¸ºåŸæ•°å€¼ï¼Œé‡åˆ°é0æ•°ï¼Œå³å¯+1
 
-//Óöµ½Ïà¸ô1/2ÌìÉúÈÕµÄ2Ãû³ÉÔ±µÄ´¦Àí£¨Ä¿Ç°Ö»ÓĞ¸ô2Ìì£©£º´ËÊ±ÓĞÁ¬Ğø5ÌìStep up½øĞĞ£¬µÚ1-3ÌìÎª½ÇÉ«1£¬µÚ3-5ÌìÎª½ÇÉ«2£¬Õâ¶ÎÊı×éÖĞ¹şÏ£±í¹²È¡ÁË3¸öÖµ
-//Òò´ËÅöµ½Ò»¸ö·Ç0½á¹ûºó£¬Ìí¼Ó¸ÃÈËÍ·£¬Í¬Ê±¼ÇÂ¼½ñÌì¹şÏ£ÖµµÄÁÙÊ±±äÁ¿¼ÓÉÏ¸ÃÊı£¬Ê¹µÃ¸Ã½ÇÉ«±»Õ¼ÓÃ£¨²»¿ÉÔÙ¼ÆËã£©£¬Ö®ºóºÍ±»É¨µÄÊı°´Î»ÓëÊ±ĞèÒªÒ»ÆğÈ¡·´
-//ÈçĞèÒª¼ÆËã»æÏŞ£¨10ÔÂ21ÈÕ£©É¨µ½9ÔÂ11ÈÕÄñÉúÈÕÄÇÌì¹şÏ£ÖµÎª0x00400000£¬
+//é‡åˆ°ç›¸éš”1/2å¤©ç”Ÿæ—¥çš„2åæˆå‘˜çš„å¤„ç†ï¼ˆç›®å‰åªæœ‰éš”2å¤©ï¼‰ï¼šæ­¤æ—¶æœ‰è¿ç»­5å¤©Step upè¿›è¡Œï¼Œç¬¬1-3å¤©ä¸ºè§’è‰²1ï¼Œç¬¬3-5å¤©ä¸ºè§’è‰²2ï¼Œè¿™æ®µæ•°ç»„ä¸­å“ˆå¸Œè¡¨å…±å–äº†3ä¸ªå€¼
+//å› æ­¤ç¢°åˆ°ä¸€ä¸ªé0ç»“æœåï¼Œæ·»åŠ è¯¥äººå¤´ï¼ŒåŒæ—¶è®°å½•ä»Šå¤©å“ˆå¸Œå€¼çš„ä¸´æ—¶å˜é‡åŠ ä¸Šè¯¥æ•°ï¼Œä½¿å¾—è¯¥è§’è‰²è¢«å ç”¨ï¼ˆä¸å¯å†è®¡ç®—ï¼‰ï¼Œä¹‹åå’Œè¢«æ‰«çš„æ•°æŒ‰ä½ä¸æ—¶éœ€è¦ä¸€èµ·å–å
+//å¦‚éœ€è¦è®¡ç®—ç»˜é™ï¼ˆ10æœˆ21æ—¥ï¼‰æ‰«åˆ°9æœˆ11æ—¥é¸Ÿç”Ÿæ—¥é‚£å¤©å“ˆå¸Œå€¼ä¸º0x00400000ï¼Œ
 
-//±ßÔµÖµ£ºÄ¿±ê¾ÍÊÇÏÖÔÚ½øĞĞÖĞµÄ½ÇÉ«£¬´ËÊ±È¡ÖµÎª0
+//è¾¹ç¼˜å€¼ï¼šç›®æ ‡å°±æ˜¯ç°åœ¨è¿›è¡Œä¸­çš„è§’è‰²ï¼Œæ­¤æ—¶å–å€¼ä¸º0
 
-//Èç¹ûÓĞ³ÉÔ±ÉúÈÕÏàÍ¬£¬Õâ3ÌìµÄ¹şÏ£Öµ¾ùÓĞ2Î»ÊÇ1£¬´ËÊ±³ÉÔ±¼ÆËãÓ¦¸Ã+2£¬µ«Ä¿Ç°Ã»ÓĞ³ÉÔ±ÉúÈÕÏàÍ¬£¬²»¿¼ÂÇ¸ÃÇé¿ö£¬´ı³öÏÖÊ±ÔÙĞŞ¸Ä
+//å¦‚æœæœ‰æˆå‘˜ç”Ÿæ—¥ç›¸åŒï¼Œè¿™3å¤©çš„å“ˆå¸Œå€¼å‡æœ‰2ä½æ˜¯1ï¼Œæ­¤æ—¶æˆå‘˜è®¡ç®—åº”è¯¥+2ï¼Œä½†ç›®å‰æ²¡æœ‰æˆå‘˜ç”Ÿæ—¥ç›¸åŒï¼Œä¸è€ƒè™‘è¯¥æƒ…å†µï¼Œå¾…å‡ºç°æ—¶å†ä¿®æ”¹
