@@ -26,7 +26,7 @@ function detect(curEv,b){
 	var difID=curEv+"dif";
 	var dif=Number(document.getElementById(difID).innerHTML);
 	
-	document.getElementById(cID).innerHTML=Math.round(eScore*bc*ar*dif/80);
+	document.getElementById(cID).innerHTML=Math.round(eScore*bc*ar*dif/80*1.21);
 	warn2(cID);
 }
 function warn(obj){
@@ -78,7 +78,7 @@ function e(curEv,b){
 	var cID=curEv+String(b)+"C";
 	var difID=curEv+"dif";
 	var dif=Number(document.getElementById(difID).innerHTML);
-	document.getElementById(cID).innerHTML=Math.round(eScore/bc/ar/dif*80);
+	document.getElementById(cID).innerHTML=Math.round(eScore/bc/ar/dif*80/1.21);
 	warn(cID);
 }
 //-------------------------%--------------------------------
