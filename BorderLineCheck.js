@@ -120,7 +120,7 @@ function Dif(curEv){
 		allSongs=1;
 		break;
 	}
-	pct=1-1/(eventSong/oneRound*maxSongs/allSongs*fcDif);
+	if(EventName!="Score Match")pct=1-1/(eventSong/oneRound*maxSongs/allSongs*fcDif);
 	var difID=curEv+"dif";
 	document.getElementById(difID).innerHTML=pct.toFixed(3);
 }
