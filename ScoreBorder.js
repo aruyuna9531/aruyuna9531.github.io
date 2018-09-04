@@ -27,6 +27,7 @@ function print(){
 	var C2 = Number(document.getElementById("SecondC").innerHTML);
 	var C3 = Number(document.getElementById("ThirdC").innerHTML);
 	var TeaTimeSpot = Number(document.getElementById("_d").innerHTML)*24+Number(document.getElementById("_h").innerHTML);
+	if(EType!="Score Match"){
 	document.getElementById("First").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S1);
 	document.getElementById("Second").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S2);
 	document.getElementById("Third").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S3);
@@ -36,6 +37,7 @@ function print(){
 	document.getElementById("B1c").innerHTML=isPos(Math.round(arrangeBits(EType)*comboBonus(maxC)*C1));
 	document.getElementById("B2c").innerHTML=isPos(Math.round(arrangeBits(EType)*comboBonus(maxC)*C2));
 	document.getElementById("B3c").innerHTML=isPos(Math.round(arrangeBits(EType)*comboBonus(maxC)*C3));
+	}
 }
 
 function isPos(num){
