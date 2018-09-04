@@ -78,6 +78,7 @@ function e(curEv,b){
 	var cID=curEv+String(b)+"C";
 	var difID=curEv+"dif";
 	var dif=Number(document.getElementById(difID).innerHTML);
+	var enID=curEv+"EN";
 	var EventName=String(document.getElementById(enID).innerHTML);
 	if(EventName!="Score Match")document.getElementById(cID).innerHTML=Math.round(eScore/bc/ar/dif*80/1.21);
 	else document.getElementById(cID).innerHTML=0;
