@@ -112,22 +112,30 @@ function change(){
 	else document.getElementById("nextRank_10").innerHTML=""
 	if(remainMin>30)document.getElementById("nextRank_30").innerHTML=curRank+drop*30-50;
 	else document.getElementById("nextRank_30").innerHTML=""
-	var HighRisk=0, LittleRisk=1;
+	var mustBe=0,HighRisk=0, LittleRisk=1,NoRisk=2;
 	switch(lastRank){
-		case 10000:HighRisk=14;LittleRisk=23;break;
-		case 30000:HighRisk=25;LittleRisk=40;break;
-		case 50000:HighRisk=50;LittleRisk=75;break;
+		case 10000:mustBe=14;HighRisk=22;LittleRisk=32;NoRisk=50;break;
+		case 30000:mustBe=17;HighRisk=25;LittleRisk=38;NoRisk=67;break;
+		case 50000:mustBe=19;HighRisk=35;LittleRisk=60;NoRisk=80;break;
 	}
-	if(drop<=HighRisk){
-		document.getElementById("msg").innerHTML=remainMin>15?"掉档风险极大，建议立即打歌，5首":"掉档风险极大，赶紧打歌，能打几首打几首";
+	if(drop<=mustBe){
+		document.getElementById("msg").innerHTML="稳稳的下一档天花板，打歌吧，4倍";
+		warn(document.getElementById("msg"));
+	}
+	else if(drop<=HighRisk){
+		document.getElementById("msg").innerHTML=remainMin>15?"掉档风险极大，建议立即开四倍打歌":"掉档风险极大，赶紧打歌，能打几首打几首";
 		warn(document.getElementById("msg"));
 	}
 	else if(drop<=LittleRisk){
-		document.getElementById("msg").innerHTML="掉档风险较大，建议立即打1首歌";
+		document.getElementById("msg").innerHTML="掉档风险较大，建议打个1首压压惊（1倍就行）";
+		unwarn(document.getElementById("msg"));
+	}
+	else if(drop<=NoRisk){
+		document.getElementById("msg").innerHTML="基本稳。仅供参考，如果1分钟后你的排名在上面安全排名之后，仍建议打歌保档";
 		unwarn(document.getElementById("msg"));
 	}
 	else{
-		document.getElementById("msg").innerHTML="基本稳。仅供参考，如果1分钟后你的排名在上面安全排名之后，仍建议打歌保档";
+		document.getElementById("msg").innerHTML="稳如狗，可以喝茶";
 		unwarn(document.getElementById("msg"));
 	}
 }
