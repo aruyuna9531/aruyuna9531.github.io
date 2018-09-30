@@ -3,12 +3,13 @@
 <title>历史档线走势</title>
 <script src="BorderLineCheck.js"></script>
 </head>
-<body onload="f(128)">
+<body onload="f(129)">
 <table class="table-bordered" border="1" cellpadding="0" cellspacing="0" align="center" width="100%">
 		<thead>
 			<th align="center" valign="middle"><strong><span title="イベントの順番">回数</span></strong></th>
 			<th align="center" valign="middle"><strong><span title="イベント開催の期間">期間</span></strong></th>
 			<th align="center" valign="middle"><strong><span title="イベントの名前">イベント名</span></strong></th>
+			<th align="center" valign="middle"><strong><span title="イベントSR報酬の所属ユニット">区分</span></strong></th>
 			<th align="center" valign="middle"><strong><span title="当回イベント配信曲の中にコンボ数が一番多い方">最大コンボ</span></strong></th>
 			<th align="center" valign="middle"><strong><span title="最大コンボの上、コンボボーナスの加算された結果">コンボ（ボナスあり）</span></strong></th>
 			<th align="center" valign="middle"><strong><span title="上位に目指すため役に立てる曲の数">ラン曲数</span></strong></th>
@@ -23,25 +24,44 @@
 		<thead>
 		<tbody>
 			<tr>
+				<td>129</td>
+				<td>2018.10.5~10.15</td>
+				<td>第6回<span id="129EN">お散歩ラリー</span></td>
+				<td><span id="129un">μ's</span></td>
+                              	<td><span id="129MC">599</span></td>
+				<td><span id="129BC"></span></td>
+				<td><span id="129HN">3</span></td>
+				<td><span id="129Ar"></span></td>
+				<td><span id="129dif"></span></td>
+				<td><span id="1291S"></span></td>
+				<td><span id="1291C">93030</span></td>
+				<td><span id="1292S"></span></td>
+				<td><span id="1292C">76784</span></td>
+				<td><span id="1293S"></span></td>
+				<td><span id="1293C">69701</span></td>
+			</tr>
+			<tr>
 				<td>128</td>
 				<td>2018.9.20~9.30</td>
 				<td><span id="128EN">また会える気がするからさ</span></td>
+				<td><span id="128un">Aqours</span></td>
                               	<td><span id="128MC">487</span></td>
 				<td><span id="128BC"></span></td>
 				<td><span id="128HN">1</span></td>
 				<td><span id="128Ar"></span></td>
 				<td><span id="128dif"></span></td>
-				<td><span id="1281S"></span></td>
-				<td><span id="1281C">92850</span></td>
-				<td><span id="1282S"></span></td>
-				<td><span id="1282C">76569</span></td>
-				<td><span id="1283S"></span></td>
-				<td><span id="1283C">69618</span></td>
+				<td><span id="1281S">0</span></td>
+				<td><span id="1281C"></span></td>
+				<td><span id="1282S">0</span></td>
+				<td><span id="1282C"></span></td>
+				<td><span id="1283S">0</span></td>
+				<td><span id="1283C"></span></td>
 			</tr>
 			<tr>
 				<td>127</td>
 				<td>2018.9.5~9.15</td>
 				<td>第36回<span id="127EN">Score Match</span></td>
+				<td><span id="127un">μ's</span></td>
                               	<td><span id="127MC">584</span></td>
 				<td><span id="127BC"></span></td>
 				<td><span id="127HN">3</span></td>
@@ -59,6 +79,7 @@
 				<td>126</td>
 				<td>2018.8.20~8.31</td>
 				<td>第8回<span id="126EN">なかよしマッチ</span></td>
+				<td><span id="126un">Aqours</span></td>
                               	<td><span id="126MC">584</span></td>
 				<td><span id="126BC"></span></td>
 				<td><span id="126HN">3</span></td>
@@ -75,6 +96,7 @@
 				<td>125</td>
 				<td>2018.8.5~8.15</td>
 				<td>第15回<span id="125EN">Challenge Festival</span></td>
+				<td><span id="125un">μ's</span></td>
                               	<td><span id="125MC">612</span></td>
 				<td><span id="125BC"></span></td>
 				<td><span id="125HN">5</span></td>
@@ -91,6 +113,7 @@
 				<td>124</td>
 				<td>2018.7.20~7.31</td>
 				<td><span id="124EN">Guilty Eyesで恋に落ちて</span></td>
+				<td><span id="124un">Aqours</span></td>
                               	<td><span id="124MC">426</span></td>
 				<td><span id="124BC"></span></td>
 				<td><span id="124HN">1</span></td>
@@ -107,6 +130,7 @@
 				<td>123</td>
 				<td>2018.7.5~7.15</td>
 				<td>第7回<span id="123EN">なかよしマッチ</span></td>
+				<td><span id="123un">μ's</span></td>
                               	<td><span id="123MC">596</span></td>
 				<td><span id="123BC"></span></td>
 				<td><span id="123HN">4</span></td>
@@ -123,6 +147,7 @@
 				<td>122</td>
 				<td>2018.6.20~6.30</td>
 				<td>第5回<span id="122EN">おさんぽラリー</span></td>
+				<td><span id="122un">Aqours</span></td>
                               	<td><span id="122MC">537</span></td>
 				<td><span id="122BC"></span></td>
 				<td><span id="122HN">5</span></td>
@@ -139,6 +164,7 @@
 				<td>121</td>
 				<td>2018.6.5~6.15</td>
 				<td>第14回<span id="121EN">Challenge Festival</span></td>
+				<td><span id="121un">μ's</span></td>
                               	<td><span id="121MC">584</span></td>
 				<td><span id="121BC"></span></td>
 				<td><span id="121HN">4</span></td>
@@ -155,6 +181,7 @@
 				<td>120<span title="2018年5月19日のアップデートにより、すべてのイベントがLP多重消費機能の追加をされて、ボーダーラインが下降">③</span></td>
 				<td>2018.5.20~5.31</td>
 				<td>第6回<span id="120EN">なかよしマッチ</span></td>
+				<td><span id="120un">Aqours</span></td>
                               	<td><span id="120MC">592</span></td>
 				<td><span id="120BC"></span></td>
 				<td><span id="120HN">4</span></td>
@@ -171,6 +198,7 @@
 				<td>119<span title="第13回チャレンジフェスティバルを皮切りにクール曲のコンボ数が蘇った故に、ボーダーラインがかなり上昇（この前の3ヶ月間クール曲のコンボ数は他のより60ぐらい少なかった）">②</span></td>
 				<td>2018.5.5~5.15</td>
 				<td>第13回<span id="119EN">Challenge Festival</span></td>
+				<td><span id="119un">μ's</span></td>
                               	<td><span id="119MC">612</span></td>
 				<td><span id="119BC"></span></td>
 				<td><span id="119HN">3</span></td>
@@ -187,6 +215,7 @@
 				<td>118<span title="2018年4月15日より、無料11連勧誘を10回できることの実施において（渡辺曜と西木野真姫ステップアップ勧誘も伴い）、ボーダーラインが少し上昇">①</span></td>
 				<td>2018.4.20~4.30</td>
 				<td><span id="118EN">おんなじキモチなの</span></td>
+				<td><span id="118un">Aqours</span></td>
                               	<td><span id="118MC">439</span></td>
 				<td><span id="118BC"></span></td>
 				<td><span id="118HN">1</span></td>
