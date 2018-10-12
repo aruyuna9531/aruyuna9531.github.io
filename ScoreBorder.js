@@ -10,10 +10,10 @@
 function arrangeBits(eventType){
 	switch(eventType){
 	case 0:return 1.13;
-	case 1:return 1.13;
-	case 2:return 1.1;
-	case 3:return 1.13;
-	case 4:return 1.21;
+	case 2:return 1.13;
+	case 3:return 1.1;
+	case 4:return 1.13;
+	case 5:return 1.21;
 	default:return 1;
 	}
 }
