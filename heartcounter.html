@@ -3,12 +3,10 @@
  <title>活动算心</title>
 </head>
 <body onload="countTime();needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();eventType();ptBonus()">
-服务器：<select id="server" onchange="countTime();needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps()">
-<option value="JP">日服</option>
-<option value="CN">国服</option>
+服务器：<select id="serverswitch" onchange="countTime();needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps()">
+<option value="jp">日服</option>
+<option value="cn">国服</option>
 </select>
-<span id="CNsta" style="display:none">2018/9/30</span>
-<span id="CNend" style="display:none">2018/10/11</span>
  <p>
 	离活动结束还有：
 	<span id="_d"></span>天
@@ -158,5 +156,6 @@
 	微信公众号：yuna的SIF小屋<br>
  </p>
  <script src="heartcounter.js"></script>
+ <script src="time.js"></script>
 </body>
 </html>

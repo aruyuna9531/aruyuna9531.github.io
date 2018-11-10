@@ -2,9 +2,13 @@
 <head>
 <title>保档观测仪</title>
 <script src="SafetyTest.js"></script>
+<script src="time.js"></script>
 </head>
 <body onload="countTime();countTimeC();change();changeC()">
- <button id="sv" type="button" value="0" onclick="serverSwitch(value)">切换国/日服</button>
+ <select id="serverswitch" onchange="sswitch_safetyTest()">
+ <option value="jp">日服</option>
+ <option value="cn">国服</option>
+ </select>
  <span id="JP">
  <p>
 	（日服活动）离活动结束还有：
@@ -13,8 +17,6 @@
 	<span id="_m"></span>:
 	<span id="_s"></span>
  </p>
- <span id="CNsta" style="display:none">2018/9/30</span>
- <span id="CNend" style="display:none">2018/10/11</span>
  <p id="main" style="display:none">
  欲保档线：<select id="border" onchange="change()">
  <option value="10000">10000位</option>

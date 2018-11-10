@@ -1,4 +1,4 @@
-//自动计算活动开始，结束时间并打印到页面的的js脚本（通用）
+﻿//自动计算活动开始，结束时间并打印到页面的的js脚本（通用）
 //如果能解决一个html不能使用2个以上js脚本的问题，请将src设为此文件
 function isNull(obj){
         if (obj == '' || obj == undefined || obj == null) {
@@ -23,7 +23,13 @@ function LastDayOfCurrentMonth(year,month){
 	}
 }
 
+function e_cnstart(){return new Date("2018/11/16");}
+function e_cnend(){return new Date("2018/11/27");}
+
 function EventOpening(date){
+	if(document.getElementById("serverswitch")!=null){
+	if(document.getElementById("serverswitch").value=="cn")return e_cnstart();
+	}
 	if(date.getDate()<5)return false;
 	if(date.getDate()==5 && date.getHours()<15)return false;
 	if(date.getDate()==15 && date.getHours()>=14)return false;
@@ -67,6 +73,11 @@ function countTime() {
 	else date = new Date();
         var now = date.getTime();  
         var endDate = EventEnd(date);
+	if(document.getElementById("serverswitch")!=null){
+		if(document.getElementById("serverswitch").value=="cn"){
+			endDate=e_cnend();
+		}
+	}
         var end = endDate.getTime();
         var leftTime = end-now; 
         var d=0,h=0,m=0,s=0;  
@@ -85,7 +96,7 @@ function countTime() {
 	document.getElementById("_h").innerHTML = h;
 	document.getElementById("_m").innerHTML = front0(m);
 	document.getElementById("_s").innerHTML = front0(s);
-	if(24*d+h<2)document.getElementById("2hrrem").style.display="inline";
+	
 	if(d<1){
 		warn(_d);
 		if(h<10)
@@ -106,4 +117,20 @@ function front0(x){
 function warn(obj){
 	obj.style.color="red";
 	obj.style.fontWeight="Bold";
+}
+
+function sswitch_safetyTest(){
+	var server=(document.getElementById("serverswitch").value);
+	if(server=="jp"){
+		document.getElementById("JP").style.display="inline";
+		document.getElementById("CN").style.display="none";
+	}
+	else{
+		document.getElementById("JP").style.display="none";
+		document.getElementById("CN").style.display="inline";
+	}
+}
+function unwarn(obj){
+	obj.style.color="black";
+	obj.style.fontWeight="normal";
 }
