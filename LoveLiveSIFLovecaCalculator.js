@@ -136,8 +136,8 @@ function eventCount(strategy){
 	switch(strategy)
 	{
 	case "normal": document.getElementById("eventloveca").innerHTML = events*9; break;
-	case "pt11w": document.getElementById("eventloveca").innerHTML = events*4; break;
-	case "pt13w": document.getElementById("eventloveca").innerHTML = events*-1; break;
+	case "pt11w": document.getElementById("eventloveca").innerHTML = events*1; break;
+	case "pt13w": document.getElementById("eventloveca").innerHTML = events*-4; break;
 	case "pt16w": document.getElementById("eventloveca").innerHTML = events*-7; break;
 	default: document.getElementById("eventloveca").innerHTML = 0; break;
 	}
@@ -286,7 +286,7 @@ function MuseMemberGachaMax(){
 	var Ticket = Number(document.getElementById("totalTicket").innerHTML);
 	var Chain_11 = Math.floor(Loveca/50);
 	var single = Math.floor((Loveca-Chain_11*50)/5);
-	if(document.getElementById("member").selectedIndex<10){
+	if(document.getElementById("member").selectedIndex<19){
 	var res = Chain_11*11+single+Ticket+Number(document.getElementById("current3Ticket").value)*3+Number(document.getElementById("current11Ticket").value)*11+Number(document.getElementById("Buy11Ticket").value)*11; 
 	document.getElementById("MuseMemberResult").innerHTML=res;
 	var cards = Number(document.getElementById("NeedCard").value);
@@ -296,8 +296,8 @@ function MuseMemberGachaMax(){
 }
 //——————————————能抽到生日卡的概率——————————————
 function calcPerc(res,cards){
-	if(res>=cards*200)return 1;
-	else return Math.pow(res/(200*cards),cards);
+	if(res>=200)return 1;
+	else return res/200;
 }
 //——————————————显示可购买礼包数——————————————————
 function otherBirths(){
