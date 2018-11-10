@@ -554,13 +554,13 @@ function TimeLimitWarnings(){
 	else document.getElementById("TimeLimitWarning").innerHTML="已经没有时间足以达到该pt，请调整目标pt或多倍策略";
 }
 function ptBonus(){
-	var loveca_checkpoint=[500, 2500, 5000, 11000, 20000, 32500, 47500, 62500, 80000, 110000, 160000]
+	var loveca_checkpoint=[500, 2500, 5750, 12500, 20000, 32500, 47500, 62500, 75000, 120000, 160000]
 	var loveca_checkpoint_makaron=[200, 1200, 2250, 5000, 9000, 14000, 20000, 26500, 36000, 42500, 65000]
-	var SR_checkpoint=[25000, 60000, 100000]
+	var SR_checkpoint=[25000, 55000, 100000]
 	var SR_checkpoint_makaron=[11000, 25000, 40000]
-	var ticket_checkpoint=[80000, 130000]
+	var ticket_checkpoint=[80000, 140000]
 	var ticket_checkpoint_makaron=[34000, 50000]
-	var sugar_checkpoint=[3500, 8000, 15000, 52500, 72500]
+	var sugar_checkpoint=[3500, 8000, 15000, 52500, 80000]
 	var sugar_checkpoint_makaron=[1600, 3500, 7000, 22000, 33000]
 	var eventType=document.getElementById("CurrentEvent").value;
 	if(eventType=="ic")ptBonusShow(loveca_checkpoint_makaron, SR_checkpoint_makaron, ticket_checkpoint_makaron, sugar_checkpoint_makaron);
