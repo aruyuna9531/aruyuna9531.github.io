@@ -12,7 +12,6 @@ function unwarn(obj){
 function change(){
 	var lastRank=Number(document.getElementById("border").value);
 	var curRank=Number(document.getElementById("curRank").value);
-	if(curRank-lastRank>0)alert("您已掉档，请打歌");
 	var remainMin=Number(document.getElementById("_d").innerHTML)*24*60+Number(document.getElementById("_h").innerHTML)*60+Number(document.getElementById("_m").innerHTML);
 	var drop=Math.floor((lastRank-curRank)/remainMin);
 	document.getElementById("nextRank").innerHTML=curRank+drop-1;
@@ -28,7 +27,11 @@ function change(){
 		case 30000:mustBe=17;HighRisk=25;LittleRisk=38;NoRisk=67;break;
 		case 50000:mustBe=19;HighRisk=35;LittleRisk=60;NoRisk=80;break;
 	}
-	if(drop<=mustBe){
+	if(curRank>lastRank){
+		document.getElementById("msg").innerHTML="都已经掉档了还观测个jb，还不快去打歌";
+		warn(document.getElementById("msg"));
+	}
+	else if(drop<=mustBe){
 		document.getElementById("msg").innerHTML="稳稳的下一档天花板，打歌吧，4倍";
 		warn(document.getElementById("msg"));
 	}
