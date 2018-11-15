@@ -106,6 +106,7 @@ function countTimeC() {
 		document.getElementById("mainC").style.display="inline";
 		document.getElementById("TimeOutOfRangeC").style.display="none";
 	}
+	last2hours();
         setTimeout(countTimeC,1000);
 }
 function changeC(){
