@@ -146,3 +146,18 @@ function fixC(){
 	changeC();
 }
 
+//-------------------temp-------------------------
+function last2hours(){
+	var remainDays=Number(document.getElementById("_d").innerHTML);
+	var remainHours=Number(document.getElementById("_h").innerHTML);
+	if(remainDays==0 && remainHours<2){
+		document.getElementById("main").style.display="inline";
+		document.getElementById("TimeOutOfRange").style.display="none";
+	}
+	var remainDaysC=Number(document.getElementById("_dc").innerHTML);
+	var remainHoursC=Number(document.getElementById("_hc").innerHTML);
+	if(remainDaysC==0 && remainHoursC<2){
+		document.getElementById("mainC").style.display="inline";
+		document.getElementById("TimeOutOfRangeC").style.display="none";
+	}
+}
