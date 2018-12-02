@@ -115,7 +115,7 @@ function countTimeC() {
 function changeC(){
 	var lastRank=Number(document.getElementById("borderC").value);
 	var curRank=Number(document.getElementById("curRankC").value);
-	if(curRank-lastRank>0)alert("您已掉档，请打歌");
+	
 	var remainMin=Number(document.getElementById("_dc").innerHTML)*24*60+Number(document.getElementById("_hc").innerHTML)*60+Number(document.getElementById("_mc").innerHTML);
 	var drop=Math.floor((lastRank-curRank)/remainMin);
 	document.getElementById("nextRankC").innerHTML=curRank+drop-1;
@@ -131,7 +131,11 @@ function changeC(){
 		case 6900:HighRisk=8;LittleRisk=11;break;
 		case 11500:HighRisk=12;LittleRisk=16;break;
 	}
-	if(drop<=HighRisk){
+	if(curRank-lastRank>0){
+		document.getElementById("msgC").innerHTML="都已经掉档了还观测个jb，还不快去打歌";
+		warn(document.getElementById("msgC"));
+	}
+	else if(drop<=HighRisk){
 		document.getElementById("msgC").innerHTML=remainMin>15?"掉档风险极大，建议立即打歌，5首":"掉档风险极大，赶紧打歌，能打几首打几首";
 		warn(document.getElementById("msgC"));
 	}
