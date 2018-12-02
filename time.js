@@ -23,8 +23,8 @@ function LastDayOfCurrentMonth(year,month){
 	}
 }
 
-function e_cnstart(){return new Date("2018/11/16");}
-function e_cnend(){return new Date("2018/11/27");}
+function e_cnstart(){return new Date("2018/12/3 15:00:00");}
+function e_cnend(){return new Date("2018/11/27 10:00:00");}
 
 function EventOpening(date){
 	if(document.getElementById("serverswitch")!=null){
