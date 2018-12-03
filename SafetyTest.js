@@ -69,49 +69,6 @@ function serverSwitch(value){
 	}
 	document.getElementById("sv").value=1-Number(document.getElementById("sv").value);
 }
-function countTimeC() {
-        var date;
-	var u = navigator.userAgent;
-	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-	if(isiOS)date = new Date();
-	else date = new Date();
-        var now = date.getTime();
-	var startDate = e_cnstart();
-	var endDate = e_cnend();
-        var end = endDate.getTime();
-        var leftTime = end-now;
-	var opening = now-startDate.getTime()>0 && end-now>0;
-        var d=0,h=0,m=0,s=0;
-	var preMin=Number(document.getElementById("_mc").innerHTML);
-        if (leftTime>0 && opening==true) {
-	d = Math.floor(leftTime/1000/60/60/24);  
-        h = Math.floor(leftTime/1000/60/60%24);  
-        m = Math.floor(leftTime/1000/60%60);  
-        s = Math.floor(leftTime/1000%60);                     
-        }
-        document.getElementById("_dc").innerHTML = d;
-	document.getElementById("_hc").innerHTML = h;
-	document.getElementById("_mc").innerHTML = front0(m);
-	document.getElementById("_sc").innerHTML = front0(s);
-	if(d<1){
-		warn(_dc);
-		if(h<10)
-		{
-			warn(_hc);
-			if(h<2){
-				warn(_mc);
-				warn(_sc);
-			}
-		}
-	}
-	if(preMin!=m)fixC();
-	if(d*24+h<2 && opening==true){
-		document.getElementById("mainC").style.display="inline";
-		document.getElementById("TimeOutOfRangeC").style.display="none";
-	}
-	last2hours();
-        setTimeout(countTimeC,1000);
-}
 function changeC(){
 	var lastRank=Number(document.getElementById("borderC").value);
 	var curRank=Number(document.getElementById("curRankC").value);

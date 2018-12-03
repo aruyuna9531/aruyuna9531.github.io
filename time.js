@@ -6,6 +6,8 @@ function isNull(obj){
 	}
 }
 
+var pageSig1_ok=0;
+
 function LastDayOfCurrentMonth(year,month){
 	switch(month){
 	case 1:
@@ -24,7 +26,20 @@ function LastDayOfCurrentMonth(year,month){
 }
 
 function e_cnstart(){return new Date("2018/12/3 15:00:00");}
-function e_cnend(){return new Date("2018/11/27 10:00:00");}
+function e_cnend(){return new Date("2018/12/13 10:00:00");}
+
+function EventEnd(date){
+	if(date.getDate()==4 && date.getHours()>=15 || 
+	date.getDate()>4 && date.getDate()<20 || 
+	date.getDate()==19 && date.getHours()<15
+	)return new Date(date.getFullYear()+"/"+(date.getMonth()+1)+"/15 14:00:00");
+	if(date.getDate()==19 && date.getHours()>=15 ||
+	date.getDate()>19 && date.getDate()<LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1) || 
+	date.getDate()==LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1)
+	)return new Date(date.getFullYear()+"/"+(date.getMonth()+1)+"/"+LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1)+" 14:00:00");
+	if(date.getMonth()!=0)return new Date(date.getFullYear()+"/"+(date.getMonth())+"/"+LastDayOfCurrentMonth(date.getFullYear(),date.getMonth())+" 14:00:00");
+	else return new Date((date.getFullYear()-1)+"/12/31 14:00:00");
+}
 
 function EventOpening(date){
 	if(document.getElementById("serverswitch")!=null){
@@ -39,7 +54,6 @@ function EventOpening(date){
 	return true;
 }
 
-
 function EventWaiting(date){
 	if(date.getDate()==4)
 		if(date.getHours()>=14)return 1;
@@ -52,32 +66,15 @@ function EventWaiting(date){
 	return 0;
 }
 
-function EventEnd(date){
-	if(date.getDate()==5 && date.getHours()>=15 || 
-	date.getDate()>5 && date.getDate()<20 || 
-	date.getDate()==20 && date.getHours()<15
-	)return new Date(date.getFullYear()+"/"+(date.getMonth()+1)+"/15 14:00:00");
-	if(date.getDate()==20 && date.getHours()>=15 ||
-	date.getDate()>20 && date.getDate()<LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1) || 
-	date.getDate()==LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1)
-	)return new Date(date.getFullYear()+"/"+(date.getMonth()+1)+"/"+LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1)+" 14:00:00");
-	if(date.getMonth()!=0)return new Date(date.getFullYear()+"/"+(date.getMonth())+"/"+LastDayOfCurrentMonth(date.getFullYear(),date.getMonth())+" 14:00:00");
-	else return new Date((date.getFullYear()-1)+"/12/31 14:00:00");
-}
 
-function countTime() {
-        var date;
-	var u = navigator.userAgent;
-	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-	if(isiOS)date = new Date();
-	else date = new Date();
+function countTime(pageSig) {
+	if(pageSig==1){
+		if(document.getElementById("serverswitch").value=="cn")pageSig1_ok=1;
+		else pageSig1_ok=0;
+	}
+	var date = new Date();
         var now = date.getTime();  
         var endDate = EventEnd(date);
-	if(document.getElementById("serverswitch")!=null){
-		if(document.getElementById("serverswitch").value=="cn"){
-			endDate=e_cnend();
-		}
-	}
         var end = endDate.getTime();
         var leftTime = end-now; 
         var d=0,h=0,m=0,s=0;  
@@ -91,6 +88,16 @@ function countTime() {
 		case 1:d=9;h=23;break;
 		case 2:d=LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1)-21;h=23;break;
 		default:break;
+	}
+	if(pageSig1_ok==1){
+			var _start=e_cnstart();
+			var _end=e_cnend();
+			if(now-_start>0)leftTime=_end.getTime()-now;
+			else leftTime=_end.getTime()-_start.getTime();
+			d = Math.floor(leftTime/1000/60/60/24);  
+			h = Math.floor(leftTime/1000/60/60%24);  
+			m = Math.floor(leftTime/1000/60%60);  
+			s = Math.floor(leftTime/1000%60);     
 	}
         document.getElementById("_d").innerHTML = d;
 	document.getElementById("_h").innerHTML = h;
@@ -106,9 +113,53 @@ function countTime() {
 				warn(_m);
 				warn(_s);
 			}
+			else{unwarn(_m);unwarn(_s);}
+		}
+		else {unwarn(_h);unwarn(_m);unwarn(_s);}
+	}
+	else {unwarn(_d);unwarn(_h);unwarn(_m);unwarn(_s);}
+        setTimeout(countTime,1000);
+}
+function countTimeC_st() {
+        var date;
+	var u = navigator.userAgent;
+	var date = new Date();
+        var now = date.getTime();
+	var startDate = e_cnstart();
+	var endDate = e_cnend();
+        var end = endDate.getTime();
+        var leftTime = end-now;
+	var opening = now-startDate.getTime()>0 && end-now>0;
+        var d=Math.floor((end-startDate.getTime())/1000/60/60/24),h=Math.floor((end-startDate.getTime())/1000/60/60%24),m=Math.floor((end-startDate.getTime())/1000/60%60),s=Math.floor((end-startDate.getTime())/1000%60);
+	var preMin=Number(document.getElementById("_mc").innerHTML);
+        if (leftTime>0 && opening==true) {
+	d = Math.floor(leftTime/1000/60/60/24);  
+        h = Math.floor(leftTime/1000/60/60%24);  
+        m = Math.floor(leftTime/1000/60%60);  
+        s = Math.floor(leftTime/1000%60);                     
+        }
+        document.getElementById("_dc").innerHTML = d;
+	document.getElementById("_hc").innerHTML = h;
+	document.getElementById("_mc").innerHTML = front0(m);
+	document.getElementById("_sc").innerHTML = front0(s);
+	if(d<1){
+		warn(_dc);
+		if(h<10)
+		{
+			warn(_hc);
+			if(h<2){
+				warn(_mc);
+				warn(_sc);
+			}
 		}
 	}
-        setTimeout(countTime,1000);
+	if(preMin!=m)fixC();
+	if(d*24+h<2 && opening==true){
+		document.getElementById("mainC").style.display="inline";
+		document.getElementById("TimeOutOfRangeC").style.display="none";
+	}
+	last2hours();
+        setTimeout(countTimeC_st,1000);
 }
 function front0(x){
 	if(x<10)return "0"+x;

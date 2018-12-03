@@ -2,8 +2,8 @@
 <head>
  <title>活动算心</title>
 </head>
-<body onload="countTime();needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();eventType();ptBonus()">
-服务器：<select id="serverswitch" onchange="countTime();needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps()">
+<body onload="countTime(1);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();eventType();ptBonus()">
+服务器：<select id="serverswitch" onchange="countTime(1);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps()">
 <option value="jp">日服</option>
 <option value="cn">国服</option>
 </select>
@@ -136,7 +136,7 @@
 	<p id="notAvailable" style="display:none">该活动还没写好，咕咕咕</p>
  <p>
 	现有LP：<input id="lp" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
-	当前LP上限：<input id="LPMax" type="number" value="181" onchange="isNull(this);AutomaticRecover()"><br>
+	当前LP上限：<input id="LPMax" type="number" value="186" onchange="isNull(this);AutomaticRecover()"><br>
 	预计能升几级（活动内）：<input id="LvUp" type="number" value="2" onchange="isNull(this);AutomaticRecover()"><br>
 	吃50糖：<input id="LP50" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
 	吃50%罐头：<input id="LP50pc" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
