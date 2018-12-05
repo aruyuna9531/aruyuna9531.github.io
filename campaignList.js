@@ -19,6 +19,7 @@ function countTime(counter){
 		s=Math.floor(mms/1000%60);
 		document.getElementById(rmt_s).innerHTML=d+"天 "+h+":"+front0(m)+":"+front0(s);
 	}
+	setInterval(countTime, 1000);
 }
 
 function front0(x){
