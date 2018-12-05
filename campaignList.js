@@ -17,7 +17,7 @@ function countTime(counter){
 		h=Math.floor(mms/1000/60/60%24);
 		m=Math.floor(mms/1000/60%60);
 		s=Math.floor(mms/1000%60);
-		document.getElementById(rmt_s).innerHTML=d+"Ìì "+h+":"+front0(m)+":"+front0(s);
+		document.getElementById(rmt_s).innerHTML=d+"ÃŒÃ¬ "+h+":"+front0(m)+":"+front0(s);
 	}
 }
 
