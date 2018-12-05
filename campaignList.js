@@ -1,6 +1,9 @@
+var cList_counter=0;
+
 function countTime(counter){
+	if(cList_counter==0)cList_counter=counter;
 	var date=new Date();
-	for(var i=1;i<=counter;i++){
+	for(var i=1;i<=cList_counter;i++){
 		var sta_s="cmp"+String(i)+"_start";
 		var end_s="cmp"+String(i)+"_end";
 		var rmt_s="cmp"+String(i)+"_remain";
