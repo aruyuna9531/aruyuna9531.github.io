@@ -7,11 +7,11 @@ function countTime(counter){
 		var startAt=new Date(String(document.getElementById(sta_s).innerHTML));
 		var endAt=new Date(String(document.getElementById(end_s).innerHTML));
 		var d=0,h=0,m=0,s=0,mms=0;
-		if(date.getTime()<startAt.getTime()-86400000){
+		if(date.getTime()<startAt.getTime()-3600000){
 			mms=endAt.getTime()-startAt.getTime();
 		}
 		else{
-			mms=endAt.getTime()-86400000-date.getTime();
+			mms=endAt.getTime()-3600000-date.getTime();
 		}
 		d=Math.floor(mms/1000/24/60/60);
 		h=Math.floor(mms/1000/60/60%24);
