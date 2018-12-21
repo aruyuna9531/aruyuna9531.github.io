@@ -419,7 +419,16 @@ function eventType(){
 }
 function TimeLimitWarnings(){
 	var remainTime=Number(document.getElementById("_d").innerHTML)*24*60+Number(document.getElementById("_h").innerHTML)*60+Number(document.getElementById("_m").innerHTML);
-	var songs=Number(document.getElementById("Songs").innerHTML);
+	var a = document.getElementById("CurrentEvent").value;
+	var songs=0;
+	switch(a){
+	case "ic":songs=Number(document.getElementById("Songs_ic").innerHTML);break;
+	case "sm":songs=Number(document.getElementById("Songs_sm").innerHTML);break;
+	case "mf":songs=Number(document.getElementById("Songs_mf").innerHTML);break;
+	case "cf":songs=Number(document.getElementById("Songs_cf").innerHTML);break;
+	case "sr":songs=Number(document.getElementById("Songs_or").innerHTML);break;
+	case "nm":songs=Number(document.getElementById("Songs_nm").innerHTML);break;
+	}
 	if(remainTime-songs*2.5>12)document.getElementById("TimeLimitWarning").innerHTML="";
 	else if(remainTime-songs*2.5>0)document.getElementById("TimeLimitWarning").innerHTML="达到目标pt所需时间可能不够，请抓紧时间";
 	else document.getElementById("TimeLimitWarning").innerHTML="已经没有时间足以达到该pt，请调整目标pt或多倍策略";
