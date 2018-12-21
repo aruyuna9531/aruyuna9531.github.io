@@ -408,6 +408,12 @@ function eventType(){
 	document.getElementById("OR").style.display="none";
 	document.getElementById("NM").style.display="none";
 	document.getElementById("notAvailable").style.display="none";
+	document.getElementById("sicMsg").style.display="none";
+	document.getElementById("ssmMsg").style.display="none";
+	document.getElementById("smfMsg").style.display="none";
+	document.getElementById("scfMsg").style.display="none";
+	document.getElementById("sorMsg").style.display="none";
+	document.getElementById("snmMsg").style.display="none";
 	switch(a){
 	case "ic":document.getElementById("IconCol").style.display="inline";document.getElementById("sicMsg").style.display="inline";break;
 	case "sm":document.getElementById("SM").style.display="inline";document.getElementById("ssmMsg").style.display="inline";break;
