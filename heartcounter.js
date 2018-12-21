@@ -409,12 +409,12 @@ function eventType(){
 	document.getElementById("NM").style.display="none";
 	document.getElementById("notAvailable").style.display="none";
 	switch(a){
-	case "ic":document.getElementById("IconCol").style.display="inline";break;
-	case "sm":document.getElementById("SM").style.display="inline";break;
-	case "mf":document.getElementById("MF").style.display="inline";break;
-	case "cf":document.getElementById("CF").style.display="inline";break;
-	case "sr":document.getElementById("OR").style.display="inline";break;
-	case "nm":document.getElementById("NM").style.display="inline";break;
+	case "ic":document.getElementById("IconCol").style.display="inline";document.getElementById("sicMsg").style.display="inline";break;
+	case "sm":document.getElementById("SM").style.display="inline";document.getElementById("ssmMsg").style.display="inline";break;
+	case "mf":document.getElementById("MF").style.display="inline";document.getElementById("smfMsg").style.display="inline";break;
+	case "cf":document.getElementById("CF").style.display="inline";document.getElementById("scfMsg").style.display="inline";break;
+	case "sr":document.getElementById("OR").style.display="inline";document.getElementById("sorMsg").style.display="inline";break;
+	case "nm":document.getElementById("NM").style.display="inline";document.getElementById("snmMsg").style.display="inline";break;
 	}
 }
 function TimeLimitWarnings(){
