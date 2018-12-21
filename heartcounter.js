@@ -26,6 +26,7 @@ function needlps(){
 	}
 	document.getElementById("normalsong").innerHTML = i;
 	document.getElementById("NeedLP").innerHTML = i*Number(document.getElementById("LPUse").value);
+	console.log("activated");
 	document.getElementById("Songs").innerHTML = i+Math.ceil(i*Number(document.getElementById("IconGet").value)/300);
 	countres();
 	TimeLimitWarnings();
