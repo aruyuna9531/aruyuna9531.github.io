@@ -47,11 +47,11 @@
   </p>
 <!--					传统活动				-->
 	<span id="IconCol" style="display:none">
-	普通曲消费LP：<input id="LPUse" type="number" value="100" onchange="isNull(this);needlps();">
-	每首歌攒道具数：<input id="IconGet" type="number" value="108" onchange="isNull(this);needlps();">
+	普通曲消费LP：<input id="LPUse" type="number" value="100" onchange="isNull(this);needlps();expCount();maxLP()">
+	每首歌攒道具数：<input id="IconGet" type="number" value="108" onchange="isNull(this);needlps();expCount();maxLP()">
  	</p>
  	<p>
-	目前道具：<input id="curicons" type="number" value="0" onchange="isNull(this);needlps()"><br>
+	目前道具：<input id="curicons" type="number" value="0" onchange="isNull(this);needlps();expCount();maxLP()"><br>
 	需要打普通曲目数：<span id="normalsong"></span><br>
 	需要LP：<span id="NeedLP"></span><br>
 	 </p>
@@ -139,13 +139,13 @@
 <!--					end					-->
 	<p id="notAvailable" style="display:none">该活动还没写好，咕咕咕</p>
  <p>
-	现有LP：<input id="lp" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
+	现有LP：<input id="lp" type="number" value="0" onchange="isNull(this);AutomaticRecover();expCount();maxLP()"><br>
 	当前LP上限：<span id="LPMax"></span><br>
 	预计能升几级（活动内）：<!--<input id="LvUp" type="number" value="2" onchange="isNull(this);AutomaticRecover()">-->
 	<span id="LvUp"></span><br>
-	吃50糖：<input id="LP50" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
-	吃50%罐头：<input id="LP50pc" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
-	吃100%罐头：<input id="LP100pc" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
+	吃50糖：<input id="LP50" type="number" value="0" onchange="isNull(this);AutomaticRecover();expCount();maxLP()"><br>
+	吃50%罐头：<input id="LP50pc" type="number" value="0" onchange="isNull(this);AutomaticRecover();expCount();maxLP()"><br>
+	吃100%罐头：<input id="LP100pc" type="number" value="0" onchange="isNull(this);AutomaticRecover();expCount();maxLP()"><br>
 	回复LP总量：<span id="LPs"></span><br>
  </p>
  <p>
