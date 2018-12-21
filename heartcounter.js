@@ -570,8 +570,9 @@ function exp(rank, cexp){
 	var Nexp=Nrecover/25*83;
 	if(expExploseSign==1){
 		var Grecover=needlp-Nrecover;
-		var Gexp=Grecover/25*830;
-		ctotExp+=Nexp+Gexp;
+		var Gexp=Math.floor(Grecover/25)*830;
+		var GeventSongExp=Math.floor(Grecover/25*27/75)*830;
+		ctotExp+=Nexp+Gexp+GeventSongExp;
 		var destExp=0;
 		var destRank=1;
 		for(;destExp<ctotExp;destRank++)destExp+=getExpFromRank(destRank);
