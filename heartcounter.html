@@ -5,7 +5,7 @@
 <body onload="countTime(1);needlps();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();eventType();ptBonus();expCount();maxLP();AutomaticRecover()">
 	<span><h3> 前排提示：已加入23日十倍Exp计算（默认吃心吃糖全部归入那一天），仅供参考
 		</h3></span>
-服务器：<select id="serverswitch" onchange="countTime(1);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();expCount();maxLP()">
+服务器：<select id="serverswitch" onchange="countTime(1);needlps();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();expCount();maxLP();AutomaticRecover();">
 <option value="jp">日服</option>
 <option value="cn">国服</option>
 </select>
@@ -139,13 +139,12 @@
 <!--					end					-->
 	<p id="notAvailable" style="display:none">该活动还没写好，咕咕咕</p>
  <p>
-	现有LP：<input id="lp" type="number" value="0" onchange="isNull(this);AutomaticRecover();expCount();maxLP()"><br>
+	现有LP：<input id="lp" type="number" value="0" onchange="isNull(this);expCount();maxLP();AutomaticRecover()"><br>
 	当前LP上限：<span id="LPMax"></span><br>
-	预计能升几级（活动内）：<!--<input id="LvUp" type="number" value="2" onchange="isNull(this);AutomaticRecover()">-->
-	<span id="LvUp"></span><br>
-	吃50糖：<input id="LP50" type="number" value="0" onchange="isNull(this);AutomaticRecover();expCount();maxLP()"><br>
-	吃50%罐头：<input id="LP50pc" type="number" value="0" onchange="isNull(this);AutomaticRecover();expCount();maxLP()"><br>
-	吃100%罐头：<input id="LP100pc" type="number" value="0" onchange="isNull(this);AutomaticRecover();expCount();maxLP()"><br>
+	预计能升几级（活动内）：<span id="LvUp"></span><br>
+	吃50糖：<input id="LP50" type="number" value="0" onchange="isNull(this);expCount();maxLP();AutomaticRecover()"><br>
+	吃50%罐头：<input id="LP50pc" type="number" value="0" onchange="isNull(this);expCount();maxLP();AutomaticRecover()"><br>
+	吃100%罐头：<input id="LP100pc" type="number" value="0" onchange="isNull(this);expCount();maxLP();AutomaticRecover()"><br>
 	回复LP总量：<span id="LPs"></span><br>
  </p>
  <p>
