@@ -2,12 +2,10 @@
 <head>
  <title>活动算心</title>
 </head>
-<body onload="countTime(1);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();eventType();ptBonus()">
-	<span><h3> 前排提示：12月23日有除常驻Master以外的全曲10倍打歌Exp活动，因此在23日之前的算心，请注意修改“预计能升几级”选项<br>
-		请参考<a href="https://tieba.baidu.com/p/5983069989">十倍传统升级参考</a>一贴进行计算<br>
-		或者23日之后再来计算
+<body onload="countTime(1);needlps();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();eventType();ptBonus();expCount();maxLP();AutomaticRecover()">
+	<span><h3> 前排提示：已加入23日十倍Exp计算（默认吃心吃糖全部归入那一天），仅供参考
 		</h3></span>
-服务器：<select id="serverswitch" onchange="countTime(1);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps()">
+服务器：<select id="serverswitch" onchange="countTime(1);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();expCount();maxLP()">
 <option value="jp">日服</option>
 <option value="cn">国服</option>
 </select>
@@ -19,24 +17,26 @@
 	<span id="_s"></span>
  </p>
  <p>
-	每首活动曲分数等级：<select id="scoreRank" onchange="needlps();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();">
+	每首活动曲分数等级：<select id="scoreRank" onchange="needlps();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();expCount();maxLP()">
 	<option value="S">S</option>
 	<option value="A">A</option>
 	<option value="B">B</option>
 	<option value="C">C</option>
 	<option value="D">D</option>
 	</select><br>
-	每首活动曲连击等级：<select id="ComboRank" onchange="needlps();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();">
+	每首活动曲连击等级：<select id="ComboRank" onchange="needlps();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();expCount();maxLP()">
 	<option value="S">S</option>
 	<option value="A">A</option>
 	<option value="B">B</option>
 	<option value="C">C</option>
 	<option value="D">D</option>
 	</select><br>
-	目标pt：<input id="aim" type="number" value="40000" onchange="isNull(this);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();ptBonus()"><br>
-	目前pt：<input id="cur" type="number" value="0" onchange="isNull(this);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();ptBonus()"><br>
+	目标pt：<input id="aim" type="number" value="40000" onchange="isNull(this);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();ptBonus();expCount();maxLP()"><br>
+	目前pt：<input id="cur" type="number" value="0" onchange="isNull(this);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();ptBonus();expCount();maxLP()"><br>
+	目前Rank：<input id="curRank" type="number" value="337" onchange="isNull(this);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();ptBonus();expCount();maxLP()"><br>
+	目前Exp：<input id="curExp" type="number" value="0" onchange="isNull(this);needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();ptBonus();expCount();maxLP()"><br>
 	<br>
-	当前活动类型:<select id="CurrentEvent" onchange="eventType();needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();ptBonus()">
+	当前活动类型:<select id="CurrentEvent" onchange="eventType();needlps();AutomaticRecover();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();ptBonus();expCount();maxLP()">
 	<option value="ic" selected="selected">传统</option>
 	<option value="sm">SM</option>
 	<option value="mf">MF</option>
@@ -140,8 +140,9 @@
 	<p id="notAvailable" style="display:none">该活动还没写好，咕咕咕</p>
  <p>
 	现有LP：<input id="lp" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
-	当前LP上限：<input id="LPMax" type="number" value="186" onchange="isNull(this);AutomaticRecover()"><br>
-	预计能升几级（活动内）：<input id="LvUp" type="number" value="2" onchange="isNull(this);AutomaticRecover()"><br>
+	当前LP上限：<span id="LPMax"></span><br>
+	预计能升几级（活动内）：<!--<input id="LvUp" type="number" value="2" onchange="isNull(this);AutomaticRecover()">-->
+	<span id="LvUp"></span><br>
 	吃50糖：<input id="LP50" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
 	吃50%罐头：<input id="LP50pc" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>
 	吃100%罐头：<input id="LP100pc" type="number" value="0" onchange="isNull(this);AutomaticRecover()"><br>

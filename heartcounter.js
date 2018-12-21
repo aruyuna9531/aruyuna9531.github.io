@@ -3,10 +3,10 @@
 function AutomaticRecover(){
 	var RemainMins = Number(document.getElementById("_d").innerHTML)*24*60+Number(document.getElementById("_h").innerHTML)+Number(document.getElementById("_m").innerHTML);
 	var AutoRec=Math.floor((RemainMins>10?RemainMins-10:0)/6);
-	var LvUpRec=Number(document.getElementById("LvUp").value) * Number(document.getElementById("LPMax").value) +1;
+	var LvUpRec=Number(document.getElementById("LvUp").innerHTML) * Number(document.getElementById("LPMax").innerHTML) +1;
 	var LP50Rec=Number(document.getElementById("LP50").value)*50;
-	var LP50pcRec=Number(document.getElementById("LP50pc").value)*Number(document.getElementById("LPMax").value)*0.5;
-	var LP100pcRec=Number(document.getElementById("LP100pc").value)*Number(document.getElementById("LPMax").value);
+	var LP50pcRec=Number(document.getElementById("LP50pc").value)*Number(document.getElementById("LPMax").innerHTML)*0.5;
+	var LP100pcRec=Number(document.getElementById("LP100pc").value)*Number(document.getElementById("LPMax").innerHTML);
 	var nowLP=Number(document.getElementById("lp").value);
 	var ptBonusSugar=(document.getElementsByName("useTheseSugars")[0].checked)?(Number(document.getElementById("getSugar").innerHTML)*50):0;
 	document.getElementById("LPs").innerHTML=AutoRec+LvUpRec+LP50Rec+LP50pcRec+LP100pcRec+nowLP+ptBonusSugar;
@@ -392,7 +392,7 @@ function countres(){
 	}
 
 	var recovlp= Number(document.getElementById("LPs").innerHTML);
-	var lpmax  = Number(document.getElementById("LPMax").value);
+	var lpmax  = Number(document.getElementById("LPMax").innerHTML);
 	var res = Math.ceil((needlp-recovlp)/lpmax);
 	document.getElementById("auto").innerHTML=res>0?res:0;
 	if(res==1)document.getElementById("Loveca1Warning").style.display="inline";
@@ -495,4 +495,98 @@ function ptBonusShow(lovecaArr, srArr, ticketArr, sugarArr){
 	document.getElementById("getSR").innerHTML=sr>0?sr:0;
 	document.getElementById("getTicket").innerHTML=ticket>0?ticket:0;
 	document.getElementById("getSugar").innerHTML=sugar>0?sugar:0;
+}
+//————————————————————————————EXP————————————————————————————
+
+function getExpFromRank(rank){
+	if(rank<=33){
+		switch(rank){
+		case 1:return 6;
+		case 2:return 6;
+		case 3:return 8;
+		case 4:return 10;
+		case 5:return 13;
+		case 6:return 16;
+		case 7:return 20;
+		case 8:return 24;
+		case 9:return 28;
+		case 10:return 34;
+		case 11:return 39;
+		case 12:return 46;
+		case 13:return 52;
+		case 14:return 60;
+		case 15:return 68;
+		case 16:return 76;
+		case 17:return 85;
+		case 18:return 94;
+		case 19:return 104;
+		case 20:return 115;
+		case 21:return 125;
+		case 22:return 137;
+		case 23:return 149;
+		case 24:return 162;
+		case 25:return 174;
+		case 26:return 188;
+		case 27:return 203;
+		case 28:return 217;
+		case 29:return 232;
+		case 30:return 247;
+		case 31:return 264;
+		case 32:return 281;
+		case 33:return 298;
+		}
+	}
+	else if(rank<=1000)
+	{
+		var ret=Math.round(34.45*rank-551);
+		if(rank<100)return Math.round(ret/2);
+		else return ret;
+	}
+	else return 0;
+}
+
+function expCount(){
+	var rank=Number(document.getElementById("curRank").value);
+	var cexp=Number(document.getElementById("curExp").value);
+	exp(rank, cexp);
+}
+
+function exp(rank, cexp){
+	var ctotExp=0;
+	for(var i=1;i<rank;i++)ctotExp+=getExpFromRank(i);
+	ctotExp+=cexp;
+	
+	var expExploseSign=Number(document.getElementById("_d").innerHTML)>=8 && String(document.getElementById("serverswitch").value)=="jp"?1:0;
+	var needlp=0;
+	switch(document.getElementById("CurrentEvent").value){
+	case "ic":needlp=Number(document.getElementById("NeedLP").innerHTML);break;
+	case "sm":needlp=Number(document.getElementById("SmNeedLP").innerHTML);break;
+	case "mf":needlp=Number(document.getElementById("MfNeedLP").innerHTML);break;
+	case "cf":needlp=Number(document.getElementById("Cfrlp").innerHTML);break;
+	case "sr":needlp=Number(document.getElementById("Orrlp").innerHTML);break;
+	case "nm":needlp=Number(document.getElementById("NmNeedLP").innerHTML);break;
+	}
+	var Nrecover=Math.floor(Number(document.getElementById("_d").innerHTML)*240+Number(document.getElementById("_h").innerHTML)*10+Number(document.getElementById("_m").innerHTML)/6);
+	var Nexp=Nrecover/25*83;
+	if(expExploseSign==1){
+		var Grecover=needlp-Nrecover;
+		var Gexp=Grecover/25*830;
+		ctotExp+=Nexp+Gexp;
+		var destExp=0;
+		var destRank=1;
+		for(;destExp<ctotExp;destRank++)destExp+=getExpFromRank(destRank);
+		document.getElementById("LvUp").innerHTML=destRank-rank;
+	}
+	else{
+		ctotExp+=Nexp;
+		var destExp=0;
+		var destRank=1;
+		for(;destExp<ctotExp;destRank++)destExp+=getExpFromRank(destRank);
+		document.getElementById("LvUp").innerHTML=destRank-rank;
+	}
+}
+
+function maxLP(){
+	var rank=Number(document.getElementById("curRank").value);
+	document.getElementById("LPMax").innerHTML=(rank<=300)?(25+Math.floor(rank/2)):(175+Math.floor((rank-300)/3));
 }
