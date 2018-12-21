@@ -569,7 +569,7 @@ function exp(rank, cexp){
 	var Nrecover=Math.floor(Number(document.getElementById("_d").innerHTML)*240+Number(document.getElementById("_h").innerHTML)*10+Number(document.getElementById("_m").innerHTML)/6);
 	var Nexp=Nrecover/25*83;
 	if(expExploseSign==1){
-		var Grecover=needlp-Nrecover;
+		var Grecover=(needlp-Nrecover)>0?needlp-Nrecover:0;
 		var Gexp=Math.floor(Grecover/25)*830;
 		var GeventSongExp=Math.floor(Grecover/25*27/75)*830;
 		ctotExp+=Nexp+Gexp+GeventSongExp;
