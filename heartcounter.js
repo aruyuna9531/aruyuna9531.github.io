@@ -26,8 +26,7 @@ function needlps(){
 	}
 	document.getElementById("normalsong").innerHTML = i;
 	document.getElementById("NeedLP").innerHTML = i*Number(document.getElementById("LPUse").value);
-	console.log("activated");
-	document.getElementById("Songs").innerHTML = i+Math.ceil(i*Number(document.getElementById("IconGet").value)/300);
+	document.getElementById("Songs_ic").innerHTML = i+Math.ceil(i*Number(document.getElementById("IconGet").value)/300);
 	countres();
 	TimeLimitWarnings();
 }
@@ -114,7 +113,7 @@ function SmNeedLps(){
 	var needPts = Number(document.getElementById("aim").value)-Number(document.getElementById("cur").value);
 	var res=Math.ceil(needPts/Math.round(357*sBets*rBets));
 	document.getElementById("SmNeedLP").innerHTML=res*25;
-	document.getElementById("Songs").innerHTML=Math.ceil(res/Number(document.getElementById("smbet").value));
+	document.getElementById("Songs_sm").innerHTML=Math.ceil(res/Number(document.getElementById("smbet").value));
 	countres();
 	TimeLimitWarnings();
 }
@@ -143,7 +142,7 @@ function MfNeedLps(){
 	var needPts = Number(document.getElementById("aim").value)-Number(document.getElementById("cur").value);
 	var res=Math.ceil(needPts/Math.round(777*sBets*cBets*1.1));
 	document.getElementById("MfNeedLP").innerHTML=res*60;
-	document.getElementById("Songs").innerHTML=Math.ceil(res/Number(document.getElementById("mfbet").value));
+	document.getElementById("Songs_mf").innerHTML=Math.ceil(res/Number(document.getElementById("mfbet").value));
 	countres();
 	TimeLimitWarnings();
 }
@@ -185,7 +184,7 @@ function CfNeedLps(){
 		}
 	}
 	document.getElementById("Cfrlp").innerHTML=needLP;
-	document.getElementById("Songs").innerHTML=songs;
+	document.getElementById("Songs_cf").innerHTML=songs;
 	countres();
 	TimeLimitWarnings();
 	
@@ -292,7 +291,7 @@ function OrNeedLps(){
 		}
 	}
 	document.getElementById("Orrlp").innerHTML=Math.ceil(needlps);
-	document.getElementById("Songs").innerHTML=songCount;
+	document.getElementById("Songs_or").innerHTML=songCount;
 	countres();
 	TimeLimitWarnings();
 }
@@ -376,7 +375,7 @@ function NmNeedLps(){
 	var res=Math.ceil(needPts/Math.round(301*sBets*cBets*pBets*rBets));
 	document.getElementById("NmNeedLP").innerHTML=res*25;
 	var songplay=Math.ceil(res/Number(document.getElementById("nmbet").value));
-	document.getElementById("Songs").innerHTML=songplay>0?songplay:0;
+	document.getElementById("Songs_nm").innerHTML=songplay>0?songplay:0;
 	countres();
 	TimeLimitWarnings();
 }
