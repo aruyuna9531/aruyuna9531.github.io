@@ -25,8 +25,8 @@ function LastDayOfCurrentMonth(year,month){
 	}
 }
 
-function e_cnstart(){return new Date("2018/12/3 15:00:00");}
-function e_cnend(){return new Date("2018/12/13 10:00:00");}
+function e_cnstart(){return new Date("2018/12/18 17:00:00");}
+function e_cnend(){return new Date("2018/12/28 14:00:00");}
 
 function EventEnd(date){
 	if(date.getDate()==4 && date.getHours()>=15 || 
