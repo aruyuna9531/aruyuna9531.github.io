@@ -572,7 +572,7 @@ function exp(rank, cexp){
 	for(var i=1;i<rank;i++)ctotExp+=getExpFromRank(i);
 	ctotExp+=cexp;
 	
-	var expExploseSign=Number(document.getElementById("_d").innerHTML)>=8 && String(document.getElementById("serverswitch").value)=="jp"?1:0;
+	var expExploseSign=Number(document.getElementById("_d").innerHTML)*24+Number(document.getElementById("_h").innerHTML)>=7*24+14 && String(document.getElementById("serverswitch").value)=="jp"?1:0;
 	var needlp=0;
 	switch(document.getElementById("CurrentEvent").value){
 	case "ic":needlp=Number(document.getElementById("NeedLP").innerHTML);break;
