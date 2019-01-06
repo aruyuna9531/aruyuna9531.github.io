@@ -27,7 +27,7 @@ function print(){
 	var C2 = Number(document.getElementById("SecondC").innerHTML);
 	var C3 = Number(document.getElementById("ThirdC").innerHTML);
 	var TeaTimeSpot = Number(document.getElementById("_d").innerHTML)*24+Number(document.getElementById("_h").innerHTML);
-	if(EType!="SM"){
+	if(String(document.getElementById("EventType").value)!="SM"){
 	document.getElementById("First").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S1);
 	document.getElementById("Second").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S2);
 	document.getElementById("Third").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S3);
