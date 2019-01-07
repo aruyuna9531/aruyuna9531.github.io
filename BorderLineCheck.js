@@ -13,48 +13,46 @@
 	Dif(curEv);
 	var c1w=0, c3w=0, c5w=0;
 	var sN1s=curEv+"1C";
-	var sN1Check=document.getElementById(sN1s).innerHTML;
 	var sN2s=curEv+"2C";
-	var sN2Check=document.getElementById(sN2s).innerHTML;
 	var sN3s=curEv+"3C";
-	var sN3Check=document.getElementById(sN3s).innerHTML;
 	var m1AvgStr=0, mCount=0, evPtr=curEv-1;
-	while(mCount<3){
+	var countSt=2;
+	while(mCount<countSt){
 		if(evPtr%2==curEv%2){
 			var s1s=evPtr+"1C";
 			var s1Check=Number(document.getElementById(s1s).innerHTML);
 			m1AvgStr+=s1Check;
-			mCount++;
+			if(s1Check!=0)mCount++;
 		}
 		evPtr--;
 	}
-	sN1Check=Math.floor(m1AvgStr/3);
+	document.getElementById(sN1s).innerHTML=Math.floor(m1AvgStr/countSt);
 
 	var m2AvgStr=0;
 	mCount=0,evPtr=curEv-1;
-	while(mCount<3){
+	while(mCount<countSt){
 		if(evPtr%2==curEv%2){
 			var s2s=evPtr+"2C";
 			var s2Check=Number(document.getElementById(s2s).innerHTML);
 			m2AvgStr+=s2Check;
-			mCount++;
+			if(s2Check!=0)mCount++;
 		}
 		evPtr--;
 	}
-	sN2Check=Math.floor(m2AvgStr/3);
+	document.getElementById(sN2s).innerHTML=Math.floor(m2AvgStr/countSt);
 
 	var m3AvgStr=0;
 	mCount=0,evPtr=curEv-1;
-	while(mCount<3){
+	while(mCount<countSt){
 		if(evPtr%2==curEv%2){
 			var s3s=evPtr+"3C";
 			var s3Check=Number(document.getElementById(s3s).innerHTML);
 			m3AvgStr+=s3Check;
-			mCount++;
+			if(s3Check!=0)mCount++;
 		}
 		evPtr--;
 	}
-	sN3Check=Math.floor(m3AvgStr/3);
+	document.getElementById(sN3s).innerHTML=Math.floor(m3AvgStr/countSt);
 	detect(curEv,1);
 	detect(curEv,2);
 	detect(curEv,3);
@@ -70,7 +68,7 @@ function detect(curEv,b){
 	var difID=curEv+"dif";
 	var dif=Number(document.getElementById(difID).innerHTML);
 	
-	document.getElementById(cID).innerHTML=Math.round(eScore*bc*ar*dif/80*1.21)+"～"+Math.round((eScore+2000)*bc*ar*dif/80*1.21);
+	document.getElementById(cID).innerHTML=Math.round(eScore*bc*ar*dif/80*1.21)+"～"+Math.round((eScore+(b==1?3000:(b==2?2250:1500)))*bc*ar*dif/80*1.21);
 	warn2(cID);
 }
 function warn(obj){
