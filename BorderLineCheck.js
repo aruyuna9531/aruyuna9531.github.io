@@ -133,7 +133,7 @@ function last6monthEvc(){
 	var curEv=Number(document.getElementById("LastNo").innerHTML);
 	var ic=0,sm=0,mf=0,cf=0,sr=0,nm=0;
 	for(var i=curEv; i>curEv-12;i--){
-		var enID=curEv+"EN";
+		var enID=i+"EN";
 		var EventName=String(document.getElementById(enID).innerHTML);switch(EventName){
 		case "Score Match":sm++;break;
 		case "Medley Festival":mf++;break;
