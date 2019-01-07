@@ -163,10 +163,37 @@ function last6monthEvc(){
 		default:if(i>icl)icl=i;break;
 		}
 	}
-	document.getElementById("LastIc").innerHTML=icl;
-	document.getElementById("LastSm").innerHTML=sml;
-	document.getElementById("LastMf").innerHTML=mfl;
-	document.getElementById("LastCf").innerHTML=cfl;
-	document.getElementById("LastSr").innerHTML=srl;
-	document.getElementById("LastNm").innerHTML=nml;
+	var cEv=158;
+	var cYear=2019;
+	
+	var RvsE=cEv-icl;
+	var _Year=cYear-Math.floor(RvsE/24);
+	var _Month=12-Math.floor((RvsE%24)/2);
+	var _Half=icl%2==1?"上旬":"下旬";
+	document.getElementById("LastIc").innerHTML=_Year+"年"+_Month+"月"+_Half;
+	RvsE=cEv-sml;
+	_Year=cYear-Math.floor(RvsE/24);
+	_Month=12-Math.floor((RvsE%24)/2);
+	_Half=sml%2==1?"上旬":"下旬";
+	document.getElementById("LastSm").innerHTML=_Year+"年"+_Month+"月"+_Half;
+	RvsE=cEv-mfl;
+	_Year=cYear-Math.floor(RvsE/24);
+	_Month=12-Math.floor((RvsE%24)/2);
+	_Half=mfl%2==1?"上旬":"下旬";
+	document.getElementById("LastMf").innerHTML=_Year+"年"+_Month+"月"+_Half;
+	RvsE=cEv-cfl;
+	_Year=cYear-Math.floor(RvsE/24);
+	_Month=12-Math.floor((RvsE%24)/2);
+	_Half=cfl%2==1?"上旬":"下旬";
+	document.getElementById("LastCf").innerHTML=_Year+"年"+_Month+"月"+_Half;
+	RvsE=cEv-srl;
+	_Year=cYear-Math.floor(RvsE/24);
+	_Month=12-Math.floor((RvsE%24)/2);
+	_Half=srl%2==1?"上旬":"下旬";
+	document.getElementById("LastSr").innerHTML=_Year+"年"+_Month+"月"+_Half;
+	RvsE=cEv-nml;
+	_Year=cYear-Math.floor(RvsE/24);
+	_Month=12-Math.floor((RvsE%24)/2);
+	_Half=nml%2==1?"上旬":"下旬";
+	document.getElementById("LastNm").innerHTML=_Year+"年"+_Month+"月"+_Half;
 }
