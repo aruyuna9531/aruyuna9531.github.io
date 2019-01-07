@@ -134,7 +134,8 @@ function last6monthEvc(){
 	var ic=0,sm=0,mf=0,cf=0,sr=0,nm=0;
 	for(var i=curEv; i>curEv-12;i--){
 		var enID=i+"EN";
-		var EventName=String(document.getElementById(enID).innerHTML);switch(EventName){
+		var EventName=String(document.getElementById(enID).innerHTML);
+		switch(EventName){
 		case "Score Match":sm++;break;
 		case "Medley Festival":mf++;break;
 		case "Challenge Festival":cf++;break;
@@ -149,4 +150,23 @@ function last6monthEvc(){
 	document.getElementById("cfc").innerHTML=cf;
 	document.getElementById("src").innerHTML=sr;
 	document.getElementById("nmc").innerHTML=nm;
+	var icl=0,sml=0,mfl=104,cfl=0,srl=0,nml=0;
+	for(var i=curEv; i>117;i--){
+		var enID=i+"EN";
+		var EventName=String(document.getElementById(enID).innerHTML);
+		switch(EventName){
+		case "Score Match":if(i>sml)sml=i;break;
+		case "Medley Festival":if(i>mfl)mfl=i;break;
+		case "Challenge Festival":if(i>cfl)cfl=i;break;
+		case "おさんぽラリー":if(i>srl)srl=i;break;
+		case "なかよしマッチ":if(i>nml)nml=i;break;
+		default:if(i>icl)icl=i;break;
+		}
+	}
+	document.getElementById("LastIc").innerHTML=icl;
+	document.getElementById("LastSm").innerHTML=sml;
+	document.getElementById("LastMf").innerHTML=mfl;
+	document.getElementById("LastCf").innerHTML=cfl;
+	document.getElementById("LastSr").innerHTML=srl;
+	document.getElementById("LastNm").innerHTML=nml;
 }
