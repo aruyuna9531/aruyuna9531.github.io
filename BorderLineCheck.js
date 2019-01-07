@@ -1,5 +1,5 @@
-﻿function f(ev){
-	var curEv=ev;
+function f(){
+	var curEv=Number(document.getElementById("LastNo").innerHTML);
 	for(var i=118;i<curEv;i++){
 		BC(i);
 		Ar(i);
@@ -104,6 +104,7 @@ function Dif(curEv){
 		eventSong=300;
 		oneRound=5;
 		allSongs=8;
+		fcDif=1;
 		break;
 	case "おさんぽラリー":
 		eventSong=150;
@@ -126,4 +127,26 @@ function Dif(curEv){
 	if(EventName!="Score Match")pct=1-1/(eventSong/oneRound*maxSongs/allSongs*fcDif);
 	var difID=curEv+"dif";
 	document.getElementById(difID).innerHTML=pct.toFixed(3);
+}
+
+function last6monthEvc(){
+	var curEv=Number(document.getElementById("LastNo").innerHTML);
+	var ic=0,sm=0,mf=0,cf=0,sr=0,nm=0;
+	for(var i=curEv; i>curEv-12;i--){
+		var enID=curEv+"EN";
+		var EventName=String(document.getElementById(enID).innerHTML);switch(EventName){
+		case "Score Match":sm++;break;
+		case "Medley Festival":mf++;break;
+		case "Challenge Festival":cf++;break;
+		case "おさんぽラリー":sr++;break;
+		case "なかよしマッチ":nm++;break;
+		default:ic++;break;
+		}
+	}
+	document.getElementById("icc").innerHTML=ic;
+	document.getElementById("smc").innerHTML=sm;
+	document.getElementById("mfc").innerHTML=mf;
+	document.getElementById("cfc").innerHTML=cf;
+	document.getElementById("src").innerHTML=sr;
+	document.getElementById("nmc").innerHTML=nm;
 }
