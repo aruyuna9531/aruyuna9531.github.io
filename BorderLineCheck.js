@@ -227,9 +227,9 @@ function last6monthEvc(){
 		nmPct=nmGap/tGap*98;
 	}
 	document.getElementById("nextIcPerc").innerHTML=icPct+"%";
-	document.getElementById("nextSmPerc").innerHTML=icPct+"%";
-	document.getElementById("nextMfPerc").innerHTML=icPct+"%";
-	document.getElementById("nextCfPerc").innerHTML=icPct+"%";
-	document.getElementById("nextSrPerc").innerHTML=icPct+"%（必ず事前お知らせで確認できる）";
-	document.getElementById("nextNmPerc").innerHTML=icPct+"%";
+	document.getElementById("nextSmPerc").innerHTML=smPct+"%";
+	document.getElementById("nextMfPerc").innerHTML=mfPct+"%";
+	document.getElementById("nextCfPerc").innerHTML=cfPct+"%";
+	document.getElementById("nextSrPerc").innerHTML=srPct+"%（必ず事前お知らせで確認できる）";
+	document.getElementById("nextNmPerc").innerHTML=nmPct+"%";
 }
