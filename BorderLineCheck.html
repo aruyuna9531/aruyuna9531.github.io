@@ -3,7 +3,7 @@
 <title>历史档线走势</title>
 <script src="BorderLineCheck.js"></script>
 </head>
-<body onload="f(136)">
+<body onload="f();last6monthEvc()">
 <table class="table-bordered" border="1" cellpadding="0" cellspacing="0" align="center" width="100%">
 		<thead>
 			<th align="center" valign="middle"><strong><span title="イベントの順番">回数</span></strong></th>
@@ -24,7 +24,7 @@
 		<thead>
 		<tbody>
 			<tr>
-				<td>136</td>
+				<td><span id="LastNo">136</span></td>
 				<td>2019.1.20~1.31</td>
 				<td>第8回<span id="136EN">おさんぽラリー</span></td>
 				<td><span id="136un">Aqours</span></td>
@@ -348,6 +348,15 @@
 				<td><span id="1183C"></span></td>
 			</tr>
 		</tbody>
+	<p>
+		近い12回のイベント種類：
+		アイコンコレクション：<span id="icc"></span>回
+		スコアマッチ：<span id="smc"></span>回
+		メドレーフェスティバル：<span id="mfc"></span>回
+		チャレンジフェスティバル：<span id="cfc"></span>回
+		おさんぽラリー：<span id="src"></span>回
+		なかよしマッチ：<span id="nmc"></span>回
+	</p>
 </table>
 </body>
 </html>
