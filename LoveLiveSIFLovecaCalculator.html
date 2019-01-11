@@ -45,9 +45,10 @@
  <p>前排提示：1.能打的新EX，新MA先都打了，否则计算会有偏差<br>
 	2.目前水团只有Step Up抽卡，因此<del>超过120的可以不攒了留着过年</del>最后抽卡计数的结果只计算μ's成员的，敬请原谅<br>
 	3.如果今天正好是某人的生日那么预测可获得心数会出现负数的情况，由于边界值引起，但懒得改了，反正本次也攒不起心了。等到第2天该成员来到明年的年份后会恢复正常。<br>
-	5.生日单人限定开始时间为该成员(A)生日前一天，而“其他成员生日策略”处记录的为截止该成员生日为止还未到生日的总人数。
+	4.生日单人限定开始时间为该成员(A)生日前一天，而“其他成员生日策略”处记录的为截止该成员生日为止还未到生日的总人数。
 	  若今天是某成员(B)生日前一天，那么玩家有可能已经抽了B的生日单人限定，而此时B没有被排除在“其他成员生日策略”的名单之外，因此算心时把B算了进去。
 	  因此，如果你属于这种情况，请自行补上抽掉的心数，或者过一天再来算。<br>
+	5.2019年μ's成员的生日单人限定卡池分为了3种：4连Step up，当年的新Box卡，包含去年的旧Box卡的50心无底洞卡池。请根据自己想要的卡分配资源，目前没有合理的分配建议（咕咕咕）
 </p>
  <p>抽谁的生日卡：
  <select id="member" onchange="daystobirth(value,true);otherMemberLoveca(value);newex();newma();calendar();predictloginbonus();total();sum();TicketEventBonus();totalTicketSum();MuseMemberGachaMax();otherBirths()">
@@ -86,8 +87,8 @@ id="newmaster"></span>心<br>
 	登录日历：<span id="loginCalendar"></span><br>
 	活动攒心（不计现在进行中的和生日所在当期活动）：<select id="eventset" onchange="eventCount(value);total();sum();MuseMemberGachaMax()">
 	<option value="normal">平刷</option>
-	<option value="pt11w">十一万pt</option>
-	<option value="pt13w">十三万pt</option>
+	<option value="pt11w">十二万pt</option>
+	<option value="pt13w">十四万pt</option>
 	</select>，共<span id="eventloveca">0</span>心<br>
 	各种登陆奖励（预测值）：<input id="loginbonus" type="number" value="0" onchange="total();sum();MuseMemberGachaMax()" /><br>
  </p>
@@ -95,38 +96,31 @@ id="newmaster"></span>心<br>
 	其他成员生日单人限定Step Up抽卡策略：<br>
 	μ's：<select id="OtherStepUpMuse" onchange="MuseBirthGacha(value);total();sum();MuseMemberGachaMax()">
 	<option value="0">0心</option>
-	<option value="30">30心</option>
-	<option value="80">80心</option>
+	<option value="30">30心（Step 1 1张SR保底）</option>
+	<option value="70">70心（Step 2 2张SR保底）</option>
+	<option value="120">120心（Step 3 1SSR保底）</option>
+	<option value="170">170心（Step 4 SR以上限定）</option>
 	</select>，共用心<span id="MuseTotalLoveca">0</span><br>
 	Aqours：<select id="OtherStepUpAqours" onchange="AqoursBirthGacha(value);total();sum();MuseMemberGachaMax()">
 	<option value="0">0心</option>
-	<option value="30">30心</option>
-	<option value="120">120心</option>
+	<option value="30">30心（Step 1 1张SR保底）</option>
+	<option value="70">70心（Step 2）</option>
+	<option value="120">120心（Step 3 1张SSR保底）</option>
 	</select>，共用心<span id="AqoursTotalLoveca">0</span><br>
- </p>
- <p>
-	预测成员生日当天总心数：<strong><font color="red"><span id="totalloveca"></span></font></strong>
  </p>
  <p>
 	可选：攒券<br>
 	现有单抽券数：<input id="currentTicket" type="number" value="0" onchange="totalTicketSum();MuseMemberGachaMax()"/> <br>
 	活动攒券：<select id="eventTicket" onchange="TicketEventget(value);TicketEventBonus();totalTicketSum();MuseMemberGachaMax()">
-	<option value="third">三档</option>
-	<option value="second">二档</option>
-	<option value="first">一档</option>
-	<option value="shisanwan">十三万pt</option>
+	<option value="third">4档（无券）</option>
+	<option value="second">3档（排名奖励1券）</option>
+	<option value="7w">7万pt（pt奖励1券）</option>
+	<option value="first">一档/14wpt（排名奖励+pt奖励共2券）</option>
 	</select>，共<span id="eventTicketSum">0</span>券<br>
-	MF活动攒券（假设4个月举行1次，每次得<input id="mfTEv" type="number" value="2" onchange="TicketEventBonus();totalTicketSum();MuseMemberGachaMax()" />张券）：
-
-<span id="mfTicket"></span><br>
-	CF活动攒券（假设3个月举行1次，每次得<input id="cfTEv" type="number" value="3" onchange="TicketEventBonus();totalTicketSum();MuseMemberGachaMax()" />张券）：
-
-<span id="cfTicket"></span><br>
-	协力活动攒券（假设2个月举行1次，每次得<input id="nmTEv" type="number" value="5" onchange="TicketEventBonus();totalTicketSum();MuseMemberGachaMax()" />张券）：
-
-<span id="nmTicket"></span><br>
+	MF活动攒券（假设4个月举行1次，每次得<input id="mfTEv" type="number" value="2" onchange="TicketEventBonus();totalTicketSum();MuseMemberGachaMax()" />张券）：<span id="mfTicket"></span><br>
+	CF活动攒券（假设3个月举行1次，每次得<input id="cfTEv" type="number" value="2" onchange="TicketEventBonus();totalTicketSum();MuseMemberGachaMax()" />张券）：<span id="cfTicket"></span><br>
+	协力活动攒券（假设2个月举行1次，每次得<input id="nmTEv" type="number" value="3" onchange="TicketEventBonus();totalTicketSum();MuseMemberGachaMax()" />张券）：<span id="nmTicket"></span><br>
 	登陆奖励送券（预测值）：<input id="loginbonusTicket" type="number" value="0" onchange="totalTicketSum();MuseMemberGachaMax()" /><br>
-	预测成员生日当天总券数：<strong><font color="red"><span id="totalTicket"></span></font></strong>
  </p>
  <p>
 	可选：氪礼包<br>
@@ -136,22 +130,10 @@ id="newmaster"></span>心<br>
 	参考：剩余月初礼包*<span id="months"></span>,成员生日礼包*<span id="memberBirth"></span>,其他乱七八糟的礼包*<span id="randomPack"></span><br>
  </p>
  <p>
-	该成员Step Up 80心抽不抽：<select id="this80" onchange="MuseMemberGachaMax()">
-	<option value="yes">抽</option>
-	<option value="no">不抽</option>
-	</select><br>
-	<div style="display:none">
-	<span style="color:red">临时补充：真夏的Step Up劝诱，抽卡轮数【不许摸真是花样越来越多了代码都不知道去哪改(╯‵□′)╯︵┻━┻】：</span><select id="ManatsuStepup" onchange="MuseMemberGachaMax()">
-	<option value="0">不抽</option>
-	<option value="10">1轮（3连）</option>
-	<option value="30">2轮（5连[SR以上确定]）</option>
-	<option value="60">3轮（30心11连）</option>
-	<option value="100">4轮（40心11连[SR以上2张确定]）</option>
-	<option value="150">5轮（50心11连[SSR以上确定]）</option>
-	</select></div><br>
-	计算结果（可以抽BOX内卡片数目）：<strong><font color="red"><span id="MuseMemberResult"></span></font></strong><br>
-	能获得<input id="NeedCard" type="number" value="0" onchange="MuseMemberGachaMax()"/>张BOX生日卡概率：<span id="card1"></span><br>
-	 ↑以上概率的前提是抽到生日卡即重置，剩一张普U还想抽出来的不在此范围内
+	计算结果：
+	当天Loveca总数：<strong><span id="totalloveca" style="color:red"></span></strong><br>
+	当天单抽券数：<strong><span id="totalTicket" style="color:red"></span></strong><br>
+	参考：抽空BOX需要的资源：455心/100券（具体计算日后再更）
  </p>
  <p>
 	Author: aruyuna~ at 2018.04.17 <br>
