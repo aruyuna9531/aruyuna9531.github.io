@@ -387,7 +387,7 @@ function MuseBirthGacha(strategy){
 //————————————————（原）Aqours成员生日抽卡策略————————————
 function AqoursBirthGacha(strategy){
 	var other = otherAqoursBirth(document.getElementById("member").value);
-	document.getElementById("AqoursTotalLoveca").innerHTML = Number(strategy) * other; break;
+	document.getElementById("AqoursTotalLoveca").innerHTML = Number(strategy) * other;
 }
 //————————————————（新）μ's，Aqours成员生日抽卡策略【重构部分，试用】————————————
 //生日单限分布哈希表（每一二进制位代表一个角色的step up是否进行中，为1则是，为0则否（定义为：μ's成员从果到妮占用8-16位，Aqours成员从千到露占用24-32位））
