@@ -279,20 +279,7 @@ function totalTicketSum(){
 }
 //————————————————计算可抽Box卡数量——————————————
 function MuseMemberGachaMax(){
-	var this80=0;
-	if(document.getElementById("this80").value=="yes")this80=1;
-	var tmp=document.getElementById("ManatsuStepup");
-	var Loveca = Number(document.getElementById("totalloveca").innerHTML)-80*this80-(tmp==null?0:Number(tmp.value));
-	var Ticket = Number(document.getElementById("totalTicket").innerHTML);
-	var Chain_11 = Math.floor(Loveca/50);
-	var single = Math.floor((Loveca-Chain_11*50)/5);
-	if(document.getElementById("member").selectedIndex<19){
-	var res = Chain_11*11+single+Ticket+Number(document.getElementById("current3Ticket").value)*3+Number(document.getElementById("current11Ticket").value)*11+Number(document.getElementById("Buy11Ticket").value)*11; 
-	document.getElementById("MuseMemberResult").innerHTML=res;
-	var cards = Number(document.getElementById("NeedCard").value);
-	document.getElementById("card1").innerHTML=(calcPerc(res,cards)*100).toFixed(2)+"%";
-	}
-	else document.getElementById("MuseMemberResult").innerHTML = ""; 
+	
 }
 //——————————————能抽到生日卡的概率——————————————
 function calcPerc(res,cards){
