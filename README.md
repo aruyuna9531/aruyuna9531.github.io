@@ -20,13 +20,13 @@ LLhelper很多区没有推出4倍计算或者没考虑其他因素（LP回复道
 
 面向最后2小时，有时间盯pt榜然后又不想吃心保档想在掉档边缘试探的同学（pt榜，分榜均可用）
 
-[SIF 限时活动列表](https://aruyuna9531.github.io/campaignList.html)
-
-最近召开的活动一览表
-
 [SIF score match 跳车观测仪](https://aruyuna9531.github.io/SMquitTest.html)
 
 面向最后一天，想通过秒退保smpt的同学们的参考器（输入数字一定要快，否则局开了我不负责hhhh或者你可以人齐了先切到后台算完再决定打不打，sm结算允许的等待时间是30秒）
+
+[SIF score match 根据结算页面结果计算各人变化分数（测试）](https://aruyuna9531.github.io/smReverseCount.html)
+
+面向对smpt的算分机制有疑惑的同学，将结算页面的四人得分写进来，就可以算出各人相对应打歌前的加减分
 
 ———————————————————————————————————
 
