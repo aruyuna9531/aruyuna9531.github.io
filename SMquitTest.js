@@ -75,7 +75,7 @@ function guessOriginSmpt(){
 					var basic3 = getSmpt(brackets[zBra], 3);
 					var basic4 = getSmpt(brackets[wBra], 4);
 					//排位基础分
-					var posBasic = Math.round((a+b+c+d-basic1-basic2-basic3-basic4)/160);
+					var posBasic = Math.floor((a+b+c+d-basic1-basic2-basic3-basic4)/160);
 					//计算原得分
 					var origin1=0,origin2=0,origin3=0,origin4=0;
 					origin1 = Math.round(40*(a - posBasic - basic1)/39);
