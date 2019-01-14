@@ -47,6 +47,7 @@ brackets = [0, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11500, 13000, 14
 
 function guessOriginSmpt(){
 	//从html获得最终得分
+	document.getElementById("andmore").innerHTML="";
 	var a = Number(document.getElementById("1stScore").value);
 	var b = Number(document.getElementById("2ndScore").value);
 	var c = Number(document.getElementById("3rdScore").value);
@@ -83,6 +84,10 @@ function guessOriginSmpt(){
 						origin4 = Math.round(40*(d - posBasic - basic4)/39);
 					}
 					if(xBra==getCurrentBracket(origin1) && yBra==getCurrentBracket(origin2) && zBra==getCurrentBracket(origin3) && wBra==getCurrentBracket(origin4)){
+						if(printed>=5){
+							document.getElementById("andmore").innerHTML="还有其他组合，不再一一列举";
+							return;
+						}
 						document.getElementById("1stChange_"+printed).innerHTML=plm(a-origin1);
 						document.getElementById("2ndChange_"+printed).innerHTML=plm(b-origin2);
 						document.getElementById("3rdChange_"+printed).innerHTML=plm(c-origin3);
