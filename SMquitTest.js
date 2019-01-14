@@ -78,17 +78,17 @@ function guessOriginSmpt(){
 					var posBasic = Math.round((a+b+c+d-basic1-basic2-basic3-basic4)/160);
 					//计算原得分
 					var origin1=0,origin2=0,origin3=0,origin4=0;
-					origin1 = Math.ceil(40*(a - posBasic - basic1)/39);
+					origin1 = Math.round(40*(a - posBasic - basic1)/39);
 					if(a-origin1<3){
 						origin1=a-3;		//第一名至少+3
-						origin2=origin1-Math.floor(40*(a-b-basic1+basic2)/39);
-						origin3=origin1-Math.floor(40*(a-c-basic1+basic3)/39);
-						origin4=origin1-Math.floor(40*(a-d-basic1+basic4)/39);
+						origin2=origin1-Math.round(40*(a-b-basic1+basic2)/39);
+						origin3=origin1-Math.round(40*(a-c-basic1+basic3)/39);
+						origin4=origin1-Math.round(40*(a-d-basic1+basic4)/39);
 					}
 					else{
-						origin2 = Math.ceil(40*(b - posBasic - basic2)/39);
-						origin3 = Math.ceil(40*(c - posBasic - basic3)/39);
-						origin4 = Math.ceil(40*(d - posBasic - basic4)/39);
+						origin2 = Math.round(40*(b - posBasic - basic2)/39);
+						origin3 = Math.round(40*(c - posBasic - basic3)/39);
+						origin4 = Math.round(40*(d - posBasic - basic4)/39);
 					}
 					if(xBra==getCurrentBracket(origin1) && yBra==getCurrentBracket(origin2) && zBra==getCurrentBracket(origin3) && wBra==getCurrentBracket(origin4)){
 						if(printed>=5){
