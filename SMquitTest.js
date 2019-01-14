@@ -56,6 +56,7 @@ function guessOriginSmpt(){
 	var bBra = getCurrentBracket(b);
 	var cBra = getCurrentBracket(c);
 	var dBra = getCurrentBracket(d);
+	var printed = 0;
 	for(var xBra = aBra-1;xBra<=aBra+1;xBra++){
 		for(var yBra = bBra-1;yBra<=bBra+1;yBra++){
 			for(var zBra = cBra-1;zBra<=cBra+1;zBra++){
@@ -82,11 +83,11 @@ function guessOriginSmpt(){
 						origin4 = Math.round(40*(d - posBasic - basic4)/39);
 					}
 					if(xBra==getCurrentBracket(origin1) && yBra==getCurrentBracket(origin2) && zBra==getCurrentBracket(origin3) && wBra==getCurrentBracket(origin4)){
-						document.getElementById("1stChange").innerHTML=plm(a-origin1);
-						document.getElementById("2ndChange").innerHTML=plm(b-origin2);
-						document.getElementById("3rdChange").innerHTML=plm(c-origin3);
-						document.getElementById("4thChange").innerHTML=plm(d-origin4);
-						return;
+						document.getElementById("1stChange_"+printed).innerHTML=plm(a-origin1);
+						document.getElementById("2ndChange_"+printed).innerHTML=plm(b-origin2);
+						document.getElementById("3rdChange_"+printed).innerHTML=plm(c-origin3);
+						document.getElementById("4thChange_"+printed).innerHTML=plm(d-origin4);
+						printed++;
 					}
 				}
 			}
