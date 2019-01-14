@@ -47,7 +47,14 @@ brackets = [0, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11500, 13000, 14
 
 function guessOriginSmpt(){
 	//从html获得最终得分
+	var grs=5;
 	document.getElementById("andmore").innerHTML="";
+	for(var g = 1; g<grs; g++){
+		document.getElementById("1stChange_"+g).innerHTML="-";
+		document.getElementById("2ndChange_"+g).innerHTML="-";
+		document.getElementById("3rdChange_"+g).innerHTML="-";
+		document.getElementById("4thChange_"+g).innerHTML="-";
+	}
 	var a = Number(document.getElementById("1stScore").value);
 	var b = Number(document.getElementById("2ndScore").value);
 	var c = Number(document.getElementById("3rdScore").value);
