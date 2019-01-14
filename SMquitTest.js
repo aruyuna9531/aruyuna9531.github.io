@@ -51,13 +51,11 @@ function guessOriginSmpt(){
 	var b = Number(document.getElementById("2ndScore").value);
 	var c = Number(document.getElementById("3rdScore").value);
 	var d = Number(document.getElementById("4thScore").value);
-	console.log("a="+a+",b="+b+",c="+c+",d="+d);
 	//获得最终得分所在区间
 	var aBra = getCurrentBracket(a);
 	var bBra = getCurrentBracket(b);
 	var cBra = getCurrentBracket(c);
 	var dBra = getCurrentBracket(d);
-	console.log("aBra="+aBra+",bBra="+bBra+",cBra="+cBra+",dBra="+dBra);
 	for(var xBra = aBra-1;xBra<=aBra+1;xBra++){
 		for(var yBra = bBra-1;yBra<=bBra+1;yBra++){
 			for(var zBra = cBra-1;zBra<=cBra+1;zBra++){
@@ -67,10 +65,8 @@ function guessOriginSmpt(){
 					var basic2 = getSmpt(brackets[yBra], 2);
 					var basic3 = getSmpt(brackets[zBra], 3);
 					var basic4 = getSmpt(brackets[wBra], 4);
-					console.log("basic1="+basic1+"basic2="+basic2+"basic3="+basic3+"basic4="+basic4);
 					//排位基础分
 					var posBasic = Math.round((a+b+c+d-basic1-basic2-basic3-basic4)/160);
-					console.log("posbasic="+posBasic);
 					//计算原得分
 					var origin1=0,origin2=0,origin3=0,origin4=0;
 					origin1 = Math.round(40*(a - posBasic - basic1)/39);
@@ -85,7 +81,6 @@ function guessOriginSmpt(){
 						origin3 = Math.round(40*(c - posBasic - basic3)/39);
 						origin4 = Math.round(40*(d - posBasic - basic4)/39);
 					}
-					console.log("origin1="+origin1+"origin2="+origin2+"origin3="+origin3+"origin4="+origin4);
 					if(xBra==getCurrentBracket(origin1) && yBra==getCurrentBracket(origin2) && zBra==getCurrentBracket(origin3) && wBra==getCurrentBracket(origin4)){
 						document.getElementById("1stChange").innerHTML=plm(a-origin1);
 						document.getElementById("2ndChange").innerHTML=plm(b-origin2);
