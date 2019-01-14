@@ -7,7 +7,6 @@ function count(){
 	if(document.getElementById("robot1").checked==true)robots++;
 	if(document.getElementById("robot2").checked==true)robots++;
 	if(document.getElementById("robot3").checked==true)robots++;
-	var arr=Math.round((r1smpt+r2smpt+r3smpt-3*mysmpt)/160);
 	document.getElementById("r1res").innerHTML=plm(Math.round((arr+getSmpt(mysmpt,1))*((4-robots)/4)>=3?(arr+getSmpt(mysmpt,1))*((4-robots)/4):3));
 	document.getElementById("r2res").innerHTML=plm(Math.round((arr+getSmpt(mysmpt,2))*((4-robots)/4)));
 	document.getElementById("r3res").innerHTML=plm(Math.round((arr+getSmpt(mysmpt,3))*((4-robots)/4)));
@@ -42,4 +41,57 @@ function getSmpt(base, rank){
 function plm(x){
 	if(x>=0)return "+"+x;
 	else return x;
+}
+
+brackets = [0, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11500, 13000, 14500, 16000, 17500, 19000, 20500, 22000, 23500, 100000];
+
+function guessOriginSmpt(){
+	//从html获得最终得分
+	var a = Number(document.getElementById("1stScore").value);
+	var b = Number(document.getElementById("2ndScore").value);
+	var c = Number(document.getElementById("3rdScore").value);
+	var d = Number(document.getElementById("4thScore").value);
+	console.log("a="+a+",b="+b+",c="+c+",d="+d);
+	//获得最终得分所在区间
+	var aBra = getCurrentBracket(a);
+	var bBra = getCurrentBracket(b);
+	var cBra = getCurrentBracket(c);
+	var dBra = getCurrentBracket(d);
+	console.log("aBra="+aBra+",bBra="+bBra+",cBra="+cBra+",dBra="+dBra);
+	for(var xBra = aBra-1;xBra<=aBra+1;xBra++){
+		for(var yBra = bBra-1;yBra<=bBra+1;yBra++){
+			for(var zBra = cBra-1;zBra<=cBra+1;zBra++){
+				for(var wBra = dBra-1;wBra<=dBra+1;wBra++){
+					//计算各位基础分
+					var basic1 = getSmpt(brackets[xBra], 1);
+					var basic2 = getSmpt(brackets[yBra], 2);
+					var basic3 = getSmpt(brackets[zBra], 3);
+					var basic4 = getSmpt(brackets[wBra], 4);
+					console.log("basic1="+basic1+"basic2="+basic2+"basic3="+basic3+"basic4="+basic4);
+					//排位基础分
+					var posBasic = Math.round((a+b+c+d-basic1-basic2-basic3-basic4)/160);
+					console.log("posbasic="+posBasic);
+					//计算原得分
+					var origin1 = Math.round(40*(a - posBasic - basic1)/39);
+					var origin2 = Math.round(40*(b - posBasic - basic2)/39);
+					var origin3 = Math.round(40*(c - posBasic - basic3)/39);
+					var origin4 = Math.round(40*(d - posBasic - basic4)/39);
+					console.log("origin1="+origin1+"origin2="+origin2+"origin3="+origin3+"origin4="+origin4);
+					if(xBra==getCurrentBracket(origin1) && yBra==getCurrentBracket(origin2) && zBra==getCurrentBracket(origin3) && wBra==getCurrentBracket(origin4)){
+						document.getElementById("1stChange").innerHTML=plm(a-origin1);
+						document.getElementById("2ndChange").innerHTML=plm(b-origin2);
+						document.getElementById("3rdChange").innerHTML=plm(c-origin3);
+						document.getElementById("4thChange").innerHTML=plm(d-origin4);
+						return;
+					}
+				}
+			}
+		}
+	}
+}
+
+function getCurrentBracket(smpt){
+	for(var i=0;i<brackets.length-1;i++){
+		if(brackets[i]<=smpt && brackets[i+1]>smpt)return i;
+	}
 }
