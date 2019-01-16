@@ -279,12 +279,19 @@ function totalTicketSum(){
 }
 //————————————————计算可抽Box卡数量——————————————
 function MuseMemberGachaMax(){
-	
+	var loveca = Number(document.getElementById("totalloveca").innerHTML);
+	var ticket = Number(document.getElementById("totalTicket").innerHTML);
+	var t11 = Number(document.getElementById("current11Ticket").innerHTML)+ Number(document.getElementById("Buy11Ticket").innerHTML);
+	var times_11 = Math.floor(loveca/50)+t11;
+	loveca -= Math.floor(loveca/50)*50;
+	var times_single = Math.floor(loveca/5);
+	var t3 =  Number(document.getElementById("current3Ticket").innerHTML);
+	var totaltimes = times_11*11+times_single+t3*3;
+	document.getElementById("CN2018BoxPerc").innerHTML=1-Math.pow(99.25, totaltimes);
 }
 //——————————————能抽到生日卡的概率——————————————
 function calcPerc(res,cards){
-	if(res>=200)return 1;
-	else return res/200;
+	
 }
 //——————————————显示可购买礼包数——————————————————
 function otherBirths(){
