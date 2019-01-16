@@ -287,7 +287,7 @@ function MuseMemberGachaMax(){
 	var times_single = Math.floor(loveca/5);
 	var t3 =  Number(document.getElementById("current3Ticket").innerHTML);
 	var totaltimes = times_11*11+times_single+t3*3;
-	document.getElementById("CN2018BoxPerc").innerHTML=100-Math.pow(99.25, totaltimes);
+	document.getElementById("CN2018BoxPerc").innerHTML=(1-Math.pow(0.9925, totaltimes))*100;
 }
 //——————————————能抽到生日卡的概率——————————————
 function calcPerc(res,cards){
