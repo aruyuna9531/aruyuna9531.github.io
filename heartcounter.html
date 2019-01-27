@@ -37,11 +37,11 @@
 	目前Exp：<input id="curExp" type="number" value="0" onchange="isNull(this);needlps();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();ptBonus();expCount();maxLP();AutomaticRecover()"><br>
 	<br>
 	当前活动类型:<select id="CurrentEvent" onchange="eventType();needlps();SmNeedLps();MfNeedLps();CfNeedLps();OrNeedLps();NmNeedLps();ptBonus();expCount();maxLP();AutomaticRecover()">
-	<option value="ic" selected="selected">传统</option>
+	<option value="ic">传统</option>
 	<option value="sm">SM</option>
 	<option value="mf">MF</option>
 	<option value="cf">CF</option>
-	<option value="sr">散步</option>
+	<option value="sr" selected="selected">散步</option>
 	<option value="nm">协力</option>
 	</select><br>
   </p>
@@ -106,8 +106,7 @@
 	<option value="7">7章</option>
 	<option value="8">8章</option>
 	<option value="9">9章</option>
-	<option value="Epilogue">终章</option>
-	</select><br>
+	</select>（如果不足9章就选到最后一张的编码）<br>
 	普通歌策略（剧情、挑战点）：<select id="ORNormalBets" onchange="OrNeedLps()">
 	<option value="1ea">1倍Easy</option>
 	<option value="1ex">1倍Expert</option>
