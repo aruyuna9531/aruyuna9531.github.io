@@ -1,4 +1,5 @@
-﻿function comboBonus(combo){
+﻿var tzone=8;
+function comboBonus(combo){
 	if(combo<50)return combo;
 	if(combo<100)return 1.1*combo-5;
 	if(combo<200)return 1.15*combo-10;
@@ -65,11 +66,9 @@ function languageSwitch(value){
 			document.getElementById("Msg2").innerHTML="二档：";
 			document.getElementById("Msg3").innerHTML="三档：";
 			document.getElementById("MsgCurrentUpdate").innerHTML="上次更新：";
-			document.getElementById("MsgSafe").innerHTML="喝茶线";
-			document.getElementById("MsgS1").innerHTML="一档：";
-			document.getElementById("MsgS2").innerHTML="二档：";
-			document.getElementById("MsgS3").innerHTML="三档：";
-			document.getElementById("MsgSafeTips").innerHTML="喝茶线是动态变化的，随着活动进行会越来越迫近预测线，仅供参考";
+			tzone = 8;
+			document.getElementById("tzone").innerHTML=tzone;
+			document.getElementById("lastModified").innerHTML=tzswitch(document.lastModified).Format("yyyy-MM-dd hh:mm:ss");
 			break;
 		case "jp":
 			document.getElementById("lan").innerHTML="言語：";
@@ -88,11 +87,9 @@ function languageSwitch(value){
 			document.getElementById("Msg2").innerHTML="30000位：";
 			document.getElementById("Msg3").innerHTML="50000位：";
 			document.getElementById("MsgCurrentUpdate").innerHTML="前回更新：";
-			document.getElementById("MsgSafe").innerHTML="セーフボーダー（すでにボーダー以上確定）";
-			document.getElementById("MsgS1").innerHTML="10000位：";
-			document.getElementById("MsgS2").innerHTML="30000位：";
-			document.getElementById("MsgS3").innerHTML="50000位：";
-			document.getElementById("MsgSafeTips").innerHTML="セーフボーダーは時間の流れによって自動的に更新します";
+			tzone = 9;
+			document.getElementById("tzone").innerHTML=tzone;
+			document.getElementById("lastModified").innerHTML=tzswitch(document.lastModified).Format("yyyy-MM-dd hh:mm:ss");
 			break;
 		case "en":
 			document.getElementById("lan").innerHTML="Language：";
@@ -111,11 +108,9 @@ function languageSwitch(value){
 			document.getElementById("Msg2").innerHTML="30000th：";
 			document.getElementById("Msg3").innerHTML="50000th：";
 			document.getElementById("MsgCurrentUpdate").innerHTML="Last update：";
-			document.getElementById("MsgSafe").innerHTML="Safety border (be sure above the border)";
-			document.getElementById("MsgS1").innerHTML="10000th：";
-			document.getElementById("MsgS2").innerHTML="30000th：";
-			document.getElementById("MsgS3").innerHTML="50000th：";
-			document.getElementById("MsgSafeTips").innerHTML="Safety border is dynamic.";
+			tzone = 0;
+			document.getElementById("tzone").innerHTML=tzone;
+			document.getElementById("lastModified").innerHTML=tzswitch(document.lastModified).Format("yyyy-MM-dd hh:mm:ss");
 			break;
 	}
 }

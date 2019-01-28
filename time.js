@@ -1,4 +1,36 @@
-﻿//自动计算活动开始，结束时间并打印到页面的的js脚本（通用）
+﻿var tzone=8;
+var pageSig1_ok=0;
+
+Date.prototype.Format = function(fmt)   
+{ 
+  var o = {   
+    "M+" : this.getMonth()+1,                 //月份   
+    "d+" : this.getDate(),                    //日   
+    "h+" : this.getHours(),                   //小时   
+    "m+" : this.getMinutes(),                 //分   
+    "s+" : this.getSeconds(),                 //秒     
+    "S"  : this.getMilliseconds()             //毫秒   
+  };   
+  if(/(y+)/.test(fmt))   
+    fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));   
+  for(var k in o)   
+    if(new RegExp("("+ k +")").test(fmt))   
+  fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));   
+  return fmt;   
+}  
+
+//切换时区
+function tzswitch(date){
+	var d=new Date(date);
+	var localTime = d.getTime(); 
+	var localOffset=d.getTimezoneOffset()*60000;
+	var utc = localTime + localOffset;
+	var gtm= utc + (3600000*tzone); 
+	var u = navigator.userAgent;
+	var nd = new Date(gtm); 
+	return nd;
+}
+//自动计算活动开始，结束时间并打印到页面的的js脚本（通用）
 //如果能解决一个html不能使用2个以上js脚本的问题，请将src设为此文件
 function isNull(obj){
         if (obj == '' || obj == undefined || obj == null) {
@@ -6,7 +38,6 @@ function isNull(obj){
 	}
 }
 
-var pageSig1_ok=0;
 
 function LastDayOfCurrentMonth(year,month){
 	switch(month){
@@ -25,20 +56,20 @@ function LastDayOfCurrentMonth(year,month){
 	}
 }
 
-function e_cnstart(){return new Date("2018/12/18 17:00:00");}
-function e_cnend(){return new Date("2018/12/28 14:00:00");}
+function e_cnstart(){return new Date("2019/1/18 15:00:00");}
+function e_cnend(){return new Date("2019/1/27 14:00:00");}
 
 function EventEnd(date){
-	if(date.getDate()==4 && date.getHours()>=15 || 
+	if(date.getDate()==4 && date.getHours()>=7+tzone || 
 	date.getDate()>4 && date.getDate()<20 || 
-	date.getDate()==19 && date.getHours()<15
-	)return new Date(date.getFullYear()+"/"+(date.getMonth()+1)+"/15 14:00:00");
-	if(date.getDate()==19 && date.getHours()>=15 ||
+	date.getDate()==19 && date.getHours()<7+tzone
+	)return new Date(date.getFullYear()+"/"+(date.getMonth()+1)+"/15 "+(6+tzone)+":00:00");
+	if(date.getDate()==19 && date.getHours()>=7+tzone ||
 	date.getDate()>19 && date.getDate()<LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1) || 
 	date.getDate()==LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1)
-	)return new Date(date.getFullYear()+"/"+(date.getMonth()+1)+"/"+LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1)+" 14:00:00");
-	if(date.getMonth()!=0)return new Date(date.getFullYear()+"/"+(date.getMonth())+"/"+LastDayOfCurrentMonth(date.getFullYear(),date.getMonth())+" 14:00:00");
-	else return new Date((date.getFullYear()-1)+"/12/31 14:00:00");
+	)return new Date(date.getFullYear()+"/"+(date.getMonth()+1)+"/"+LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1)+" "+(6+tzone)+":00:00");
+	if(date.getMonth()!=0)return new Date(date.getFullYear()+"/"+(date.getMonth())+"/"+LastDayOfCurrentMonth(date.getFullYear(),date.getMonth())+" "+(6+tzone)+":00:00");
+	else return new Date((date.getFullYear()-1)+"/12/31 "+(6+tzone)+":00:00");
 }
 
 function EventOpening(date){
@@ -46,11 +77,11 @@ function EventOpening(date){
 	if(document.getElementById("serverswitch").value=="cn")return e_cnstart();
 	}
 	if(date.getDate()<5)return false;
-	if(date.getDate()==5 && date.getHours()<15)return false;
-	if(date.getDate()==15 && date.getHours()>=14)return false;
+	if(date.getDate()==5 && date.getHours()<7+tzone)return false;
+	if(date.getDate()==15 && date.getHours()>=6+tzone)return false;
 	if(date.getDate()>15 && date.getDate()<20)return false;
-	if(date.getDate()==20 && date.getHours()<15)return false;
-	if(date.getDate()==LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1) && date.getHours()>=14)return false;
+	if(date.getDate()==20 && date.getHours()<7+tzone)return false;
+	if(date.getDate()==LastDayOfCurrentMonth(date.getFullYear(),date.getMonth()+1) && date.getHours()>=6+tzone)return false;
 	return true;
 }
 

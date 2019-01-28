@@ -1,18 +1,7 @@
-//————————————————————————获取东京时间————————————————————
-function TokyoTime(){
-	var d=new Date();
-	var localTime = d.getTime(); 
-	var localOffset=d.getTimezoneOffset()*60000;
-	var utc = localTime + localOffset;
-	var offset =9;
-	var gtm= utc + (3600000*offset); 
-	var u = navigator.userAgent;
-	var nd = new Date(gtm); 
-	return nd;
-}
+﻿
 //————————————————————登陆日历奖励（每到5的倍数日能获得2心）——————————————
 function calendar(){
-	var date = TokyoTime();
+	var date = tzswitch(9);
 	var endDate = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/"));
 	var monthminus = endDate.getMonth()-date.getMonth();
 	var daycounter = 0;
@@ -38,7 +27,7 @@ function calendar(){
 }
 //——————————————————————每日1心奖励————————————————————
 function dailyloveca(){
-	var currentDate = TokyoTime();
+	var currentDate = tzswitch(9);
 	var endDate = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/"));
 	var now = currentDate.getTime();
 	var end = endDate.getTime();
@@ -58,7 +47,7 @@ function otherbirth(value){
 	var names = ["dia", "hanayo", "kanan", "hanamaru", "umi", "you", "maki", "nozomi", "mari", "yoshiko", "nico", "chika", "honoka", "kotori", "riko", "ruby", "eli", "rin"];
 	
 	var now = daystobirth(value,false);
-	var endDate = TokyoTime();
+	var endDate = tzswitch(9);
 	var counter = 0;
 	for(var i=0;i<names.length;i++){
 		if(datecompare(daystobirth(names[i],false),now)==false)counter++;
@@ -72,7 +61,7 @@ function otherMemberLoveca(value){
 function otherMuseBirth(value){
 	var names = ["hanayo", "umi", "maki", "nozomi", "nico", "honoka", "kotori", "eli", "rin"];
 	var now = daystobirth(value,false);
-	var endDate = TokyoTime();
+	var endDate = tzswitch(9);
 	var counter = 0;
 	for(var i=0;i<names.length;i++){
 		if(datecompare(daystobirth(names[i],false),now)==false)counter++;
@@ -83,7 +72,7 @@ function otherMuseBirth(value){
 function otherAqoursBirth(value){
 	var names = ["dia", "kanan", "hanamaru", "you",  "mari", "yoshiko", "chika", "riko", "ruby"];
 	var now = daystobirth(value,false);
-	var endDate = TokyoTime();
+	var endDate = tzswitch(9);
 	var counter = 0;
 	for(var i=0;i<names.length;i++){
 		if(datecompare(daystobirth(names[i],false),now)==false)counter++;
@@ -92,7 +81,7 @@ function otherAqoursBirth(value){
 }
 //——————————————————————下一次[value]成员生日的时间（如果今年过去了写明年）—————————————
 function daystobirth(value, fromHTML){
-	var date=TokyoTime();
+	var date=tzswitch(9);
 	var year=date.getFullYear();
 	var month=0;
 	var day=0;
@@ -144,7 +133,7 @@ function eventCount(strategy){
 }
 //——————————————————————新ex、ma攒心——————————————————————
 function newex(){
-	var date = TokyoTime();
+	var date = tzswitch(9);
 	var endDate = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/"));
 	var monthminus = endDate.getMonth()-date.getMonth();
 	var daycounter = 0;
@@ -161,7 +150,7 @@ function newex(){
 	document.getElementById("newexpert").innerHTML = (monthminus * 2 + daycounter) * document.getElementById("lovecaperex").value;
 }
 function newma(){
-	var date = TokyoTime();
+	var date = tzswitch(9);
 	var endDate = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/"));
 	var monthminus = endDate.getMonth()-date.getMonth();
 	var daycounter = 0;
@@ -183,7 +172,7 @@ function newma(){
 }
 //——————————————计算当月有多少天————————————
 function getCountDays() {
-       var curDate = TokyoTime();
+       var curDate = tzswitch(9);
        var curMonth = curDate.getMonth();
        curDate.setMonth(curMonth + 1);
        curDate.setDate(0);
@@ -196,7 +185,7 @@ function predictloginbonus(){
 }
 //——————————————打印现在的时间——————————————————
 function printToday(){
-	var date=TokyoTime();
+	var date=tzswitch(9);
 	document.getElementById("today").innerHTML = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+" "+date.getHours()+":"+front0(date.getMinutes())+":"+front0(date.getSeconds());
 	birthdayInProcess();
 	setTimeout(printToday,1000);
@@ -229,7 +218,7 @@ function EventTimes(){
 	var currentMonthEvents = 0;
 	var finalMonthEvents = 0;
 	var mediumEvents = 0;
-	var date = TokyoTime();
+	var date = tzswitch(9);
 	var end = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/"));
 	if(date.getDate()<=5)currentMonthEvents=2;
 	else if(date.getDate()<=20)currentMonthEvents=1;
@@ -299,15 +288,15 @@ function otherBirths(){
 	var other2 = otherAqoursBirth(document.getElementById("member").value);
 	document.getElementById("memberBirth").innerHTML=(other1+other2);
 	var monthEnd = new Date(String(document.getElementById("birth").innerHTML).replace(/\-/g, "/"));
-	var monthNow = TokyoTime();
+	var monthNow = tzswitch(9);
 	document.getElementById("months").innerHTML=monthEnd.getMonth()-monthNow.getMonth();
 	document.getElementById("randomPack").innerHTML=Math.round((monthEnd.getMonth()-monthNow.getMonth())/2);
 }
 
 //————————————————————————当前的日期偏移————————————————
 function dayShift(){
-	var currentMonth = TokyoTime().getMonth()+1;
-	var currentDay = TokyoTime().getDate();
+	var currentMonth = tzswitch(9).getMonth()+1;
+	var currentDay = tzswitch(9).getDate();
 	var ds=0;
 	if(currentMonth>1)ds+=31;
 	if(currentMonth>2)ds+=28;
