@@ -4,7 +4,7 @@
  <script src="ScoreBorder.js"></script>
  <script src="time.js"></script>
 </head>
-<body onload="countTime();print()">
+<body onload="countTime();print();chg()">
  <p><span id="lan">语言：</span><select id="Language" onchange="languageSwitch(value);chg()">
 	 <option value="ch">中文</option>
 	 <option value="jp">日本語</option>
@@ -288,13 +288,15 @@
  <span id="Msg3">三档：</span><strong><span id="Third">18380</span>(<span id="B3c">+0</span>)～</strong><strong><span id="Tea3"></span></strong><br>
  </p>
  <span id="MsgCurrentUpdate">上次更新：</span>
- <span id="lastModified"><script>
+ <span id="lastModified">
+ <script>
 	var lm = document.lastModified;
-	document.write(lm.Format("yyyy-MM-dd hh:mm:ss"));
+	console.log("last modified:"+lm);
 	function chg(){
 		document.getElementById("lastModified").innerHTML=tzswitch(lm).Format("yyyy-MM-dd hh:mm:ss");
 	}
- </script></span>
+ </script>
+ </span>
  UTC+<span id="tzone">8</span>
  <p style="display:none">
  一档基础分：<span id="FirstBase">1478</span>
