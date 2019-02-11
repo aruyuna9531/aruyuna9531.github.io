@@ -1,4 +1,4 @@
-﻿var tzone=8;
+﻿
 var pageSig1_ok=0;
 
 Date.prototype.Format = function(fmt)   

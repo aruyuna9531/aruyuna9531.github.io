@@ -68,7 +68,6 @@ function languageSwitch(value){
 			document.getElementById("MsgCurrentUpdate").innerHTML="上次更新：";
 			tzone = 8;
 			document.getElementById("tzone").innerHTML=tzone;
-			document.getElementById("lastModified").innerHTML=tzswitch(document.lastModified).Format("yyyy-MM-dd hh:mm:ss");
 			break;
 		case "jp":
 			document.getElementById("lan").innerHTML="言語：";
@@ -89,7 +88,6 @@ function languageSwitch(value){
 			document.getElementById("MsgCurrentUpdate").innerHTML="前回更新：";
 			tzone = 9;
 			document.getElementById("tzone").innerHTML=tzone;
-			document.getElementById("lastModified").innerHTML=tzswitch(document.lastModified).Format("yyyy-MM-dd hh:mm:ss");
 			break;
 		case "en":
 			document.getElementById("lan").innerHTML="Language：";
@@ -110,7 +108,6 @@ function languageSwitch(value){
 			document.getElementById("MsgCurrentUpdate").innerHTML="Last update：";
 			tzone = 0;
 			document.getElementById("tzone").innerHTML=tzone;
-			document.getElementById("lastModified").innerHTML=tzswitch(document.lastModified).Format("yyyy-MM-dd hh:mm:ss");
 			break;
 	}
 }
