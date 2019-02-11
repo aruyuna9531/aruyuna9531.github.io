@@ -1,4 +1,4 @@
-﻿
+﻿tzone = 8;
 var pageSig1_ok=0;
 
 Date.prototype.Format = function(fmt)   
@@ -20,8 +20,8 @@ Date.prototype.Format = function(fmt)
 }  
 
 //切换时区
-function tzswitch(date){
-	var d=new Date(date);
+function tzswitch(tzone){
+	var d=new Date();
 	var localTime = d.getTime(); 
 	var localOffset=d.getTimezoneOffset()*60000;
 	var utc = localTime + localOffset;
