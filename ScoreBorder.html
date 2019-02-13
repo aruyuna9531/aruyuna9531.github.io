@@ -292,10 +292,10 @@
  <span id="MsgCurrentUpdate">上次更新：</span>
  <span id="lastModified">
  <script>
-	var lm = document.lastModified;
+	var lm = new Date(document.lastModified);
 	console.log("last modified:"+lm);
 	function chg(){
-		document.getElementById("lastModified").innerHTML=tzswitch(tzone).Format("yyyy-MM-dd hh:mm:ss");
+		document.getElementById("lastModified").innerHTML=lm.Format("yyyy-MM-dd hh:mm:ss");
 	}
  </script>
  </span>
