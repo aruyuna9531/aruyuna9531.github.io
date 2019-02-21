@@ -20,6 +20,8 @@ function arrangeBits(eventType){
 }
 function print(){
 	var maxC = Number(document.getElementById("MaxCombo").value);
+	var maxC2 = Number(document.getElementById("MaxCombo2").value);
+	var maxC3 = Number(document.getElementById("MaxCombo3").value);
 	var EType = document.getElementById("EventType").selectedIndex;
 	var S1 = Number(document.getElementById("FirstBase").innerHTML);
 	var S2 = Number(document.getElementById("SecondBase").innerHTML);
@@ -27,17 +29,20 @@ function print(){
 	var C1 = Number(document.getElementById("FirstC").innerHTML);
 	var C2 = Number(document.getElementById("SecondC").innerHTML);
 	var C3 = Number(document.getElementById("ThirdC").innerHTML);
+	var cBonus = 0;
+	if(String(document.getElementById("EventType").value)=="MF")cBonus = comboBonus(maxC)+comboBonus(maxC2)+comboBonus(maxC3);
+	else cBonus = comboBonus(maxC);
 	var TeaTimeSpot = Number(document.getElementById("_d").innerHTML)*24+Number(document.getElementById("_h").innerHTML);
 	if(String(document.getElementById("EventType").value)!="SM"){
-	document.getElementById("First").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S1);
-	document.getElementById("Second").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S2);
-	document.getElementById("Third").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*S3);
-	document.getElementById("Tea1").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*(S1+TeaTimeSpot/2))+2000;
-	document.getElementById("Tea2").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*(S2+TeaTimeSpot/3))+1500;
-	document.getElementById("Tea3").innerHTML=Math.round(arrangeBits(EType)*comboBonus(maxC)*(S3+TeaTimeSpot/4))+1000;
-	document.getElementById("B1c").innerHTML=isPos(Math.round(arrangeBits(EType)*comboBonus(maxC)*C1));
-	document.getElementById("B2c").innerHTML=isPos(Math.round(arrangeBits(EType)*comboBonus(maxC)*C2));
-	document.getElementById("B3c").innerHTML=isPos(Math.round(arrangeBits(EType)*comboBonus(maxC)*C3));
+	document.getElementById("First").innerHTML=Math.round(arrangeBits(EType)*cBonus*S1);
+	document.getElementById("Second").innerHTML=Math.round(arrangeBits(EType)*cBonus*S2);
+	document.getElementById("Third").innerHTML=Math.round(arrangeBits(EType)*cBonus*S3);
+	document.getElementById("Tea1").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S1+TeaTimeSpot/2))+2000;
+	document.getElementById("Tea2").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S2+TeaTimeSpot/3))+1500;
+	document.getElementById("Tea3").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S3+TeaTimeSpot/4))+1000;
+	document.getElementById("B1c").innerHTML=isPos(Math.round(arrangeBits(EType)*cBonus*C1));
+	document.getElementById("B2c").innerHTML=isPos(Math.round(arrangeBits(EType)*cBonus*C2));
+	document.getElementById("B3c").innerHTML=isPos(Math.round(arrangeBits(EType)*cBonus*C3));
 	}
 }
 
