@@ -140,7 +140,7 @@ function Dif(curEv){
 		eventSong=150;
 		oneRound=3;
 		allSongs=15;		//56/11*3--song can be refresh
-		fcDif=0.9;
+		fcDif=0.95;
 		break;
 	case "Challenge Festival":
 		eventSong=300;
