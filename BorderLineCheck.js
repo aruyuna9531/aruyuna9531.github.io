@@ -137,7 +137,7 @@ function Dif(curEv){
 	case "Score Match":
 		pct=1;break;
 	case "Medley Festival":
-		eventSong=120;
+		eventSong=200;
 		oneRound=3;
 		allSongs=15;		//56/11*3--song can be refresh
 		fcDif=0.95;
