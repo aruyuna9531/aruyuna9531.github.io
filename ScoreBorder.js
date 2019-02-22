@@ -40,9 +40,6 @@ function print(){
 	document.getElementById("Tea1").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S1+TeaTimeSpot/2))+2000;
 	document.getElementById("Tea2").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S2+TeaTimeSpot/3))+1500;
 	document.getElementById("Tea3").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S3+TeaTimeSpot/4))+1000;
-	document.getElementById("B1c").innerHTML=isPos(Math.round(arrangeBits(EType)*cBonus*C1));
-	document.getElementById("B2c").innerHTML=isPos(Math.round(arrangeBits(EType)*cBonus*C2));
-	document.getElementById("B3c").innerHTML=isPos(Math.round(arrangeBits(EType)*cBonus*C3));
 	}
 }
 
