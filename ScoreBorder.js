@@ -46,9 +46,9 @@ function print(){
 	document.getElementById("Tea1").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S1+TeaTimeSpot/2))+4000;
 	document.getElementById("Tea2").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S2+TeaTimeSpot/3))+3000;
 	document.getElementById("Tea3").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S3+TeaTimeSpot/4))+2000;
-	document.getElementById("TMax1").innerHTML=Math.round(arrangeBits(EType)*cBonus*M1);
-	document.getElementById("TMax2").innerHTML=Math.round(arrangeBits(EType)*cBonus*M2);
-	document.getElementById("TMax3").innerHTML=Math.round(arrangeBits(EType)*cBonus*M3);
+	document.getElementById("TMax1").innerHTML=Math.round(arrangeBits(EType)*cBonus*M1)+100000;
+	document.getElementById("TMax2").innerHTML=Math.round(arrangeBits(EType)*cBonus*M2)+80000;
+	document.getElementById("TMax3").innerHTML=Math.round(arrangeBits(EType)*cBonus*M3)+60000;
 	}
 }
 
