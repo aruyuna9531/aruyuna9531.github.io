@@ -26,6 +26,9 @@ function print(){
 	var S1 = Number(document.getElementById("FirstBase").innerHTML);
 	var S2 = Number(document.getElementById("SecondBase").innerHTML);
 	var S3 = Number(document.getElementById("ThirdBase").innerHTML);
+	var M1 = Number(document.getElementById("FirstMax").innerHTML);
+	var M2 = Number(document.getElementById("SecondMax").innerHTML);
+	var M3 = Number(document.getElementById("ThirdMax").innerHTML);
 	var C1 = Number(document.getElementById("FirstC").innerHTML);
 	var C2 = Number(document.getElementById("SecondC").innerHTML);
 	var C3 = Number(document.getElementById("ThirdC").innerHTML);
@@ -37,9 +40,15 @@ function print(){
 	document.getElementById("First").innerHTML=Math.round(arrangeBits(EType)*cBonus*S1);
 	document.getElementById("Second").innerHTML=Math.round(arrangeBits(EType)*cBonus*S2);
 	document.getElementById("Third").innerHTML=Math.round(arrangeBits(EType)*cBonus*S3);
-	document.getElementById("Tea1").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S1+TeaTimeSpot/2))+2000;
-	document.getElementById("Tea2").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S2+TeaTimeSpot/3))+1500;
-	document.getElementById("Tea3").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S3+TeaTimeSpot/4))+1000;
+	document.getElementById("TMin1").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S1-TeaTimeSpot/8))-2000;
+	document.getElementById("TMin2").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S2-TeaTimeSpot/7))-1500;
+	document.getElementById("TMin3").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S3-TeaTimeSpot/6))-1000;
+	document.getElementById("Tea1").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S1+TeaTimeSpot/2))+4000;
+	document.getElementById("Tea2").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S2+TeaTimeSpot/3))+3000;
+	document.getElementById("Tea3").innerHTML=Math.round(arrangeBits(EType)*cBonus*(S3+TeaTimeSpot/4))+2000;
+	document.getElementById("TMax1").innerHTML=Math.round(arrangeBits(EType)*cBonus*M1);
+	document.getElementById("TMax2").innerHTML=Math.round(arrangeBits(EType)*cBonus*M2);
+	document.getElementById("TMax3").innerHTML=Math.round(arrangeBits(EType)*cBonus*M3);
 	}
 }
 
