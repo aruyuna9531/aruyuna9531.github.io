@@ -137,13 +137,13 @@ function Dif(curEv){
 	case "Score Match":
 		pct=1;break;
 	case "Medley Festival":
-		eventSong=150;
+		eventSong=120;
 		oneRound=3;
 		allSongs=15;		//56/11*3--song can be refresh
 		fcDif=0.95;
 		break;
 	case "Challenge Festival":
-		eventSong=300;
+		eventSong=240;
 		oneRound=5;
 		allSongs=8;
 		fcDif=1;
@@ -151,7 +151,7 @@ function Dif(curEv){
 	case "おさんぽラリー":
 		eventSong=150;
 		oneRound=1;
-		allSongs=21;
+		allSongs=6;
 		break;
 	case "なかよしマッチ":
 		eventSong=220;
