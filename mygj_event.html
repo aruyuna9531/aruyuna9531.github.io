@@ -1,0 +1,138 @@
+<html>
+<head>
+ <title> 命运歌姬 鬼乡吃钻计算</title>
+ <script src="time.js"></script>
+ <script src="mygj_event.js"></script>
+</head>
+<body onload="countTime(1);count()">
+ <p>
+	离活动结束还有：
+	<span id="_d"></span><span id="MsgDays">天</span>
+	<span id="_h"></span>:
+	<span id="_m"></span>:
+	<span id="_s"></span>
+ </p>
+ <select id="serverswitch" onchange="countTime(1)">
+  <option value="cn">日服</option>
+ </select>
+ <table class="table-bordered" border="1" cellpadding="0" cellspacing="0" align="right">
+  <thead>
+   <th> 星级 </th>
+   <th> 基础分 </th>
+   <th> 消耗体力 </th>
+   <th> 单位体力基础分 </th>
+  </thead>
+  <tbody>
+   <tr>
+    <td> 1 </td>
+	<td> 100 </td>
+	<td> 5 </td>
+	<td> 20 </td>
+   </tr>
+   <tr>
+    <td> 2 </td>
+	<td> 105 </td>
+	<td> 5 </td>
+	<td> 21 </td>
+   </tr>
+   <tr>
+    <td> 3 </td>
+	<td> 110 </td>
+	<td> 5 </td>
+	<td> 22 </td>
+   </tr>
+   <tr>
+    <td> 4 </td>
+	<td> 200 </td>
+	<td> 10 </td>
+	<td> 20 </td>
+   </tr>
+   <tr>
+    <td> 5 </td>
+	<td> 230 </td>
+	<td> 10 </td>
+	<td> 23 </td>
+   </tr>
+   <tr>
+    <td> 6 </td>
+	<td> 300 </td>
+	<td> 10 </td>
+	<td style="color:red"> 30 </td>
+   </tr>
+   <tr>
+    <td> 7 </td>
+	<td> 330 </td>
+	<td> 15 </td>
+	<td> 22 </td>
+   </tr>
+   <tr>
+    <td> 8 </td>
+	<td> 350 </td>
+	<td> 15 </td>
+	<td> 23.3 </td>
+   </tr>
+   <tr>
+    <td> 9 </td>
+	<td> 370 </td>
+	<td> 15 </td>
+	<td> 24.7 </td>
+   </tr>
+   <tr>
+    <td> 10 </td>
+	<td> 380 </td>
+	<td> 15 </td>
+	<td> 25.3 </td>
+   </tr>
+  </tbody>
+ </table>
+ <span> 无Fever打歌星级： </span>
+ <select id="LevelNoFever" onchange="count()">
+  <option value="6"> 6星（专业）</option>
+  <option value="8"> 8星（大师）</option>
+  <option value="9"> 9星（大师）</option>
+  <option value="10"> 10星（大师）</option>
+ </select>
+ <span> 预计打分等级： </span>
+ <select id="RankNoFever" onchange="count()">
+  <option value="S"> S（×1.3）</option>
+  <option value="SS"> SS（×1.4）</option>
+  <option value="SSS"> SSS（×1.5）</option>
+ </select>
+ 刷Fever燃烧模式倍数：
+ <select id="betNoFever" onchange="count()">
+  <option value="1"> 1 </option>
+  <option value="2"> 2 </option>
+ </select>
+ <br>
+ <span> 有Fever打歌星级： </span>
+ <select id="LevelFever" onchange="count()">
+  <option value="6"> 6星（专业）×8</option>
+  <option value="8"> 8星（大师）×7</option>
+  <option value="9"> 9星（大师）×7</option>
+  <option value="10"> 10星（大师）×7</option>
+  <option value="short"> 大师短歌集（104s以下）可打8首</option>
+ </select>
+ <span> 预计打分等级： </span>
+ <select id="RankFever" onchange="count()">
+  <option value="S"> S（×1.3）</option>
+  <option value="SS"> SS（×1.4）</option>
+  <option value="SSS"> SSS（×1.5）</option>
+ </select>
+ <br>
+ pt总加成（%）：<input id="bonus" type="number" value="0" onchange="count()"><br>
+ 
+ 目标pt：<input id="target" type="number" value="0" onchange="count()"><br>
+ 当前pt：<input id="current" type="number" value="0" onchange="count()"><br>
+ <br>
+ 当前体力：<input id="current_stamina" type="number" min="0" onchange="count()"><br>
+ 每日领50体力次数：<input id="stamina_50" type="number" min="0" max="3" value="2" onchange="count()"><br>
+ 每日领好友送体力次数：<input id="stamina_friend" type="number" min="0" max="20" value="20" onchange="count()"><br>
+ 
+ 计算结果：
+ 需要消耗体力：<span id="need_stamina"></span><br>
+ 需要购买体力（消耗钻数）：<span id="buy_stamina"></span><br>
+ 预计打歌次数：<span id="playSongs"></span><br>
+ 预计打歌时间：<span id="time_h"></span>小时<span id="time_min"></span>分钟<br>
+ 
+</body>
+</html>

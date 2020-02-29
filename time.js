@@ -56,8 +56,8 @@ function LastDayOfCurrentMonth(year,month){
 	}
 }
 
-function e_cnstart(){return new Date("2019/1/18 15:00:00");}
-function e_cnend(){return new Date("2019/1/27 14:00:00");}
+function e_cnstart(){return new Date("2020/2/26 15:00:00");}
+function e_cnend(){return new Date("2020/3/8 23:00:00");}
 
 function EventEnd(date){
 	if(date.getDate()==4 && date.getHours()>=7+tzone || 
