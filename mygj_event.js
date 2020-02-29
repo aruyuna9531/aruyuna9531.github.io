@@ -55,7 +55,20 @@ function count(){
 	var total_staminas = to_gap_rounds * one_round_staminas + remain_times * v_snf * 2;
 	var total_times = one_round_times * to_gap_rounds + remain_times;
 	var total_elapse_min = total_times * 2.87;
-	var buy_stamina = total_staminas - Number(document.getElementById("current_stamina").value) - Number(document.getElementById("_d").innerHTML)*(Number(document.getElementById("stamina_50").value)*50+Number(document.getElementById("stamina_friend").value));
+	var total_50_sta_times = Number(document.getElementById("_d").innerHTML) * 3;
+	if( Number(document.getElementById("_h").innerHTML)) < 4){
+		total_50_sta_times = total_50_sta_times;
+	}
+	else if( Number(document.getElementById("_h").innerHTML)) < 12){
+		total_50_sta_times = total_50_sta_times + 1;
+	}
+	else if( Number(document.getElementById("_h").innerHTML)) < 18){
+		total_50_sta_times = total_50_sta_times + 2;
+	}
+	else total_50_sta_times = total_50_sta_times + 3;
+	var buy_stamina = total_staminas - Number(document.getElementById("current_stamina").value)
+	  - Number(document.getElementById("_d").innerHTML)*Number(document.getElementById("stamina_friend").value)
+	  - total_50_sta_times * 50;
 	buy_stamina = buy_stamina - Math.floor(((
 		Number(document.getElementById("_d").innerHTML) * 24 
 		+ Number(document.getElementById("_h").innerHTML)) * 60 
