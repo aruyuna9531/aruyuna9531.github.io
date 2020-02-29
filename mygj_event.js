@@ -74,7 +74,7 @@ function count(){
 		+ Number(document.getElementById("_h").innerHTML)) * 60 
 		+ Number(document.getElementById("_m").innerHTML))/6);
 	
-	console.log(v_rnf);
+	console.log(buy_stamina);
 	document.getElementById("need_stamina").innerHTML = total_staminas;
 	document.getElementById("buy_stamina").innerHTML = buy_stamina > 0 ? buy_stamina : 0;
 	document.getElementById("playSongs").innerHTML = total_times;

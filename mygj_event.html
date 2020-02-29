@@ -5,7 +5,7 @@
  <script src="mygj_event.js"></script>
 </head>
 <body onload="countTime(1);count()">
- <h1>修改记录：（20/2/29 14:23 修复了50体力计算错误）</h1>
+ <h1>修改记录：（20/2/29 14:33 50体力删了，自动计算，拿不到的以后计算时自动减掉）</h1>
  <p>
 	离活动结束还有：
 	<span id="_d"></span><span id="MsgDays">天</span>
@@ -126,7 +126,6 @@
  当前pt：<input id="current" type="number" value="0" onchange="count()"><br>
  <br>
  当前体力：<input id="current_stamina" type="number" value="0" min="0" onchange="count()"><br>
- 每日领50体力次数：<input id="stamina_50" type="number" min="0" max="3" value="2" onchange="count()"><br>
  每日领好友送体力次数：<input id="stamina_friend" type="number" min="0" max="20" value="20" onchange="count()"><br>
  
  计算结果：
