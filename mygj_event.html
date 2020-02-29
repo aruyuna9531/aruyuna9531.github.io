@@ -89,14 +89,14 @@
  <select id="LevelNoFever" onchange="count()">
   <option value="6"> 6星（专业）</option>
   <option value="8"> 8星（大师）</option>
-  <option value="9"> 9星（大师）</option>
+  <option value="9" selected="selected"> 9星（大师）</option>
   <option value="10"> 10星（大师）</option>
  </select>
  <span> 预计打分等级： </span>
  <select id="RankNoFever" onchange="count()">
   <option value="S"> S（×1.3）</option>
   <option value="SS"> SS（×1.4）</option>
-  <option value="SSS"> SSS（×1.5）</option>
+  <option value="SSS" selected="selected"> SSS（×1.5）</option>
  </select>
  刷Fever燃烧模式倍数：
  <select id="betNoFever" onchange="count()">
@@ -110,13 +110,13 @@
   <option value="8"> 8星（大师）×7</option>
   <option value="9"> 9星（大师）×7</option>
   <option value="10"> 10星（大师）×7</option>
-  <option value="short"> 大师短歌集（104s以下）可打8首</option>
+  <option value="short" selected="selected"> 大师短歌集（104s以下）可打8首</option>
  </select>
  <span> 预计打分等级： </span>
  <select id="RankFever" onchange="count()">
   <option value="S"> S（×1.3）</option>
   <option value="SS"> SS（×1.4）</option>
-  <option value="SSS"> SSS（×1.5）</option>
+  <option value="SSS" selected="selected"> SSS（×1.5）</option>
  </select>
  <br>
  pt总加成（%）：<input id="bonus" type="number" value="0" onchange="count()"><br>
@@ -124,7 +124,7 @@
  目标pt：<input id="target" type="number" value="0" onchange="count()"><br>
  当前pt：<input id="current" type="number" value="0" onchange="count()"><br>
  <br>
- 当前体力：<input id="current_stamina" type="number" min="0" onchange="count()"><br>
+ 当前体力：<input id="current_stamina" type="number" value="0" min="0" onchange="count()"><br>
  每日领50体力次数：<input id="stamina_50" type="number" min="0" max="3" value="2" onchange="count()"><br>
  每日领好友送体力次数：<input id="stamina_friend" type="number" min="0" max="20" value="20" onchange="count()"><br>
  
