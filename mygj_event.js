@@ -55,7 +55,7 @@ function count(){
 	var total_staminas = to_gap_rounds * one_round_staminas + remain_times * v_snf * 2;
 	var total_times = one_round_times * to_gap_rounds + remain_times;
 	var total_elapse_min = total_times * 2.87;
-	var buy_stamina = total_staminas - Number(document.getElementById("current_stamina").value) - Number(document.getElementById("_d").innerHTML)*(Number(document.getElementById("stamina_50").value)+Number(document.getElementById("stamina_friend").value));
+	var buy_stamina = total_staminas - Number(document.getElementById("current_stamina").value) - Number(document.getElementById("_d").innerHTML)*(Number(document.getElementById("stamina_50").value)*50+Number(document.getElementById("stamina_friend").value));
 	buy_stamina = buy_stamina - Math.floor(((
 		Number(document.getElementById("_d").innerHTML) * 24 
 		+ Number(document.getElementById("_h").innerHTML)) * 60 
