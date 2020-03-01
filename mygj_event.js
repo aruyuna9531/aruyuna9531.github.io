@@ -41,12 +41,12 @@ function count(){
 		default: break;
 	}
 	
-	var betnofever = Number(document.getElementById("betNoFever").value);
-	var bonus = Number(document.getElementById("bonus").value)/100+1;
-	var times_to_fever = 10;
-	var one_round_times = times_to_fever + times_f;
+	var betnofever = Number(document.getElementById("betNoFever").value);	//无fever倍数
+	var bonus = Number(document.getElementById("bonus").value)/100+1;		//pt加成（转化为基础分倍数
+	var times_to_fever = 10;												//打出fever预计次数
+	var one_round_times = times_to_fever + times_f;							//没了
 	var one_round_staminas = v_snf * betnofever * times_to_fever + v_sf * 2 * times_f;
-	var one_round_pts = (v_lnf * v_rnf * bonus) * betnofever * times_to_fever + (v_lf * v_rf * bonus) * 2 * times_f;
+	var one_round_pts = (v_lnf * v_rnf * bonus) * betnofever * times_to_fever + (v_lf * v_rf * bonus) * 2 * times_f * 1.5;
 	
 	var pt_gap = Number(document.getElementById("target").value) - Number(document.getElementById("current").value);
 	var to_gap_rounds = Math.floor(pt_gap / one_round_pts);
