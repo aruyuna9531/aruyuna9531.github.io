@@ -1,3 +1,7 @@
+function predict(){
+	
+}
+
 function count(){
 	var lnf = document.getElementById("LevelNoFever").value;
 	var v_lnf = 0;

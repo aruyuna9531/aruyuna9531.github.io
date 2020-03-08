@@ -1,0 +1,41 @@
+﻿<html>
+<head>
+<title>命运歌姬 保档安全线观测</title>
+<script src="SafetyTest_mygj.js"></script>
+<script src="time_tmp.js"></script>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+ $(document).ready(function(){
+	$("#_s").bind('DOMNodeInserted', function(e){
+	    if(Number(document.getElementById("_d").innerHTML)==0 && Number(document.getElementById("_h").innerHTML)<6){
+			document.getElementById("main").style.display="inline";
+			document.getElementById("TimeOutOfRange").style.display="none";
+		}
+	})
+  });
+</script>
+</head>
+<body onload="countTime(1);change()">
+ <select id="serverswitch" onchange="sswitch_safetyTest()">
+ <option value="cn">日服</option>
+ </select>
+ <span id="JP">
+ <p>
+	离活动结束还有：
+	<span id="_d"></span>天
+	<span id="_h"></span>:
+	<span id="_m"></span>:
+	<span id="_s"></span>
+ </p>
+ <p id="main" style="display:none">
+ 下一档线的天花板：
+ 目前pt：<input id="NextBorderCurrentPt" value="0" onchange="change()"><br>
+ 一局获得pt（常态下，可反复刷新档线观察计算）：<input id="NextBorderGetPt" value="0" onchange="change()"><br>
+ 预测该玩家可打到的pt最大值：<span id="result"></span><br>
+ </p>
+ <p id="TimeOutOfRange"> 离活动结束过早观察会有非常大的偏差，因此仅在活动结束前6小时开放，敬请期待 </p>
+ </span>
+ </span>
+</body>
+</html>
+ 
