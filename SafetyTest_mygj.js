@@ -14,12 +14,13 @@ function change(){
 	var NextBorderCurrentPt = Number(document.getElementById("NextBorderCurrentPt").value);
 	var NextBorderGetPt = Number(document.getElementById("NextBorderGetPt").value);
 	//计算基于如下假设：
-	//1.该玩家下一局立即打出了fever
-	//2.该玩家一个fever内能打8首歌
-	//3.由于该玩家在冲档爆菊，因此假设为稳定打大师10星，全程2倍体力，因此不对体力、难度选择上作处理
+	//1.该玩家下一局立即打出了烧
+	//2.该玩家3把一烧
+	//3.该玩家一个烧内能打8首歌
+	//4.由于该玩家在冲档爆菊，因此假设为稳定打大师10星，全程2倍体力，因此不对体力、难度选择上作处理
 	
 	var oneSongTime = 2.85;
-	var loopGet = NextBorderGetPt * (1.5 * 8 + 1 * 8);
+	var loopGet = NextBorderGetPt * (1.5 * 8 + 1 * 3);
 	var loopTime = oneSongTime * (8 + 8);
 	var loops = Math.floor(remainMin / loopTime);
 	//打完周期后预计最后剩下的时间（不够一个loop），假设前期是fever
